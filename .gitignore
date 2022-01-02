@@ -1,0 +1,5 @@
+ce/__pycache__/*
+ce/cbe/__pycache__/*
+ce/cte/__pycache__/*
+ce/tests/__pycache__/*
+ce/cte/antlrgen/__pycache__/*
