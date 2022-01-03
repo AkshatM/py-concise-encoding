@@ -2,11 +2,11 @@
 from antlr4 import *
 from io import StringIO
 import sys
+
 if sys.version_info[1] > 5:
     from typing import TextIO
 else:
     from typing.io import TextIO
-
 
 
 def serializedATN():
@@ -18,8 +18,8 @@ def serializedATN():
         buf.write("\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21")
         buf.write("\4\22\t\22\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27")
         buf.write("\t\27\4\30\t\30\4\31\t\31\4\32\t\32\4\33\t\33\4\34\t\34")
-        buf.write("\4\35\t\35\4\36\t\36\4\37\t\37\4 \t \4!\t!\4\"\t\"\4#")
-        buf.write("\t#\4$\t$\4%\t%\4&\t&\4\'\t\'\4(\t(\4)\t)\4*\t*\4+\t+")
+        buf.write('\4\35\t\35\4\36\t\36\4\37\t\37\4 \t \4!\t!\4"\t"\4#')
+        buf.write("\t#\4$\t$\4%\t%\4&\t&\4'\t'\4(\t(\4)\t)\4*\t*\4+\t+")
         buf.write("\4,\t,\4-\t-\4.\t.\4/\t/\4\60\t\60\4\61\t\61\4\62\t\62")
         buf.write("\4\63\t\63\4\64\t\64\4\65\t\65\4\66\t\66\4\67\t\67\48")
         buf.write("\t8\49\t9\4:\t:\4;\t;\4<\t<\4=\t=\4>\t>\4?\t?\4@\t@\4")
@@ -62,11 +62,11 @@ def serializedATN():
         buf.write("\3\34\3\34\3\35\3\35\3\35\3\35\3\35\3\35\3\35\3\35\3\35")
         buf.write("\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\37\3\37")
         buf.write("\3\37\3\37\3\37\3\37\3\37\3\37\3\37\3 \3 \3 \3 \3 \3 ")
-        buf.write("\3 \3 \3 \3!\3!\3!\3!\3!\3!\3!\3!\3!\3\"\3\"\3\"\3\"\3")
-        buf.write("\"\3\"\3\"\3\"\3\"\3#\3#\3#\3#\3#\3#\3#\3#\3#\3$\3$\3")
+        buf.write('\3 \3 \3 \3!\3!\3!\3!\3!\3!\3!\3!\3!\3"\3"\3"\3"\3')
+        buf.write('"\3"\3"\3"\3"\3#\3#\3#\3#\3#\3#\3#\3#\3#\3$\3$\3')
         buf.write("$\3$\3$\3$\3$\3$\3$\3%\3%\3%\3%\3%\3%\3%\3%\3%\3&\3&\3")
-        buf.write("&\3&\3&\3&\3&\3&\3&\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3")
-        buf.write("\'\3(\3(\3(\3(\3(\3(\3(\3(\3(\3)\3)\3)\3)\3)\3)\3)\3)")
+        buf.write("&\3&\3&\3&\3&\3&\3&\3'\3'\3'\3'\3'\3'\3'\3'\3")
+        buf.write("'\3(\3(\3(\3(\3(\3(\3(\3(\3(\3)\3)\3)\3)\3)\3)\3)\3)")
         buf.write("\3)\3*\3*\3*\3*\3*\3*\3*\3*\3*\3+\3+\3+\3+\3+\3+\3+\3")
         buf.write("+\3+\3,\3,\3,\3,\3,\3,\3,\3,\3,\3-\3-\3-\3-\3-\3-\3-\3")
         buf.write("-\3-\3.\3.\3.\3.\3.\3.\3.\3.\3.\3/\3/\3/\3/\3/\3/\3/\3")
@@ -159,9 +159,9 @@ def serializedATN():
         buf.write("\3\u00b9\3\u00b9\3\u00b9\3\u00b9\3\u00b9\3\u00b9\3\u00b9")
         buf.write("\3\u00b9\3\u00b9\3\u00b9\3\u00b9\3\u00b9\3\u00b9\3\u00b9")
         buf.write("\5\u00b9\u05cf\n\u00b9\4\u03a4\u03b2\2\u00ba\24\3\26\4")
-        buf.write("\30\5\32\6\34\7\36\b \t\"\n$\13&\f(\r*\16,\17.\20\60\21")
+        buf.write('\30\5\32\6\34\7\36\b \t"\n$\13&\f(\r*\16,\17.\20\60\21')
         buf.write("\62\22\64\23\66\248\25:\26<\27>\30@\31B\32D\33F\34H\35")
-        buf.write("J\36L\37N P!R\"T#V$X%Z&\\\'^(`)b*d+f,h-j.l/n\60p\61r\62")
+        buf.write("J\36L\37N P!R\"T#V$X%Z&\\'^(`)b*d+f,h-j.l/n\60p\61r\62")
         buf.write("t\63v\64x\65z\66|\67~8\u00809\u0082:\u0084;\u0086<\u0088")
         buf.write("=\u008a>\u008c?\u008e@\u0090A\u0092B\u0094C\u0096D\u0098")
         buf.write("E\u009aF\u009cG\u009eH\u00a0I\u00a2J\u00a4K\u00a6L\u00a8")
@@ -184,11 +184,11 @@ def serializedATN():
         buf.write("\21\22\23\34\3\2\62\63\4\2DDdd\4\2EEee\4\2GGgg\4\2HHh")
         buf.write("h\4\2KKkk\4\2QQqq\4\2RRrr\4\2VVvv\4\2WWww\4\2ZZzz\4\2")
         buf.write("..\60\60\3\2\629\3\2\62;\5\2\62;CHch\4\2--//\3\2C\\\5")
-        buf.write("\2\13\f\17\17\"\"\7\2/\60\62<C\\aac|\7\2/\60\62;C\\aa")
-        buf.write("c|\3\2\2\"\6\2\2!>>@@^^\5\2\2!$$^^\5\2\2!^^~~\16\2$$,")
+        buf.write('\2\13\f\17\17""\7\2/\60\62<C\\aac|\7\2/\60\62;C\\aa')
+        buf.write('c|\3\2\2"\6\2\2!>>@@^^\5\2\2!$$^^\5\2\2!^^~~\16\2$$,')
         buf.write(",//\61\61>>@@^^aappttvv~~\4\2\f\f\62\62\2\u05d5\2\24\3")
         buf.write("\2\2\2\3\26\3\2\2\2\3\30\3\2\2\2\3\32\3\2\2\2\3\34\3\2")
-        buf.write("\2\2\3\36\3\2\2\2\3 \3\2\2\2\3\"\3\2\2\2\3$\3\2\2\2\3")
+        buf.write('\2\2\3\36\3\2\2\2\3 \3\2\2\2\3"\3\2\2\2\3$\3\2\2\2\3')
         buf.write("&\3\2\2\2\3(\3\2\2\2\3*\3\2\2\2\3,\3\2\2\2\3.\3\2\2\2")
         buf.write("\3\60\3\2\2\2\3\62\3\2\2\2\3\64\3\2\2\2\3\66\3\2\2\2\3")
         buf.write("8\3\2\2\2\3:\3\2\2\2\3<\3\2\2\2\3>\3\2\2\2\3@\3\2\2\2")
@@ -223,7 +223,7 @@ def serializedATN():
         buf.write("\2\22\u0114\3\2\2\2\22\u0116\3\2\2\2\22\u0118\3\2\2\2")
         buf.write("\23\u011a\3\2\2\2\24\u0184\3\2\2\2\26\u0189\3\2\2\2\30")
         buf.write("\u018d\3\2\2\2\32\u018f\3\2\2\2\34\u0191\3\2\2\2\36\u0193")
-        buf.write("\3\2\2\2 \u0195\3\2\2\2\"\u0197\3\2\2\2$\u0199\3\2\2\2")
+        buf.write('\3\2\2\2 \u0195\3\2\2\2"\u0197\3\2\2\2$\u0199\3\2\2\2')
         buf.write("&\u019c\3\2\2\2(\u019e\3\2\2\2*\u01a2\3\2\2\2,\u01a4\3")
         buf.write("\2\2\2.\u01a8\3\2\2\2\60\u01ad\3\2\2\2\62\u01b4\3\2\2")
         buf.write("\2\64\u01bb\3\2\2\2\66\u01c2\3\2\2\28\u01c9\3\2\2\2:\u01d0")
@@ -292,7 +292,7 @@ def serializedATN():
         buf.write("\2\u0192\35\3\2\2\2\u0193\u0194\7\177\2\2\u0194\37\3\2")
         buf.write("\2\2\u0195\u0196\7?\2\2\u0196!\3\2\2\2\u0197\u0198\7*")
         buf.write("\2\2\u0198#\3\2\2\2\u0199\u019a\7B\2\2\u019a\u019b\7*")
-        buf.write("\2\2\u019b%\3\2\2\2\u019c\u019d\7+\2\2\u019d\'\3\2\2\2")
+        buf.write("\2\2\u019b%\3\2\2\2\u019c\u019d\7+\2\2\u019d'\3\2\2\2")
         buf.write("\u019e\u019f\5\u0132\u0091\2\u019f\u01a0\3\2\2\2\u01a0")
         buf.write("\u01a1\b\f\4\2\u01a1)\3\2\2\2\u01a2\u01a3\5\u0134\u0092")
         buf.write("\2\u01a3+\3\2\2\2\u01a4\u01a5\7=\2\2\u01a5\u01a6\3\2\2")
@@ -359,7 +359,7 @@ def serializedATN():
         buf.write("\u0240\7~\2\2\u0240\u0241\5\u0126\u008b\2\u0241\u0242")
         buf.write("\7\65\2\2\u0242\u0243\7\64\2\2\u0243\u0244\3\2\2\2\u0244")
         buf.write("\u0245\5\u0128\u008c\2\u0245\u0246\3\2\2\2\u0246\u0247")
-        buf.write("\b\"\t\2\u0247U\3\2\2\2\u0248\u0249\7~\2\2\u0249\u024a")
+        buf.write('\b"\t\2\u0247U\3\2\2\2\u0248\u0249\7~\2\2\u0249\u024a')
         buf.write("\5\u0126\u008b\2\u024a\u024b\7\65\2\2\u024b\u024c\7\64")
         buf.write("\2\2\u024c\u024d\3\2\2\2\u024d\u024e\5\u0130\u0090\2\u024e")
         buf.write("\u024f\3\2\2\2\u024f\u0250\b#\n\2\u0250W\3\2\2\2\u0251")
@@ -376,7 +376,7 @@ def serializedATN():
         buf.write("\b&\r\2\u026b]\3\2\2\2\u026c\u026d\7~\2\2\u026d\u026e")
         buf.write("\5\u012e\u008f\2\u026e\u026f\7\65\2\2\u026f\u0270\7\64")
         buf.write("\2\2\u0270\u0271\3\2\2\2\u0271\u0272\5\u0130\u0090\2\u0272")
-        buf.write("\u0273\3\2\2\2\u0273\u0274\b\'\16\2\u0274_\3\2\2\2\u0275")
+        buf.write("\u0273\3\2\2\2\u0273\u0274\b'\16\2\u0274_\3\2\2\2\u0275")
         buf.write("\u0276\7~\2\2\u0276\u0277\5\u0126\u008b\2\u0277\u0278")
         buf.write("\78\2\2\u0278\u0279\7\66\2\2\u0279\u027a\3\2\2\2\u027a")
         buf.write("\u027b\5\u0172\u00b1\2\u027b\u027c\3\2\2\2\u027c\u027d")
@@ -776,7 +776,7 @@ class CTELexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
-    decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
+    decisionsToDFA = [DFA(ds, i) for i, ds in enumerate(atn.decisionToState)]
 
     NORMAL = 1
     ARRAY_BIT = 2
@@ -929,105 +929,377 @@ class CTELexer(Lexer):
     MARKUP_SUB_BEGIN = 131
     MARKUP_SUB_NAME = 132
 
-    channelNames = [ u"DEFAULT_TOKEN_CHANNEL", u"HIDDEN" ]
+    channelNames = [u"DEFAULT_TOKEN_CHANNEL", u"HIDDEN"]
 
-    modeNames = [ "DEFAULT_MODE", "NORMAL", "ARRAY_BIT", "ARRAY_I", "ARRAY_U", 
-                  "ARRAY_F", "ARRAY_F_X", "ARRAY_I_B", "ARRAY_I_O", "ARRAY_I_X", 
-                  "ARRAY_U_B", "ARRAY_U_O", "ARRAY_U_X", "CUSTOM_BINARY", 
-                  "MEDIA", "MARKUP_GET_ID", "MARKUP_BEGIN_CONTENTS", "MARKUP_SUB_GET_ID" ]
+    modeNames = [
+        "DEFAULT_MODE",
+        "NORMAL",
+        "ARRAY_BIT",
+        "ARRAY_I",
+        "ARRAY_U",
+        "ARRAY_F",
+        "ARRAY_F_X",
+        "ARRAY_I_B",
+        "ARRAY_I_O",
+        "ARRAY_I_X",
+        "ARRAY_U_B",
+        "ARRAY_U_O",
+        "ARRAY_U_X",
+        "CUSTOM_BINARY",
+        "MEDIA",
+        "MARKUP_GET_ID",
+        "MARKUP_BEGIN_CONTENTS",
+        "MARKUP_SUB_GET_ID",
+    ]
 
-    literalNames = [ "<INVALID>",
-            "'['", "']'", "'{'", "'}'", "'='", "'('", "'@('", "')'", "';'", 
-            "'null'", "'nan'", "'snan'", "'true'", "'false'" ]
+    literalNames = [
+        "<INVALID>",
+        "'['",
+        "']'",
+        "'{'",
+        "'}'",
+        "'='",
+        "'('",
+        "'@('",
+        "')'",
+        "';'",
+        "'null'",
+        "'nan'",
+        "'snan'",
+        "'true'",
+        "'false'",
+    ]
 
-    symbolicNames = [ "<INVALID>",
-            "VERSION", "WS", "LIST_BEGIN", "LIST_END", "MAP_BEGIN", "MAP_END", 
-            "KV_SEPARATOR", "NODE_BEGIN", "EDGE_BEGIN", "EDGE_NODE_END", 
-            "MARKUP_BEGIN", "MARKUP_END", "MARKUP_CONTENT_BEGIN", "ARRAY_BIT_BEGIN", 
-            "ARRAY_I8_BEGIN", "ARRAY_I8B_BEGIN", "ARRAY_I8O_BEGIN", "ARRAY_I8X_BEGIN", 
-            "ARRAY_U8_BEGIN", "ARRAY_U8B_BEGIN", "ARRAY_U8O_BEGIN", "ARRAY_U8X_BEGIN", 
-            "ARRAY_I16_BEGIN", "ARRAY_I16B_BEGIN", "ARRAY_I16O_BEGIN", "ARRAY_I16X_BEGIN", 
-            "ARRAY_U16_BEGIN", "ARRAY_U16B_BEGIN", "ARRAY_U16O_BEGIN", "ARRAY_U16X_BEGIN", 
-            "ARRAY_I32_BEGIN", "ARRAY_I32B_BEGIN", "ARRAY_I32O_BEGIN", "ARRAY_I32X_BEGIN", 
-            "ARRAY_U32_BEGIN", "ARRAY_U32B_BEGIN", "ARRAY_U32O_BEGIN", "ARRAY_U32X_BEGIN", 
-            "ARRAY_I64_BEGIN", "ARRAY_I64B_BEGIN", "ARRAY_I64O_BEGIN", "ARRAY_I64X_BEGIN", 
-            "ARRAY_U64_BEGIN", "ARRAY_U64B_BEGIN", "ARRAY_U64O_BEGIN", "ARRAY_U64X_BEGIN", 
-            "ARRAY_F16_BEGIN", "ARRAY_F16X_BEGIN", "ARRAY_F32_BEGIN", "ARRAY_F32X_BEGIN", 
-            "ARRAY_F64_BEGIN", "ARRAY_F64X_BEGIN", "CUSTOM_BINARY_BEGIN", 
-            "MEDA_BEGIN", "CUSTOM_TEXT", "NULL", "NAN", "SNAN", "INF", "TRUE", 
-            "FALSE", "PINT_BIN", "NINT_BIN", "PINT_DEC", "NINT_DEC", "PINT_OCT", 
-            "NINT_OCT", "PINT_HEX", "NINT_HEX", "FLOAT_DEC", "FLOAT_HEX", 
-            "DATE", "TIME", "UID", "STRING", "RID", "REMOTE_REF", "MARKER", 
-            "REFRENCE", "BLOCK_COMMENT", "LINE_COMMENT", "ARRAY_BIT_BITS", 
-            "ARRAY_BIT_END", "ARRAY_BIT_WS", "ARRAY_I_ELEM_B", "ARRAY_I_ELEM_O", 
-            "ARRAY_I_ELEM_H", "ARRAY_I_ELEM_D", "ARRAY_I_END", "ARRAY_I_WS", 
-            "ARRAY_U_ELEM_B", "ARRAY_U_ELEM_O", "ARRAY_U_ELEM_H", "ARRAY_U_ELEM_D", 
-            "ARRAY_U_END", "ARRAY_U_WS", "ARRAY_F_ELEM_D", "ARRAY_F_ELEM_H", 
-            "ARRAY_F_END", "ARRAY_F_WS", "ARRAY_F_X_ELEM", "ARRAY_F_X_END", 
-            "ARRAY_F_X_WS", "ARRAY_I_B_ELEM", "ARRAY_I_B_END", "ARRAY_I_B_WS", 
-            "ARRAY_I_O_ELEM", "ARRAY_I_O_END", "ARRAY_I_O_WS", "ARRAY_I_X_ELEM", 
-            "ARRAY_I_X_END", "ARRAY_I_X_WS", "ARRAY_U_B_ELEM", "ARRAY_U_B_END", 
-            "ARRAY_U_B_WS", "ARRAY_U_O_ELEM", "ARRAY_U_O_END", "ARRAY_U_O_WS", 
-            "ARRAY_U_X_ELEM", "ARRAY_U_X_END", "ARRAY_U_X_WS", "CUSTOM_BINARY_ELEM", 
-            "CUSTOM_BINARY_END", "CUSTOM_BINARY_WS", "MEDIA_ELEM", "MEDIA_END", 
-            "MEDIA_WS", "MARKUP_NAME", "MARKUP_CONTENTS", "MARKUP_CONTENTS_END", 
-            "MARKUP_SUB_BEGIN", "MARKUP_SUB_NAME" ]
+    symbolicNames = [
+        "<INVALID>",
+        "VERSION",
+        "WS",
+        "LIST_BEGIN",
+        "LIST_END",
+        "MAP_BEGIN",
+        "MAP_END",
+        "KV_SEPARATOR",
+        "NODE_BEGIN",
+        "EDGE_BEGIN",
+        "EDGE_NODE_END",
+        "MARKUP_BEGIN",
+        "MARKUP_END",
+        "MARKUP_CONTENT_BEGIN",
+        "ARRAY_BIT_BEGIN",
+        "ARRAY_I8_BEGIN",
+        "ARRAY_I8B_BEGIN",
+        "ARRAY_I8O_BEGIN",
+        "ARRAY_I8X_BEGIN",
+        "ARRAY_U8_BEGIN",
+        "ARRAY_U8B_BEGIN",
+        "ARRAY_U8O_BEGIN",
+        "ARRAY_U8X_BEGIN",
+        "ARRAY_I16_BEGIN",
+        "ARRAY_I16B_BEGIN",
+        "ARRAY_I16O_BEGIN",
+        "ARRAY_I16X_BEGIN",
+        "ARRAY_U16_BEGIN",
+        "ARRAY_U16B_BEGIN",
+        "ARRAY_U16O_BEGIN",
+        "ARRAY_U16X_BEGIN",
+        "ARRAY_I32_BEGIN",
+        "ARRAY_I32B_BEGIN",
+        "ARRAY_I32O_BEGIN",
+        "ARRAY_I32X_BEGIN",
+        "ARRAY_U32_BEGIN",
+        "ARRAY_U32B_BEGIN",
+        "ARRAY_U32O_BEGIN",
+        "ARRAY_U32X_BEGIN",
+        "ARRAY_I64_BEGIN",
+        "ARRAY_I64B_BEGIN",
+        "ARRAY_I64O_BEGIN",
+        "ARRAY_I64X_BEGIN",
+        "ARRAY_U64_BEGIN",
+        "ARRAY_U64B_BEGIN",
+        "ARRAY_U64O_BEGIN",
+        "ARRAY_U64X_BEGIN",
+        "ARRAY_F16_BEGIN",
+        "ARRAY_F16X_BEGIN",
+        "ARRAY_F32_BEGIN",
+        "ARRAY_F32X_BEGIN",
+        "ARRAY_F64_BEGIN",
+        "ARRAY_F64X_BEGIN",
+        "CUSTOM_BINARY_BEGIN",
+        "MEDA_BEGIN",
+        "CUSTOM_TEXT",
+        "NULL",
+        "NAN",
+        "SNAN",
+        "INF",
+        "TRUE",
+        "FALSE",
+        "PINT_BIN",
+        "NINT_BIN",
+        "PINT_DEC",
+        "NINT_DEC",
+        "PINT_OCT",
+        "NINT_OCT",
+        "PINT_HEX",
+        "NINT_HEX",
+        "FLOAT_DEC",
+        "FLOAT_HEX",
+        "DATE",
+        "TIME",
+        "UID",
+        "STRING",
+        "RID",
+        "REMOTE_REF",
+        "MARKER",
+        "REFRENCE",
+        "BLOCK_COMMENT",
+        "LINE_COMMENT",
+        "ARRAY_BIT_BITS",
+        "ARRAY_BIT_END",
+        "ARRAY_BIT_WS",
+        "ARRAY_I_ELEM_B",
+        "ARRAY_I_ELEM_O",
+        "ARRAY_I_ELEM_H",
+        "ARRAY_I_ELEM_D",
+        "ARRAY_I_END",
+        "ARRAY_I_WS",
+        "ARRAY_U_ELEM_B",
+        "ARRAY_U_ELEM_O",
+        "ARRAY_U_ELEM_H",
+        "ARRAY_U_ELEM_D",
+        "ARRAY_U_END",
+        "ARRAY_U_WS",
+        "ARRAY_F_ELEM_D",
+        "ARRAY_F_ELEM_H",
+        "ARRAY_F_END",
+        "ARRAY_F_WS",
+        "ARRAY_F_X_ELEM",
+        "ARRAY_F_X_END",
+        "ARRAY_F_X_WS",
+        "ARRAY_I_B_ELEM",
+        "ARRAY_I_B_END",
+        "ARRAY_I_B_WS",
+        "ARRAY_I_O_ELEM",
+        "ARRAY_I_O_END",
+        "ARRAY_I_O_WS",
+        "ARRAY_I_X_ELEM",
+        "ARRAY_I_X_END",
+        "ARRAY_I_X_WS",
+        "ARRAY_U_B_ELEM",
+        "ARRAY_U_B_END",
+        "ARRAY_U_B_WS",
+        "ARRAY_U_O_ELEM",
+        "ARRAY_U_O_END",
+        "ARRAY_U_O_WS",
+        "ARRAY_U_X_ELEM",
+        "ARRAY_U_X_END",
+        "ARRAY_U_X_WS",
+        "CUSTOM_BINARY_ELEM",
+        "CUSTOM_BINARY_END",
+        "CUSTOM_BINARY_WS",
+        "MEDIA_ELEM",
+        "MEDIA_END",
+        "MEDIA_WS",
+        "MARKUP_NAME",
+        "MARKUP_CONTENTS",
+        "MARKUP_CONTENTS_END",
+        "MARKUP_SUB_BEGIN",
+        "MARKUP_SUB_NAME",
+    ]
 
-    ruleNames = [ "VERSION", "WS", "LIST_BEGIN", "LIST_END", "MAP_BEGIN", 
-                  "MAP_END", "KV_SEPARATOR", "NODE_BEGIN", "EDGE_BEGIN", 
-                  "EDGE_NODE_END", "MARKUP_BEGIN", "MARKUP_END", "MARKUP_CONTENT_BEGIN", 
-                  "ARRAY_BIT_BEGIN", "ARRAY_I8_BEGIN", "ARRAY_I8B_BEGIN", 
-                  "ARRAY_I8O_BEGIN", "ARRAY_I8X_BEGIN", "ARRAY_U8_BEGIN", 
-                  "ARRAY_U8B_BEGIN", "ARRAY_U8O_BEGIN", "ARRAY_U8X_BEGIN", 
-                  "ARRAY_I16_BEGIN", "ARRAY_I16B_BEGIN", "ARRAY_I16O_BEGIN", 
-                  "ARRAY_I16X_BEGIN", "ARRAY_U16_BEGIN", "ARRAY_U16B_BEGIN", 
-                  "ARRAY_U16O_BEGIN", "ARRAY_U16X_BEGIN", "ARRAY_I32_BEGIN", 
-                  "ARRAY_I32B_BEGIN", "ARRAY_I32O_BEGIN", "ARRAY_I32X_BEGIN", 
-                  "ARRAY_U32_BEGIN", "ARRAY_U32B_BEGIN", "ARRAY_U32O_BEGIN", 
-                  "ARRAY_U32X_BEGIN", "ARRAY_I64_BEGIN", "ARRAY_I64B_BEGIN", 
-                  "ARRAY_I64O_BEGIN", "ARRAY_I64X_BEGIN", "ARRAY_U64_BEGIN", 
-                  "ARRAY_U64B_BEGIN", "ARRAY_U64O_BEGIN", "ARRAY_U64X_BEGIN", 
-                  "ARRAY_F16_BEGIN", "ARRAY_F16X_BEGIN", "ARRAY_F32_BEGIN", 
-                  "ARRAY_F32X_BEGIN", "ARRAY_F64_BEGIN", "ARRAY_F64X_BEGIN", 
-                  "CUSTOM_BINARY_BEGIN", "MEDA_BEGIN", "CUSTOM_TEXT", "NULL", 
-                  "NAN", "SNAN", "INF", "TRUE", "FALSE", "PINT_BIN", "NINT_BIN", 
-                  "PINT_DEC", "NINT_DEC", "PINT_OCT", "NINT_OCT", "PINT_HEX", 
-                  "NINT_HEX", "FLOAT_DEC", "FLOAT_HEX", "DATE", "TIME", 
-                  "UID", "STRING", "RID", "REMOTE_REF", "MARKER", "REFRENCE", 
-                  "BLOCK_COMMENT", "LINE_COMMENT", "ARRAY_BIT_BITS", "ARRAY_BIT_END", 
-                  "ARRAY_BIT_WS", "ARRAY_I_ELEM_B", "ARRAY_I_ELEM_O", "ARRAY_I_ELEM_H", 
-                  "ARRAY_I_ELEM_D", "ARRAY_I_END", "ARRAY_I_WS", "ARRAY_U_ELEM_B", 
-                  "ARRAY_U_ELEM_O", "ARRAY_U_ELEM_H", "ARRAY_U_ELEM_D", 
-                  "ARRAY_U_END", "ARRAY_U_WS", "ARRAY_F_ELEM_D", "ARRAY_F_ELEM_H", 
-                  "ARRAY_F_END", "ARRAY_F_WS", "ARRAY_F_X_ELEM", "ARRAY_F_X_END", 
-                  "ARRAY_F_X_WS", "ARRAY_I_B_ELEM", "ARRAY_I_B_END", "ARRAY_I_B_WS", 
-                  "ARRAY_I_O_ELEM", "ARRAY_I_O_END", "ARRAY_I_O_WS", "ARRAY_I_X_ELEM", 
-                  "ARRAY_I_X_END", "ARRAY_I_X_WS", "ARRAY_U_B_ELEM", "ARRAY_U_B_END", 
-                  "ARRAY_U_B_WS", "ARRAY_U_O_ELEM", "ARRAY_U_O_END", "ARRAY_U_O_WS", 
-                  "ARRAY_U_X_ELEM", "ARRAY_U_X_END", "ARRAY_U_X_WS", "CUSTOM_BINARY_ELEM", 
-                  "CUSTOM_BINARY_END", "CUSTOM_BINARY_WS", "MEDIA_ELEM", 
-                  "MEDIA_END", "MEDIA_WS", "MARKUP_NAME", "MARKUP_CONTENTS", 
-                  "MARKUP_CONTENTS_END", "MARKUP_SUB_BEGIN", "MARKUP_SUB_NAME", 
-                  "WHITESPACE", "B", "C", "E", "F", "I", "O", "P", "T", 
-                  "U", "X", "SEQ_MARKUP_BEGIN", "SEQ_MARKUP_END", "SEQ_MARKUP_NAME", 
-                  "SEQ_ARRAY_END", "SEQ_MARKER_ID", "PREFIX_BIN", "PREFIX_OCT", 
-                  "PREFIX_HEX", "FRACTION_DEC", "FRACTION_HEX", "RADIX", 
-                  "NEG", "BIT", "OCT", "DEC", "HEX", "DIGITS_BIN", "DIGITS_OCT", 
-                  "DIGITS_DEC", "DIGITS_HEX", "EXPONENT_DEC", "EXPONENT_HEX", 
-                  "BYTE_HEX", "FLOAT_D", "FLOAT_H_PREFIX", "FLOAT_H_NOPREFIX", 
-                  "DATE_PORTION", "TIME_PORTION", "TIME_ZONE", "TZ_AREALOC", 
-                  "TZ_LATLONG", "TZ_OFFSET", "CHAR_WS", "CHAR_MARKUP_NAME", 
-                  "CHAR_MARKER_ID", "CHAR_AREA_LOC", "CHAR_MEDIA_TYPE", 
-                  "CHAR_MARKUP_STRING", "CHAR_QUOTED_STRING", "CHAR_CUSTOM_TEXT", 
-                  "ESCAPE" ]
+    ruleNames = [
+        "VERSION",
+        "WS",
+        "LIST_BEGIN",
+        "LIST_END",
+        "MAP_BEGIN",
+        "MAP_END",
+        "KV_SEPARATOR",
+        "NODE_BEGIN",
+        "EDGE_BEGIN",
+        "EDGE_NODE_END",
+        "MARKUP_BEGIN",
+        "MARKUP_END",
+        "MARKUP_CONTENT_BEGIN",
+        "ARRAY_BIT_BEGIN",
+        "ARRAY_I8_BEGIN",
+        "ARRAY_I8B_BEGIN",
+        "ARRAY_I8O_BEGIN",
+        "ARRAY_I8X_BEGIN",
+        "ARRAY_U8_BEGIN",
+        "ARRAY_U8B_BEGIN",
+        "ARRAY_U8O_BEGIN",
+        "ARRAY_U8X_BEGIN",
+        "ARRAY_I16_BEGIN",
+        "ARRAY_I16B_BEGIN",
+        "ARRAY_I16O_BEGIN",
+        "ARRAY_I16X_BEGIN",
+        "ARRAY_U16_BEGIN",
+        "ARRAY_U16B_BEGIN",
+        "ARRAY_U16O_BEGIN",
+        "ARRAY_U16X_BEGIN",
+        "ARRAY_I32_BEGIN",
+        "ARRAY_I32B_BEGIN",
+        "ARRAY_I32O_BEGIN",
+        "ARRAY_I32X_BEGIN",
+        "ARRAY_U32_BEGIN",
+        "ARRAY_U32B_BEGIN",
+        "ARRAY_U32O_BEGIN",
+        "ARRAY_U32X_BEGIN",
+        "ARRAY_I64_BEGIN",
+        "ARRAY_I64B_BEGIN",
+        "ARRAY_I64O_BEGIN",
+        "ARRAY_I64X_BEGIN",
+        "ARRAY_U64_BEGIN",
+        "ARRAY_U64B_BEGIN",
+        "ARRAY_U64O_BEGIN",
+        "ARRAY_U64X_BEGIN",
+        "ARRAY_F16_BEGIN",
+        "ARRAY_F16X_BEGIN",
+        "ARRAY_F32_BEGIN",
+        "ARRAY_F32X_BEGIN",
+        "ARRAY_F64_BEGIN",
+        "ARRAY_F64X_BEGIN",
+        "CUSTOM_BINARY_BEGIN",
+        "MEDA_BEGIN",
+        "CUSTOM_TEXT",
+        "NULL",
+        "NAN",
+        "SNAN",
+        "INF",
+        "TRUE",
+        "FALSE",
+        "PINT_BIN",
+        "NINT_BIN",
+        "PINT_DEC",
+        "NINT_DEC",
+        "PINT_OCT",
+        "NINT_OCT",
+        "PINT_HEX",
+        "NINT_HEX",
+        "FLOAT_DEC",
+        "FLOAT_HEX",
+        "DATE",
+        "TIME",
+        "UID",
+        "STRING",
+        "RID",
+        "REMOTE_REF",
+        "MARKER",
+        "REFRENCE",
+        "BLOCK_COMMENT",
+        "LINE_COMMENT",
+        "ARRAY_BIT_BITS",
+        "ARRAY_BIT_END",
+        "ARRAY_BIT_WS",
+        "ARRAY_I_ELEM_B",
+        "ARRAY_I_ELEM_O",
+        "ARRAY_I_ELEM_H",
+        "ARRAY_I_ELEM_D",
+        "ARRAY_I_END",
+        "ARRAY_I_WS",
+        "ARRAY_U_ELEM_B",
+        "ARRAY_U_ELEM_O",
+        "ARRAY_U_ELEM_H",
+        "ARRAY_U_ELEM_D",
+        "ARRAY_U_END",
+        "ARRAY_U_WS",
+        "ARRAY_F_ELEM_D",
+        "ARRAY_F_ELEM_H",
+        "ARRAY_F_END",
+        "ARRAY_F_WS",
+        "ARRAY_F_X_ELEM",
+        "ARRAY_F_X_END",
+        "ARRAY_F_X_WS",
+        "ARRAY_I_B_ELEM",
+        "ARRAY_I_B_END",
+        "ARRAY_I_B_WS",
+        "ARRAY_I_O_ELEM",
+        "ARRAY_I_O_END",
+        "ARRAY_I_O_WS",
+        "ARRAY_I_X_ELEM",
+        "ARRAY_I_X_END",
+        "ARRAY_I_X_WS",
+        "ARRAY_U_B_ELEM",
+        "ARRAY_U_B_END",
+        "ARRAY_U_B_WS",
+        "ARRAY_U_O_ELEM",
+        "ARRAY_U_O_END",
+        "ARRAY_U_O_WS",
+        "ARRAY_U_X_ELEM",
+        "ARRAY_U_X_END",
+        "ARRAY_U_X_WS",
+        "CUSTOM_BINARY_ELEM",
+        "CUSTOM_BINARY_END",
+        "CUSTOM_BINARY_WS",
+        "MEDIA_ELEM",
+        "MEDIA_END",
+        "MEDIA_WS",
+        "MARKUP_NAME",
+        "MARKUP_CONTENTS",
+        "MARKUP_CONTENTS_END",
+        "MARKUP_SUB_BEGIN",
+        "MARKUP_SUB_NAME",
+        "WHITESPACE",
+        "B",
+        "C",
+        "E",
+        "F",
+        "I",
+        "O",
+        "P",
+        "T",
+        "U",
+        "X",
+        "SEQ_MARKUP_BEGIN",
+        "SEQ_MARKUP_END",
+        "SEQ_MARKUP_NAME",
+        "SEQ_ARRAY_END",
+        "SEQ_MARKER_ID",
+        "PREFIX_BIN",
+        "PREFIX_OCT",
+        "PREFIX_HEX",
+        "FRACTION_DEC",
+        "FRACTION_HEX",
+        "RADIX",
+        "NEG",
+        "BIT",
+        "OCT",
+        "DEC",
+        "HEX",
+        "DIGITS_BIN",
+        "DIGITS_OCT",
+        "DIGITS_DEC",
+        "DIGITS_HEX",
+        "EXPONENT_DEC",
+        "EXPONENT_HEX",
+        "BYTE_HEX",
+        "FLOAT_D",
+        "FLOAT_H_PREFIX",
+        "FLOAT_H_NOPREFIX",
+        "DATE_PORTION",
+        "TIME_PORTION",
+        "TIME_ZONE",
+        "TZ_AREALOC",
+        "TZ_LATLONG",
+        "TZ_OFFSET",
+        "CHAR_WS",
+        "CHAR_MARKUP_NAME",
+        "CHAR_MARKER_ID",
+        "CHAR_AREA_LOC",
+        "CHAR_MEDIA_TYPE",
+        "CHAR_MARKUP_STRING",
+        "CHAR_QUOTED_STRING",
+        "CHAR_CUSTOM_TEXT",
+        "ESCAPE",
+    ]
 
     grammarFileName = "CTELexer.g4"
 
-    def __init__(self, input=None, output:TextIO = sys.stdout):
+    def __init__(self, input=None, output: TextIO = sys.stdout):
         super().__init__(input, output)
         self.checkVersion("4.9.3")
-        self._interp = LexerATNSimulator(self, self.atn, self.decisionsToDFA, PredictionContextCache())
+        self._interp = LexerATNSimulator(
+            self, self.atn, self.decisionsToDFA, PredictionContextCache()
+        )
         self._actions = None
         self._predicates = None
-
-

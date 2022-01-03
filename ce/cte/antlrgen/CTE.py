@@ -3,10 +3,11 @@
 from antlr4 import *
 from io import StringIO
 import sys
+
 if sys.version_info[1] > 5:
-	from typing import TextIO
+    from typing import TextIO
 else:
-	from typing.io import TextIO
+    from typing.io import TextIO
 
 
 def serializedATN():
@@ -17,8 +18,8 @@ def serializedATN():
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
         buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
         buf.write("\t\31\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36")
-        buf.write("\4\37\t\37\4 \t \4!\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t")
-        buf.write("&\4\'\t\'\4(\t(\4)\t)\4*\t*\4+\t+\4,\t,\4-\t-\4.\t.\4")
+        buf.write('\4\37\t\37\4 \t \4!\t!\4"\t"\4#\t#\4$\t$\4%\t%\4&\t')
+        buf.write("&\4'\t'\4(\t(\4)\t)\4*\t*\4+\t+\4,\t,\4-\t-\4.\t.\4")
         buf.write("/\t/\4\60\t\60\4\61\t\61\4\62\t\62\4\63\t\63\4\64\t\64")
         buf.write("\4\65\t\65\4\66\t\66\4\67\t\67\48\t8\49\t9\4:\t:\4;\t")
         buf.write(";\4<\t<\4=\t=\4>\t>\4?\t?\4@\t@\4A\tA\4B\tB\4C\tC\4D\t")
@@ -38,10 +39,10 @@ def serializedATN():
         buf.write("\3\30\3\31\3\31\3\31\7\31\u0126\n\31\f\31\16\31\u0129")
         buf.write("\13\31\3\31\3\31\7\31\u012d\n\31\f\31\16\31\u0130\13\31")
         buf.write("\5\31\u0132\n\31\3\31\3\31\3\32\3\32\3\33\3\33\3\34\3")
-        buf.write("\34\3\35\3\35\3\36\3\36\3\37\3\37\3 \3 \3!\3!\3\"\3\"")
+        buf.write('\34\3\35\3\35\3\36\3\36\3\37\3\37\3 \3 \3!\3!\3"\3"')
         buf.write("\3#\3#\3$\3$\3%\3%\3&\3&\7&\u0150\n&\f&\16&\u0153\13&")
-        buf.write("\3&\3&\3\'\3\'\7\'\u0159\n\'\f\'\16\'\u015c\13\'\3\'\3")
-        buf.write("\'\3(\3(\7(\u0162\n(\f(\16(\u0165\13(\3(\3(\3)\3)\7)\u016b")
+        buf.write("\3&\3&\3'\3'\7'\u0159\n'\f'\16'\u015c\13'\3'\3")
+        buf.write("'\3(\3(\7(\u0162\n(\f(\16(\u0165\13(\3(\3(\3)\3)\7)\u016b")
         buf.write("\n)\f)\16)\u016e\13)\3)\3)\3*\3*\7*\u0174\n*\f*\16*\u0177")
         buf.write("\13*\3*\3*\3+\3+\7+\u017d\n+\f+\16+\u0180\13+\3+\3+\3")
         buf.write(",\3,\7,\u0186\n,\f,\16,\u0189\13,\3,\3,\3-\3-\7-\u018f")
@@ -73,7 +74,7 @@ def serializedATN():
         buf.write("K\3K\7K\u029d\nK\fK\16K\u02a0\13K\3K\3K\3L\3L\7L\u02a6")
         buf.write("\nL\fL\16L\u02a9\13L\3L\3L\3M\3M\7M\u02af\nM\fM\16M\u02b2")
         buf.write("\13M\3M\3M\3N\3N\7N\u02b8\nN\fN\16N\u02bb\13N\3N\3N\3")
-        buf.write("N\2\2O\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,")
+        buf.write('N\2\2O\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 "$&(*,')
         buf.write(".\60\62\64\668:<>@BDFHJLNPRTVXZ\\^`bdfhjlnprtvxz|~\u0080")
         buf.write("\u0082\u0084\u0086\u0088\u008a\u008c\u008e\u0090\u0092")
         buf.write("\u0094\u0096\u0098\u009a\2\r\3\2>?\3\2@G\4\2;=HI\3\2J")
@@ -83,7 +84,7 @@ def serializedATN():
         buf.write("\3\2\2\2\n\u00df\3\2\2\2\f\u00e1\3\2\2\2\16\u00e3\3\2")
         buf.write("\2\2\20\u00e5\3\2\2\2\22\u00e7\3\2\2\2\24\u00e9\3\2\2")
         buf.write("\2\26\u00eb\3\2\2\2\30\u00ed\3\2\2\2\32\u00ef\3\2\2\2")
-        buf.write("\34\u00f3\3\2\2\2\36\u00f5\3\2\2\2 \u00f8\3\2\2\2\"\u00fa")
+        buf.write('\34\u00f3\3\2\2\2\36\u00f5\3\2\2\2 \u00f8\3\2\2\2"\u00fa')
         buf.write("\3\2\2\2$\u00fc\3\2\2\2&\u0100\3\2\2\2(\u0102\3\2\2\2")
         buf.write("*\u010b\3\2\2\2,\u0114\3\2\2\2.\u011a\3\2\2\2\60\u0122")
         buf.write("\3\2\2\2\62\u0135\3\2\2\2\64\u0137\3\2\2\2\66\u0139\3")
@@ -106,7 +107,7 @@ def serializedATN():
         buf.write("\3\2\2\2\u009f\u00da\5\24\13\2\u00a0\u00da\5\26\f\2\u00a1")
         buf.write("\u00da\5\n\6\2\u00a2\u00da\5\f\7\2\u00a3\u00da\5\b\5\2")
         buf.write("\u00a4\u00da\5\16\b\2\u00a5\u00da\5\20\t\2\u00a6\u00da")
-        buf.write("\5\22\n\2\u00a7\u00da\5J&\2\u00a8\u00da\5L\'\2\u00a9\u00da")
+        buf.write("\5\22\n\2\u00a7\u00da\5J&\2\u00a8\u00da\5L'\2\u00a9\u00da")
         buf.write("\5N(\2\u00aa\u00da\5P)\2\u00ab\u00da\5R*\2\u00ac\u00da")
         buf.write("\5T+\2\u00ad\u00da\5V,\2\u00ae\u00da\5X-\2\u00af\u00da")
         buf.write("\5Z.\2\u00b0\u00da\5\\/\2\u00b1\u00da\5^\60\2\u00b2\u00da")
@@ -124,7 +125,7 @@ def serializedATN():
         buf.write("\u00da\5\30\r\2\u00d0\u00da\5\u009aN\2\u00d1\u00da\5(")
         buf.write("\25\2\u00d2\u00da\5*\26\2\u00d3\u00da\5,\27\2\u00d4\u00da")
         buf.write("\5.\30\2\u00d5\u00da\5\60\31\2\u00d6\u00da\5\36\20\2\u00d7")
-        buf.write("\u00da\5 \21\2\u00d8\u00da\5\"\22\2\u00d9\u009f\3\2\2")
+        buf.write('\u00da\5 \21\2\u00d8\u00da\5"\22\2\u00d9\u009f\3\2\2')
         buf.write("\2\u00d9\u00a0\3\2\2\2\u00d9\u00a1\3\2\2\2\u00d9\u00a2")
         buf.write("\3\2\2\2\u00d9\u00a3\3\2\2\2\u00d9\u00a4\3\2\2\2\u00d9")
         buf.write("\u00a5\3\2\2\2\u00d9\u00a6\3\2\2\2\u00d9\u00a7\3\2\2\2")
@@ -159,7 +160,7 @@ def serializedATN():
         buf.write("\u00f8\u00f9\7Q\2\2\u00f9!\3\2\2\2\u00fa\u00fb\7O\2\2")
         buf.write("\u00fb#\3\2\2\2\u00fc\u00fd\t\6\2\2\u00fd%\3\2\2\2\u00fe")
         buf.write("\u0101\7\u0083\2\2\u00ff\u0101\5\60\31\2\u0100\u00fe\3")
-        buf.write("\2\2\2\u0100\u00ff\3\2\2\2\u0101\'\3\2\2\2\u0102\u0106")
+        buf.write("\2\2\2\u0100\u00ff\3\2\2\2\u0101'\3\2\2\2\u0102\u0106")
         buf.write("\7\7\2\2\u0103\u0105\5\32\16\2\u0104\u0103\3\2\2\2\u0105")
         buf.write("\u0108\3\2\2\2\u0106\u0104\3\2\2\2\u0106\u0107\3\2\2\2")
         buf.write("\u0107\u0109\3\2\2\2\u0108\u0106\3\2\2\2\u0109\u010a\7")
@@ -217,7 +218,7 @@ def serializedATN():
         buf.write("\5@!\2\u018e\u018d\3\2\2\2\u018f\u0192\3\2\2\2\u0190\u018e")
         buf.write("\3\2\2\2\u0190\u0191\3\2\2\2\u0191\u0193\3\2\2\2\u0192")
         buf.write("\u0190\3\2\2\2\u0193\u0194\7w\2\2\u0194Y\3\2\2\2\u0195")
-        buf.write("\u0199\7\30\2\2\u0196\u0198\5B\"\2\u0197\u0196\3\2\2\2")
+        buf.write('\u0199\7\30\2\2\u0196\u0198\5B"\2\u0197\u0196\3\2\2\2')
         buf.write("\u0198\u019b\3\2\2\2\u0199\u0197\3\2\2\2\u0199\u019a\3")
         buf.write("\2\2\2\u019a\u019c\3\2\2\2\u019b\u0199\3\2\2\2\u019c\u019d")
         buf.write("\7z\2\2\u019d[\3\2\2\2\u019e\u01a2\7\31\2\2\u019f\u01a1")
@@ -246,14 +247,14 @@ def serializedATN():
         buf.write("\2\2\2\u01d7\u01da\3\2\2\2\u01d8\u01d6\3\2\2\2\u01d8\u01d9")
         buf.write("\3\2\2\2\u01d9\u01db\3\2\2\2\u01da\u01d8\3\2\2\2\u01db")
         buf.write("\u01dc\7w\2\2\u01dci\3\2\2\2\u01dd\u01e1\7 \2\2\u01de")
-        buf.write("\u01e0\5B\"\2\u01df\u01de\3\2\2\2\u01e0\u01e3\3\2\2\2")
+        buf.write('\u01e0\5B"\2\u01df\u01de\3\2\2\2\u01e0\u01e3\3\2\2\2')
         buf.write("\u01e1\u01df\3\2\2\2\u01e1\u01e2\3\2\2\2\u01e2\u01e4\3")
         buf.write("\2\2\2\u01e3\u01e1\3\2\2\2\u01e4\u01e5\7z\2\2\u01e5k\3")
         buf.write("\2\2\2\u01e6\u01ea\7!\2\2\u01e7\u01e9\5\64\33\2\u01e8")
         buf.write("\u01e7\3\2\2\2\u01e9\u01ec\3\2\2\2\u01ea\u01e8\3\2\2\2")
         buf.write("\u01ea\u01eb\3\2\2\2\u01eb\u01ed\3\2\2\2\u01ec\u01ea\3")
         buf.write("\2\2\2\u01ed\u01ee\7[\2\2\u01eem\3\2\2\2\u01ef\u01f3\7")
-        buf.write("\"\2\2\u01f0\u01f2\5\66\34\2\u01f1\u01f0\3\2\2\2\u01f2")
+        buf.write('"\2\2\u01f0\u01f2\5\66\34\2\u01f1\u01f0\3\2\2\2\u01f2')
         buf.write("\u01f5\3\2\2\2\u01f3\u01f1\3\2\2\2\u01f3\u01f4\3\2\2\2")
         buf.write("\u01f4\u01f6\3\2\2\2\u01f5\u01f3\3\2\2\2\u01f6\u01f7\7")
         buf.write("k\2\2\u01f7o\3\2\2\2\u01f8\u01fc\7#\2\2\u01f9\u01fb\5")
@@ -270,11 +271,11 @@ def serializedATN():
         buf.write("\u0213\u0217\7&\2\2\u0214\u0216\5> \2\u0215\u0214\3\2")
         buf.write("\2\2\u0216\u0219\3\2\2\2\u0217\u0215\3\2\2\2\u0217\u0218")
         buf.write("\3\2\2\2\u0218\u021a\3\2\2\2\u0219\u0217\3\2\2\2\u021a")
-        buf.write("\u021b\7t\2\2\u021bw\3\2\2\2\u021c\u0220\7\'\2\2\u021d")
+        buf.write("\u021b\7t\2\2\u021bw\3\2\2\2\u021c\u0220\7'\2\2\u021d")
         buf.write("\u021f\5@!\2\u021e\u021d\3\2\2\2\u021f\u0222\3\2\2\2\u0220")
         buf.write("\u021e\3\2\2\2\u0220\u0221\3\2\2\2\u0221\u0223\3\2\2\2")
         buf.write("\u0222\u0220\3\2\2\2\u0223\u0224\7w\2\2\u0224y\3\2\2\2")
-        buf.write("\u0225\u0229\7(\2\2\u0226\u0228\5B\"\2\u0227\u0226\3\2")
+        buf.write('\u0225\u0229\7(\2\2\u0226\u0228\5B"\2\u0227\u0226\3\2')
         buf.write("\2\2\u0228\u022b\3\2\2\2\u0229\u0227\3\2\2\2\u0229\u022a")
         buf.write("\3\2\2\2\u022a\u022c\3\2\2\2\u022b\u0229\3\2\2\2\u022c")
         buf.write("\u022d\7z\2\2\u022d{\3\2\2\2\u022e\u0232\7)\2\2\u022f")
@@ -303,7 +304,7 @@ def serializedATN():
         buf.write("@!\2\u0266\u0265\3\2\2\2\u0267\u026a\3\2\2\2\u0268\u0266")
         buf.write("\3\2\2\2\u0268\u0269\3\2\2\2\u0269\u026b\3\2\2\2\u026a")
         buf.write("\u0268\3\2\2\2\u026b\u026c\7w\2\2\u026c\u0089\3\2\2\2")
-        buf.write("\u026d\u0271\7\60\2\2\u026e\u0270\5B\"\2\u026f\u026e\3")
+        buf.write('\u026d\u0271\7\60\2\2\u026e\u0270\5B"\2\u026f\u026e\3')
         buf.write("\2\2\2\u0270\u0273\3\2\2\2\u0271\u026f\3\2\2\2\u0271\u0272")
         buf.write("\3\2\2\2\u0272\u0274\3\2\2\2\u0273\u0271\3\2\2\2\u0274")
         buf.write("\u0275\7z\2\2\u0275\u008b\3\2\2\2\u0276\u027a\7\61\2\2")
@@ -345,70 +346,216 @@ def serializedATN():
         return buf.getvalue()
 
 
-class CTE ( Parser ):
+class CTE(Parser):
 
     grammarFileName = "CTE.g4"
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
-    decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
+    decisionsToDFA = [DFA(ds, i) for i, ds in enumerate(atn.decisionToState)]
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "'['", "']'", 
-                     "'{'", "'}'", "'='", "'('", "'@('", "')'", "<INVALID>", 
-                     "<INVALID>", "';'", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "'null'", "'nan'", 
-                     "'snan'", "<INVALID>", "'true'", "'false'" ]
+    literalNames = [
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "'['",
+        "']'",
+        "'{'",
+        "'}'",
+        "'='",
+        "'('",
+        "'@('",
+        "')'",
+        "<INVALID>",
+        "<INVALID>",
+        "';'",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "'null'",
+        "'nan'",
+        "'snan'",
+        "<INVALID>",
+        "'true'",
+        "'false'",
+    ]
 
-    symbolicNames = [ "<INVALID>", "VERSION", "WS", "LIST_BEGIN", "LIST_END", 
-                      "MAP_BEGIN", "MAP_END", "KV_SEPARATOR", "NODE_BEGIN", 
-                      "EDGE_BEGIN", "EDGE_NODE_END", "MARKUP_BEGIN", "MARKUP_END", 
-                      "MARKUP_CONTENT_BEGIN", "ARRAY_BIT_BEGIN", "ARRAY_I8_BEGIN", 
-                      "ARRAY_I8B_BEGIN", "ARRAY_I8O_BEGIN", "ARRAY_I8X_BEGIN", 
-                      "ARRAY_U8_BEGIN", "ARRAY_U8B_BEGIN", "ARRAY_U8O_BEGIN", 
-                      "ARRAY_U8X_BEGIN", "ARRAY_I16_BEGIN", "ARRAY_I16B_BEGIN", 
-                      "ARRAY_I16O_BEGIN", "ARRAY_I16X_BEGIN", "ARRAY_U16_BEGIN", 
-                      "ARRAY_U16B_BEGIN", "ARRAY_U16O_BEGIN", "ARRAY_U16X_BEGIN", 
-                      "ARRAY_I32_BEGIN", "ARRAY_I32B_BEGIN", "ARRAY_I32O_BEGIN", 
-                      "ARRAY_I32X_BEGIN", "ARRAY_U32_BEGIN", "ARRAY_U32B_BEGIN", 
-                      "ARRAY_U32O_BEGIN", "ARRAY_U32X_BEGIN", "ARRAY_I64_BEGIN", 
-                      "ARRAY_I64B_BEGIN", "ARRAY_I64O_BEGIN", "ARRAY_I64X_BEGIN", 
-                      "ARRAY_U64_BEGIN", "ARRAY_U64B_BEGIN", "ARRAY_U64O_BEGIN", 
-                      "ARRAY_U64X_BEGIN", "ARRAY_F16_BEGIN", "ARRAY_F16X_BEGIN", 
-                      "ARRAY_F32_BEGIN", "ARRAY_F32X_BEGIN", "ARRAY_F64_BEGIN", 
-                      "ARRAY_F64X_BEGIN", "CUSTOM_BINARY_BEGIN", "MEDA_BEGIN", 
-                      "CUSTOM_TEXT", "NULL", "NAN", "SNAN", "INF", "TRUE", 
-                      "FALSE", "PINT_BIN", "NINT_BIN", "PINT_DEC", "NINT_DEC", 
-                      "PINT_OCT", "NINT_OCT", "PINT_HEX", "NINT_HEX", "FLOAT_DEC", 
-                      "FLOAT_HEX", "DATE", "TIME", "UID", "STRING", "RID", 
-                      "REMOTE_REF", "MARKER", "REFRENCE", "BLOCK_COMMENT", 
-                      "LINE_COMMENT", "ARRAY_BIT_BITS", "ARRAY_BIT_END", 
-                      "ARRAY_BIT_WS", "ARRAY_I_ELEM_B", "ARRAY_I_ELEM_O", 
-                      "ARRAY_I_ELEM_H", "ARRAY_I_ELEM_D", "ARRAY_I_END", 
-                      "ARRAY_I_WS", "ARRAY_U_ELEM_B", "ARRAY_U_ELEM_O", 
-                      "ARRAY_U_ELEM_H", "ARRAY_U_ELEM_D", "ARRAY_U_END", 
-                      "ARRAY_U_WS", "ARRAY_F_ELEM_D", "ARRAY_F_ELEM_H", 
-                      "ARRAY_F_END", "ARRAY_F_WS", "ARRAY_F_X_ELEM", "ARRAY_F_X_END", 
-                      "ARRAY_F_X_WS", "ARRAY_I_B_ELEM", "ARRAY_I_B_END", 
-                      "ARRAY_I_B_WS", "ARRAY_I_O_ELEM", "ARRAY_I_O_END", 
-                      "ARRAY_I_O_WS", "ARRAY_I_X_ELEM", "ARRAY_I_X_END", 
-                      "ARRAY_I_X_WS", "ARRAY_U_B_ELEM", "ARRAY_U_B_END", 
-                      "ARRAY_U_B_WS", "ARRAY_U_O_ELEM", "ARRAY_U_O_END", 
-                      "ARRAY_U_O_WS", "ARRAY_U_X_ELEM", "ARRAY_U_X_END", 
-                      "ARRAY_U_X_WS", "CUSTOM_BINARY_ELEM", "CUSTOM_BINARY_END", 
-                      "CUSTOM_BINARY_WS", "MEDIA_ELEM", "MEDIA_END", "MEDIA_WS", 
-                      "MARKUP_NAME", "MARKUP_CONTENTS", "MARKUP_CONTENTS_END", 
-                      "MARKUP_SUB_BEGIN", "MARKUP_SUB_NAME" ]
+    symbolicNames = [
+        "<INVALID>",
+        "VERSION",
+        "WS",
+        "LIST_BEGIN",
+        "LIST_END",
+        "MAP_BEGIN",
+        "MAP_END",
+        "KV_SEPARATOR",
+        "NODE_BEGIN",
+        "EDGE_BEGIN",
+        "EDGE_NODE_END",
+        "MARKUP_BEGIN",
+        "MARKUP_END",
+        "MARKUP_CONTENT_BEGIN",
+        "ARRAY_BIT_BEGIN",
+        "ARRAY_I8_BEGIN",
+        "ARRAY_I8B_BEGIN",
+        "ARRAY_I8O_BEGIN",
+        "ARRAY_I8X_BEGIN",
+        "ARRAY_U8_BEGIN",
+        "ARRAY_U8B_BEGIN",
+        "ARRAY_U8O_BEGIN",
+        "ARRAY_U8X_BEGIN",
+        "ARRAY_I16_BEGIN",
+        "ARRAY_I16B_BEGIN",
+        "ARRAY_I16O_BEGIN",
+        "ARRAY_I16X_BEGIN",
+        "ARRAY_U16_BEGIN",
+        "ARRAY_U16B_BEGIN",
+        "ARRAY_U16O_BEGIN",
+        "ARRAY_U16X_BEGIN",
+        "ARRAY_I32_BEGIN",
+        "ARRAY_I32B_BEGIN",
+        "ARRAY_I32O_BEGIN",
+        "ARRAY_I32X_BEGIN",
+        "ARRAY_U32_BEGIN",
+        "ARRAY_U32B_BEGIN",
+        "ARRAY_U32O_BEGIN",
+        "ARRAY_U32X_BEGIN",
+        "ARRAY_I64_BEGIN",
+        "ARRAY_I64B_BEGIN",
+        "ARRAY_I64O_BEGIN",
+        "ARRAY_I64X_BEGIN",
+        "ARRAY_U64_BEGIN",
+        "ARRAY_U64B_BEGIN",
+        "ARRAY_U64O_BEGIN",
+        "ARRAY_U64X_BEGIN",
+        "ARRAY_F16_BEGIN",
+        "ARRAY_F16X_BEGIN",
+        "ARRAY_F32_BEGIN",
+        "ARRAY_F32X_BEGIN",
+        "ARRAY_F64_BEGIN",
+        "ARRAY_F64X_BEGIN",
+        "CUSTOM_BINARY_BEGIN",
+        "MEDA_BEGIN",
+        "CUSTOM_TEXT",
+        "NULL",
+        "NAN",
+        "SNAN",
+        "INF",
+        "TRUE",
+        "FALSE",
+        "PINT_BIN",
+        "NINT_BIN",
+        "PINT_DEC",
+        "NINT_DEC",
+        "PINT_OCT",
+        "NINT_OCT",
+        "PINT_HEX",
+        "NINT_HEX",
+        "FLOAT_DEC",
+        "FLOAT_HEX",
+        "DATE",
+        "TIME",
+        "UID",
+        "STRING",
+        "RID",
+        "REMOTE_REF",
+        "MARKER",
+        "REFRENCE",
+        "BLOCK_COMMENT",
+        "LINE_COMMENT",
+        "ARRAY_BIT_BITS",
+        "ARRAY_BIT_END",
+        "ARRAY_BIT_WS",
+        "ARRAY_I_ELEM_B",
+        "ARRAY_I_ELEM_O",
+        "ARRAY_I_ELEM_H",
+        "ARRAY_I_ELEM_D",
+        "ARRAY_I_END",
+        "ARRAY_I_WS",
+        "ARRAY_U_ELEM_B",
+        "ARRAY_U_ELEM_O",
+        "ARRAY_U_ELEM_H",
+        "ARRAY_U_ELEM_D",
+        "ARRAY_U_END",
+        "ARRAY_U_WS",
+        "ARRAY_F_ELEM_D",
+        "ARRAY_F_ELEM_H",
+        "ARRAY_F_END",
+        "ARRAY_F_WS",
+        "ARRAY_F_X_ELEM",
+        "ARRAY_F_X_END",
+        "ARRAY_F_X_WS",
+        "ARRAY_I_B_ELEM",
+        "ARRAY_I_B_END",
+        "ARRAY_I_B_WS",
+        "ARRAY_I_O_ELEM",
+        "ARRAY_I_O_END",
+        "ARRAY_I_O_WS",
+        "ARRAY_I_X_ELEM",
+        "ARRAY_I_X_END",
+        "ARRAY_I_X_WS",
+        "ARRAY_U_B_ELEM",
+        "ARRAY_U_B_END",
+        "ARRAY_U_B_WS",
+        "ARRAY_U_O_ELEM",
+        "ARRAY_U_O_END",
+        "ARRAY_U_O_WS",
+        "ARRAY_U_X_ELEM",
+        "ARRAY_U_X_END",
+        "ARRAY_U_X_WS",
+        "CUSTOM_BINARY_ELEM",
+        "CUSTOM_BINARY_END",
+        "CUSTOM_BINARY_WS",
+        "MEDIA_ELEM",
+        "MEDIA_END",
+        "MEDIA_WS",
+        "MARKUP_NAME",
+        "MARKUP_CONTENTS",
+        "MARKUP_CONTENTS_END",
+        "MARKUP_SUB_BEGIN",
+        "MARKUP_SUB_NAME",
+    ]
 
     RULE_cte = 0
     RULE_value = 1
@@ -488,193 +635,251 @@ class CTE ( Parser ):
     RULE_customBinary = 75
     RULE_media = 76
 
-    ruleNames =  [ "cte", "value", "version", "valueNull", "valueUid", "valueBool", 
-                   "valueInt", "valueFloat", "valueTime", "valueString", 
-                   "valueRid", "customText", "kvPair", "markerID", "marker", 
-                   "reference", "remoteRef", "markupName", "markupContents", 
-                   "containerMap", "containerList", "containerEdge", "containerNode", 
-                   "containerMarkup", "arrayElemBits", "arrayElemInt", "arrayElemIntB", 
-                   "arrayElemIntO", "arrayElemIntX", "arrayElemUint", "arrayElemUintB", 
-                   "arrayElemUintO", "arrayElemUintX", "arrayElemFloat", 
-                   "arrayElemFloatX", "arrayElemByteX", "arrayBit", "arrayI8", 
-                   "arrayI8b", "arrayI8o", "arrayI8x", "arrayU8", "arrayU8b", 
-                   "arrayU8o", "arrayU8x", "arrayI16", "arrayI16b", "arrayI16o", 
-                   "arrayI16x", "arrayU16", "arrayU16b", "arrayU16o", "arrayU16x", 
-                   "arrayI32", "arrayI32b", "arrayI32o", "arrayI32x", "arrayU32", 
-                   "arrayU32b", "arrayU32o", "arrayU32x", "arrayI64", "arrayI64b", 
-                   "arrayI64o", "arrayI64x", "arrayU64", "arrayU64b", "arrayU64o", 
-                   "arrayU64x", "arrayF16", "arrayF16x", "arrayF32", "arrayF32x", 
-                   "arrayF64", "arrayF64x", "customBinary", "media" ]
+    ruleNames = [
+        "cte",
+        "value",
+        "version",
+        "valueNull",
+        "valueUid",
+        "valueBool",
+        "valueInt",
+        "valueFloat",
+        "valueTime",
+        "valueString",
+        "valueRid",
+        "customText",
+        "kvPair",
+        "markerID",
+        "marker",
+        "reference",
+        "remoteRef",
+        "markupName",
+        "markupContents",
+        "containerMap",
+        "containerList",
+        "containerEdge",
+        "containerNode",
+        "containerMarkup",
+        "arrayElemBits",
+        "arrayElemInt",
+        "arrayElemIntB",
+        "arrayElemIntO",
+        "arrayElemIntX",
+        "arrayElemUint",
+        "arrayElemUintB",
+        "arrayElemUintO",
+        "arrayElemUintX",
+        "arrayElemFloat",
+        "arrayElemFloatX",
+        "arrayElemByteX",
+        "arrayBit",
+        "arrayI8",
+        "arrayI8b",
+        "arrayI8o",
+        "arrayI8x",
+        "arrayU8",
+        "arrayU8b",
+        "arrayU8o",
+        "arrayU8x",
+        "arrayI16",
+        "arrayI16b",
+        "arrayI16o",
+        "arrayI16x",
+        "arrayU16",
+        "arrayU16b",
+        "arrayU16o",
+        "arrayU16x",
+        "arrayI32",
+        "arrayI32b",
+        "arrayI32o",
+        "arrayI32x",
+        "arrayU32",
+        "arrayU32b",
+        "arrayU32o",
+        "arrayU32x",
+        "arrayI64",
+        "arrayI64b",
+        "arrayI64o",
+        "arrayI64x",
+        "arrayU64",
+        "arrayU64b",
+        "arrayU64o",
+        "arrayU64x",
+        "arrayF16",
+        "arrayF16x",
+        "arrayF32",
+        "arrayF32x",
+        "arrayF64",
+        "arrayF64x",
+        "customBinary",
+        "media",
+    ]
 
     EOF = Token.EOF
-    VERSION=1
-    WS=2
-    LIST_BEGIN=3
-    LIST_END=4
-    MAP_BEGIN=5
-    MAP_END=6
-    KV_SEPARATOR=7
-    NODE_BEGIN=8
-    EDGE_BEGIN=9
-    EDGE_NODE_END=10
-    MARKUP_BEGIN=11
-    MARKUP_END=12
-    MARKUP_CONTENT_BEGIN=13
-    ARRAY_BIT_BEGIN=14
-    ARRAY_I8_BEGIN=15
-    ARRAY_I8B_BEGIN=16
-    ARRAY_I8O_BEGIN=17
-    ARRAY_I8X_BEGIN=18
-    ARRAY_U8_BEGIN=19
-    ARRAY_U8B_BEGIN=20
-    ARRAY_U8O_BEGIN=21
-    ARRAY_U8X_BEGIN=22
-    ARRAY_I16_BEGIN=23
-    ARRAY_I16B_BEGIN=24
-    ARRAY_I16O_BEGIN=25
-    ARRAY_I16X_BEGIN=26
-    ARRAY_U16_BEGIN=27
-    ARRAY_U16B_BEGIN=28
-    ARRAY_U16O_BEGIN=29
-    ARRAY_U16X_BEGIN=30
-    ARRAY_I32_BEGIN=31
-    ARRAY_I32B_BEGIN=32
-    ARRAY_I32O_BEGIN=33
-    ARRAY_I32X_BEGIN=34
-    ARRAY_U32_BEGIN=35
-    ARRAY_U32B_BEGIN=36
-    ARRAY_U32O_BEGIN=37
-    ARRAY_U32X_BEGIN=38
-    ARRAY_I64_BEGIN=39
-    ARRAY_I64B_BEGIN=40
-    ARRAY_I64O_BEGIN=41
-    ARRAY_I64X_BEGIN=42
-    ARRAY_U64_BEGIN=43
-    ARRAY_U64B_BEGIN=44
-    ARRAY_U64O_BEGIN=45
-    ARRAY_U64X_BEGIN=46
-    ARRAY_F16_BEGIN=47
-    ARRAY_F16X_BEGIN=48
-    ARRAY_F32_BEGIN=49
-    ARRAY_F32X_BEGIN=50
-    ARRAY_F64_BEGIN=51
-    ARRAY_F64X_BEGIN=52
-    CUSTOM_BINARY_BEGIN=53
-    MEDA_BEGIN=54
-    CUSTOM_TEXT=55
-    NULL=56
-    NAN=57
-    SNAN=58
-    INF=59
-    TRUE=60
-    FALSE=61
-    PINT_BIN=62
-    NINT_BIN=63
-    PINT_DEC=64
-    NINT_DEC=65
-    PINT_OCT=66
-    NINT_OCT=67
-    PINT_HEX=68
-    NINT_HEX=69
-    FLOAT_DEC=70
-    FLOAT_HEX=71
-    DATE=72
-    TIME=73
-    UID=74
-    STRING=75
-    RID=76
-    REMOTE_REF=77
-    MARKER=78
-    REFRENCE=79
-    BLOCK_COMMENT=80
-    LINE_COMMENT=81
-    ARRAY_BIT_BITS=82
-    ARRAY_BIT_END=83
-    ARRAY_BIT_WS=84
-    ARRAY_I_ELEM_B=85
-    ARRAY_I_ELEM_O=86
-    ARRAY_I_ELEM_H=87
-    ARRAY_I_ELEM_D=88
-    ARRAY_I_END=89
-    ARRAY_I_WS=90
-    ARRAY_U_ELEM_B=91
-    ARRAY_U_ELEM_O=92
-    ARRAY_U_ELEM_H=93
-    ARRAY_U_ELEM_D=94
-    ARRAY_U_END=95
-    ARRAY_U_WS=96
-    ARRAY_F_ELEM_D=97
-    ARRAY_F_ELEM_H=98
-    ARRAY_F_END=99
-    ARRAY_F_WS=100
-    ARRAY_F_X_ELEM=101
-    ARRAY_F_X_END=102
-    ARRAY_F_X_WS=103
-    ARRAY_I_B_ELEM=104
-    ARRAY_I_B_END=105
-    ARRAY_I_B_WS=106
-    ARRAY_I_O_ELEM=107
-    ARRAY_I_O_END=108
-    ARRAY_I_O_WS=109
-    ARRAY_I_X_ELEM=110
-    ARRAY_I_X_END=111
-    ARRAY_I_X_WS=112
-    ARRAY_U_B_ELEM=113
-    ARRAY_U_B_END=114
-    ARRAY_U_B_WS=115
-    ARRAY_U_O_ELEM=116
-    ARRAY_U_O_END=117
-    ARRAY_U_O_WS=118
-    ARRAY_U_X_ELEM=119
-    ARRAY_U_X_END=120
-    ARRAY_U_X_WS=121
-    CUSTOM_BINARY_ELEM=122
-    CUSTOM_BINARY_END=123
-    CUSTOM_BINARY_WS=124
-    MEDIA_ELEM=125
-    MEDIA_END=126
-    MEDIA_WS=127
-    MARKUP_NAME=128
-    MARKUP_CONTENTS=129
-    MARKUP_CONTENTS_END=130
-    MARKUP_SUB_BEGIN=131
-    MARKUP_SUB_NAME=132
+    VERSION = 1
+    WS = 2
+    LIST_BEGIN = 3
+    LIST_END = 4
+    MAP_BEGIN = 5
+    MAP_END = 6
+    KV_SEPARATOR = 7
+    NODE_BEGIN = 8
+    EDGE_BEGIN = 9
+    EDGE_NODE_END = 10
+    MARKUP_BEGIN = 11
+    MARKUP_END = 12
+    MARKUP_CONTENT_BEGIN = 13
+    ARRAY_BIT_BEGIN = 14
+    ARRAY_I8_BEGIN = 15
+    ARRAY_I8B_BEGIN = 16
+    ARRAY_I8O_BEGIN = 17
+    ARRAY_I8X_BEGIN = 18
+    ARRAY_U8_BEGIN = 19
+    ARRAY_U8B_BEGIN = 20
+    ARRAY_U8O_BEGIN = 21
+    ARRAY_U8X_BEGIN = 22
+    ARRAY_I16_BEGIN = 23
+    ARRAY_I16B_BEGIN = 24
+    ARRAY_I16O_BEGIN = 25
+    ARRAY_I16X_BEGIN = 26
+    ARRAY_U16_BEGIN = 27
+    ARRAY_U16B_BEGIN = 28
+    ARRAY_U16O_BEGIN = 29
+    ARRAY_U16X_BEGIN = 30
+    ARRAY_I32_BEGIN = 31
+    ARRAY_I32B_BEGIN = 32
+    ARRAY_I32O_BEGIN = 33
+    ARRAY_I32X_BEGIN = 34
+    ARRAY_U32_BEGIN = 35
+    ARRAY_U32B_BEGIN = 36
+    ARRAY_U32O_BEGIN = 37
+    ARRAY_U32X_BEGIN = 38
+    ARRAY_I64_BEGIN = 39
+    ARRAY_I64B_BEGIN = 40
+    ARRAY_I64O_BEGIN = 41
+    ARRAY_I64X_BEGIN = 42
+    ARRAY_U64_BEGIN = 43
+    ARRAY_U64B_BEGIN = 44
+    ARRAY_U64O_BEGIN = 45
+    ARRAY_U64X_BEGIN = 46
+    ARRAY_F16_BEGIN = 47
+    ARRAY_F16X_BEGIN = 48
+    ARRAY_F32_BEGIN = 49
+    ARRAY_F32X_BEGIN = 50
+    ARRAY_F64_BEGIN = 51
+    ARRAY_F64X_BEGIN = 52
+    CUSTOM_BINARY_BEGIN = 53
+    MEDA_BEGIN = 54
+    CUSTOM_TEXT = 55
+    NULL = 56
+    NAN = 57
+    SNAN = 58
+    INF = 59
+    TRUE = 60
+    FALSE = 61
+    PINT_BIN = 62
+    NINT_BIN = 63
+    PINT_DEC = 64
+    NINT_DEC = 65
+    PINT_OCT = 66
+    NINT_OCT = 67
+    PINT_HEX = 68
+    NINT_HEX = 69
+    FLOAT_DEC = 70
+    FLOAT_HEX = 71
+    DATE = 72
+    TIME = 73
+    UID = 74
+    STRING = 75
+    RID = 76
+    REMOTE_REF = 77
+    MARKER = 78
+    REFRENCE = 79
+    BLOCK_COMMENT = 80
+    LINE_COMMENT = 81
+    ARRAY_BIT_BITS = 82
+    ARRAY_BIT_END = 83
+    ARRAY_BIT_WS = 84
+    ARRAY_I_ELEM_B = 85
+    ARRAY_I_ELEM_O = 86
+    ARRAY_I_ELEM_H = 87
+    ARRAY_I_ELEM_D = 88
+    ARRAY_I_END = 89
+    ARRAY_I_WS = 90
+    ARRAY_U_ELEM_B = 91
+    ARRAY_U_ELEM_O = 92
+    ARRAY_U_ELEM_H = 93
+    ARRAY_U_ELEM_D = 94
+    ARRAY_U_END = 95
+    ARRAY_U_WS = 96
+    ARRAY_F_ELEM_D = 97
+    ARRAY_F_ELEM_H = 98
+    ARRAY_F_END = 99
+    ARRAY_F_WS = 100
+    ARRAY_F_X_ELEM = 101
+    ARRAY_F_X_END = 102
+    ARRAY_F_X_WS = 103
+    ARRAY_I_B_ELEM = 104
+    ARRAY_I_B_END = 105
+    ARRAY_I_B_WS = 106
+    ARRAY_I_O_ELEM = 107
+    ARRAY_I_O_END = 108
+    ARRAY_I_O_WS = 109
+    ARRAY_I_X_ELEM = 110
+    ARRAY_I_X_END = 111
+    ARRAY_I_X_WS = 112
+    ARRAY_U_B_ELEM = 113
+    ARRAY_U_B_END = 114
+    ARRAY_U_B_WS = 115
+    ARRAY_U_O_ELEM = 116
+    ARRAY_U_O_END = 117
+    ARRAY_U_O_WS = 118
+    ARRAY_U_X_ELEM = 119
+    ARRAY_U_X_END = 120
+    ARRAY_U_X_WS = 121
+    CUSTOM_BINARY_ELEM = 122
+    CUSTOM_BINARY_END = 123
+    CUSTOM_BINARY_WS = 124
+    MEDIA_ELEM = 125
+    MEDIA_END = 126
+    MEDIA_WS = 127
+    MARKUP_NAME = 128
+    MARKUP_CONTENTS = 129
+    MARKUP_CONTENTS_END = 130
+    MARKUP_SUB_BEGIN = 131
+    MARKUP_SUB_NAME = 132
 
-    def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
+    def __init__(self, input: TokenStream, output: TextIO = sys.stdout):
         super().__init__(input, output)
         self.checkVersion("4.9.3")
-        self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
+        self._interp = ParserATNSimulator(
+            self, self.atn, self.decisionsToDFA, self.sharedContextCache
+        )
         self._predicates = None
 
-
-
-
     class CteContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def version(self):
-            return self.getTypedRuleContext(CTE.VersionContext,0)
-
+            return self.getTypedRuleContext(CTE.VersionContext, 0)
 
         def value(self):
-            return self.getTypedRuleContext(CTE.ValueContext,0)
-
+            return self.getTypedRuleContext(CTE.ValueContext, 0)
 
         def getRuleIndex(self):
             return CTE.RULE_cte
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitCte" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitCte"):
                 return visitor.visitCte(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def cte(self):
 
@@ -694,257 +899,197 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ValueContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def valueString(self):
-            return self.getTypedRuleContext(CTE.ValueStringContext,0)
-
+            return self.getTypedRuleContext(CTE.ValueStringContext, 0)
 
         def valueRid(self):
-            return self.getTypedRuleContext(CTE.ValueRidContext,0)
-
+            return self.getTypedRuleContext(CTE.ValueRidContext, 0)
 
         def valueUid(self):
-            return self.getTypedRuleContext(CTE.ValueUidContext,0)
-
+            return self.getTypedRuleContext(CTE.ValueUidContext, 0)
 
         def valueBool(self):
-            return self.getTypedRuleContext(CTE.ValueBoolContext,0)
-
+            return self.getTypedRuleContext(CTE.ValueBoolContext, 0)
 
         def valueNull(self):
-            return self.getTypedRuleContext(CTE.ValueNullContext,0)
-
+            return self.getTypedRuleContext(CTE.ValueNullContext, 0)
 
         def valueInt(self):
-            return self.getTypedRuleContext(CTE.ValueIntContext,0)
-
+            return self.getTypedRuleContext(CTE.ValueIntContext, 0)
 
         def valueFloat(self):
-            return self.getTypedRuleContext(CTE.ValueFloatContext,0)
-
+            return self.getTypedRuleContext(CTE.ValueFloatContext, 0)
 
         def valueTime(self):
-            return self.getTypedRuleContext(CTE.ValueTimeContext,0)
-
+            return self.getTypedRuleContext(CTE.ValueTimeContext, 0)
 
         def arrayBit(self):
-            return self.getTypedRuleContext(CTE.ArrayBitContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayBitContext, 0)
 
         def arrayI8(self):
-            return self.getTypedRuleContext(CTE.ArrayI8Context,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI8Context, 0)
 
         def arrayI8b(self):
-            return self.getTypedRuleContext(CTE.ArrayI8bContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI8bContext, 0)
 
         def arrayI8o(self):
-            return self.getTypedRuleContext(CTE.ArrayI8oContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI8oContext, 0)
 
         def arrayI8x(self):
-            return self.getTypedRuleContext(CTE.ArrayI8xContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI8xContext, 0)
 
         def arrayU8(self):
-            return self.getTypedRuleContext(CTE.ArrayU8Context,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU8Context, 0)
 
         def arrayU8b(self):
-            return self.getTypedRuleContext(CTE.ArrayU8bContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU8bContext, 0)
 
         def arrayU8o(self):
-            return self.getTypedRuleContext(CTE.ArrayU8oContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU8oContext, 0)
 
         def arrayU8x(self):
-            return self.getTypedRuleContext(CTE.ArrayU8xContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU8xContext, 0)
 
         def arrayI16(self):
-            return self.getTypedRuleContext(CTE.ArrayI16Context,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI16Context, 0)
 
         def arrayI16b(self):
-            return self.getTypedRuleContext(CTE.ArrayI16bContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI16bContext, 0)
 
         def arrayI16o(self):
-            return self.getTypedRuleContext(CTE.ArrayI16oContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI16oContext, 0)
 
         def arrayI16x(self):
-            return self.getTypedRuleContext(CTE.ArrayI16xContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI16xContext, 0)
 
         def arrayU16(self):
-            return self.getTypedRuleContext(CTE.ArrayU16Context,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU16Context, 0)
 
         def arrayU16b(self):
-            return self.getTypedRuleContext(CTE.ArrayU16bContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU16bContext, 0)
 
         def arrayU16o(self):
-            return self.getTypedRuleContext(CTE.ArrayU16oContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU16oContext, 0)
 
         def arrayU16x(self):
-            return self.getTypedRuleContext(CTE.ArrayU16xContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU16xContext, 0)
 
         def arrayI32(self):
-            return self.getTypedRuleContext(CTE.ArrayI32Context,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI32Context, 0)
 
         def arrayI32b(self):
-            return self.getTypedRuleContext(CTE.ArrayI32bContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI32bContext, 0)
 
         def arrayI32o(self):
-            return self.getTypedRuleContext(CTE.ArrayI32oContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI32oContext, 0)
 
         def arrayI32x(self):
-            return self.getTypedRuleContext(CTE.ArrayI32xContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI32xContext, 0)
 
         def arrayU32(self):
-            return self.getTypedRuleContext(CTE.ArrayU32Context,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU32Context, 0)
 
         def arrayU32b(self):
-            return self.getTypedRuleContext(CTE.ArrayU32bContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU32bContext, 0)
 
         def arrayU32o(self):
-            return self.getTypedRuleContext(CTE.ArrayU32oContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU32oContext, 0)
 
         def arrayU32x(self):
-            return self.getTypedRuleContext(CTE.ArrayU32xContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU32xContext, 0)
 
         def arrayI64(self):
-            return self.getTypedRuleContext(CTE.ArrayI64Context,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI64Context, 0)
 
         def arrayI64b(self):
-            return self.getTypedRuleContext(CTE.ArrayI64bContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI64bContext, 0)
 
         def arrayI64o(self):
-            return self.getTypedRuleContext(CTE.ArrayI64oContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI64oContext, 0)
 
         def arrayI64x(self):
-            return self.getTypedRuleContext(CTE.ArrayI64xContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayI64xContext, 0)
 
         def arrayU64(self):
-            return self.getTypedRuleContext(CTE.ArrayU64Context,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU64Context, 0)
 
         def arrayU64b(self):
-            return self.getTypedRuleContext(CTE.ArrayU64bContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU64bContext, 0)
 
         def arrayU64o(self):
-            return self.getTypedRuleContext(CTE.ArrayU64oContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU64oContext, 0)
 
         def arrayU64x(self):
-            return self.getTypedRuleContext(CTE.ArrayU64xContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayU64xContext, 0)
 
         def arrayF16(self):
-            return self.getTypedRuleContext(CTE.ArrayF16Context,0)
-
+            return self.getTypedRuleContext(CTE.ArrayF16Context, 0)
 
         def arrayF16x(self):
-            return self.getTypedRuleContext(CTE.ArrayF16xContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayF16xContext, 0)
 
         def arrayF32(self):
-            return self.getTypedRuleContext(CTE.ArrayF32Context,0)
-
+            return self.getTypedRuleContext(CTE.ArrayF32Context, 0)
 
         def arrayF32x(self):
-            return self.getTypedRuleContext(CTE.ArrayF32xContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayF32xContext, 0)
 
         def arrayF64(self):
-            return self.getTypedRuleContext(CTE.ArrayF64Context,0)
-
+            return self.getTypedRuleContext(CTE.ArrayF64Context, 0)
 
         def arrayF64x(self):
-            return self.getTypedRuleContext(CTE.ArrayF64xContext,0)
-
+            return self.getTypedRuleContext(CTE.ArrayF64xContext, 0)
 
         def customBinary(self):
-            return self.getTypedRuleContext(CTE.CustomBinaryContext,0)
-
+            return self.getTypedRuleContext(CTE.CustomBinaryContext, 0)
 
         def customText(self):
-            return self.getTypedRuleContext(CTE.CustomTextContext,0)
-
+            return self.getTypedRuleContext(CTE.CustomTextContext, 0)
 
         def media(self):
-            return self.getTypedRuleContext(CTE.MediaContext,0)
-
+            return self.getTypedRuleContext(CTE.MediaContext, 0)
 
         def containerMap(self):
-            return self.getTypedRuleContext(CTE.ContainerMapContext,0)
-
+            return self.getTypedRuleContext(CTE.ContainerMapContext, 0)
 
         def containerList(self):
-            return self.getTypedRuleContext(CTE.ContainerListContext,0)
-
+            return self.getTypedRuleContext(CTE.ContainerListContext, 0)
 
         def containerEdge(self):
-            return self.getTypedRuleContext(CTE.ContainerEdgeContext,0)
-
+            return self.getTypedRuleContext(CTE.ContainerEdgeContext, 0)
 
         def containerNode(self):
-            return self.getTypedRuleContext(CTE.ContainerNodeContext,0)
-
+            return self.getTypedRuleContext(CTE.ContainerNodeContext, 0)
 
         def containerMarkup(self):
-            return self.getTypedRuleContext(CTE.ContainerMarkupContext,0)
-
+            return self.getTypedRuleContext(CTE.ContainerMarkupContext, 0)
 
         def marker(self):
-            return self.getTypedRuleContext(CTE.MarkerContext,0)
-
+            return self.getTypedRuleContext(CTE.MarkerContext, 0)
 
         def reference(self):
-            return self.getTypedRuleContext(CTE.ReferenceContext,0)
-
+            return self.getTypedRuleContext(CTE.ReferenceContext, 0)
 
         def remoteRef(self):
-            return self.getTypedRuleContext(CTE.RemoteRefContext,0)
-
+            return self.getTypedRuleContext(CTE.RemoteRefContext, 0)
 
         def getRuleIndex(self):
             return CTE.RULE_value
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitValue" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitValue"):
                 return visitor.visitValue(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def value(self):
 
@@ -979,7 +1124,16 @@ class CTE ( Parser ):
                 self.state = 161
                 self.valueNull()
                 pass
-            elif token in [CTE.PINT_BIN, CTE.NINT_BIN, CTE.PINT_DEC, CTE.NINT_DEC, CTE.PINT_OCT, CTE.NINT_OCT, CTE.PINT_HEX, CTE.NINT_HEX]:
+            elif token in [
+                CTE.PINT_BIN,
+                CTE.NINT_BIN,
+                CTE.PINT_DEC,
+                CTE.NINT_DEC,
+                CTE.PINT_OCT,
+                CTE.NINT_OCT,
+                CTE.PINT_HEX,
+                CTE.NINT_HEX,
+            ]:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 162
                 self.valueInt()
@@ -1255,11 +1409,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class VersionContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1269,14 +1424,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_version
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitVersion" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitVersion"):
                 return visitor.visitVersion(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def version(self):
 
@@ -1294,11 +1446,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ValueNullContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1308,14 +1461,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_valueNull
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitValueNull" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitValueNull"):
                 return visitor.visitValueNull(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def valueNull(self):
 
@@ -1333,11 +1483,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ValueUidContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1347,14 +1498,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_valueUid
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitValueUid" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitValueUid"):
                 return visitor.visitValueUid(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def valueUid(self):
 
@@ -1372,11 +1520,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ValueBoolContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1389,25 +1538,22 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_valueBool
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitValueBool" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitValueBool"):
                 return visitor.visitValueBool(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def valueBool(self):
 
         localctx = CTE.ValueBoolContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_valueBool)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 223
             _la = self._input.LA(1)
-            if not(_la==CTE.TRUE or _la==CTE.FALSE):
+            if not (_la == CTE.TRUE or _la == CTE.FALSE):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1420,11 +1566,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ValueIntContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1455,25 +1602,40 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_valueInt
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitValueInt" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitValueInt"):
                 return visitor.visitValueInt(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def valueInt(self):
 
         localctx = CTE.ValueIntContext(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_valueInt)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 225
             _la = self._input.LA(1)
-            if not(((((_la - 62)) & ~0x3f) == 0 and ((1 << (_la - 62)) & ((1 << (CTE.PINT_BIN - 62)) | (1 << (CTE.NINT_BIN - 62)) | (1 << (CTE.PINT_DEC - 62)) | (1 << (CTE.NINT_DEC - 62)) | (1 << (CTE.PINT_OCT - 62)) | (1 << (CTE.NINT_OCT - 62)) | (1 << (CTE.PINT_HEX - 62)) | (1 << (CTE.NINT_HEX - 62)))) != 0)):
+            if not (
+                (
+                    (((_la - 62)) & ~0x3F) == 0
+                    and (
+                        (1 << (_la - 62))
+                        & (
+                            (1 << (CTE.PINT_BIN - 62))
+                            | (1 << (CTE.NINT_BIN - 62))
+                            | (1 << (CTE.PINT_DEC - 62))
+                            | (1 << (CTE.NINT_DEC - 62))
+                            | (1 << (CTE.PINT_OCT - 62))
+                            | (1 << (CTE.NINT_OCT - 62))
+                            | (1 << (CTE.PINT_HEX - 62))
+                            | (1 << (CTE.NINT_HEX - 62))
+                        )
+                    )
+                    != 0
+                )
+            ):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1486,11 +1648,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ValueFloatContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1512,25 +1675,37 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_valueFloat
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitValueFloat" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitValueFloat"):
                 return visitor.visitValueFloat(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def valueFloat(self):
 
         localctx = CTE.ValueFloatContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_valueFloat)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 227
             _la = self._input.LA(1)
-            if not(((((_la - 57)) & ~0x3f) == 0 and ((1 << (_la - 57)) & ((1 << (CTE.NAN - 57)) | (1 << (CTE.SNAN - 57)) | (1 << (CTE.INF - 57)) | (1 << (CTE.FLOAT_DEC - 57)) | (1 << (CTE.FLOAT_HEX - 57)))) != 0)):
+            if not (
+                (
+                    (((_la - 57)) & ~0x3F) == 0
+                    and (
+                        (1 << (_la - 57))
+                        & (
+                            (1 << (CTE.NAN - 57))
+                            | (1 << (CTE.SNAN - 57))
+                            | (1 << (CTE.INF - 57))
+                            | (1 << (CTE.FLOAT_DEC - 57))
+                            | (1 << (CTE.FLOAT_HEX - 57))
+                        )
+                    )
+                    != 0
+                )
+            ):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1543,11 +1718,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ValueTimeContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1560,25 +1736,22 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_valueTime
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitValueTime" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitValueTime"):
                 return visitor.visitValueTime(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def valueTime(self):
 
         localctx = CTE.ValueTimeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 16, self.RULE_valueTime)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 229
             _la = self._input.LA(1)
-            if not(_la==CTE.DATE or _la==CTE.TIME):
+            if not (_la == CTE.DATE or _la == CTE.TIME):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1591,11 +1764,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ValueStringContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1605,14 +1779,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_valueString
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitValueString" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitValueString"):
                 return visitor.visitValueString(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def valueString(self):
 
@@ -1630,11 +1801,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ValueRidContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1644,14 +1816,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_valueRid
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitValueRid" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitValueRid"):
                 return visitor.visitValueRid(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def valueRid(self):
 
@@ -1669,11 +1838,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class CustomTextContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1683,14 +1853,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_customText
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitCustomText" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitCustomText"):
                 return visitor.visitCustomText(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def customText(self):
 
@@ -1708,20 +1875,20 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class KvPairContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def value(self, i:int=None):
+        def value(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ValueContext)
             else:
-                return self.getTypedRuleContext(CTE.ValueContext,i)
-
+                return self.getTypedRuleContext(CTE.ValueContext, i)
 
         def KV_SEPARATOR(self):
             return self.getToken(CTE.KV_SEPARATOR, 0)
@@ -1729,14 +1896,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_kvPair
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitKvPair" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitKvPair"):
                 return visitor.visitKvPair(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def kvPair(self):
 
@@ -1758,11 +1922,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class MarkerIDContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1772,14 +1937,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_markerID
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitMarkerID" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitMarkerID"):
                 return visitor.visitMarkerID(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def markerID(self):
 
@@ -1797,33 +1959,29 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class MarkerContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def markerID(self):
-            return self.getTypedRuleContext(CTE.MarkerIDContext,0)
-
+            return self.getTypedRuleContext(CTE.MarkerIDContext, 0)
 
         def value(self):
-            return self.getTypedRuleContext(CTE.ValueContext,0)
-
+            return self.getTypedRuleContext(CTE.ValueContext, 0)
 
         def getRuleIndex(self):
             return CTE.RULE_marker
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitMarker" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitMarker"):
                 return visitor.visitMarker(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def marker(self):
 
@@ -1843,11 +2001,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ReferenceContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1857,14 +2016,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_reference
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitReference" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitReference"):
                 return visitor.visitReference(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def reference(self):
 
@@ -1882,11 +2038,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class RemoteRefContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1896,14 +2053,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_remoteRef
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitRemoteRef" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitRemoteRef"):
                 return visitor.visitRemoteRef(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def remoteRef(self):
 
@@ -1921,11 +2075,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class MarkupNameContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1938,25 +2093,22 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_markupName
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitMarkupName" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitMarkupName"):
                 return visitor.visitMarkupName(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def markupName(self):
 
         localctx = CTE.MarkupNameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 34, self.RULE_markupName)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 250
             _la = self._input.LA(1)
-            if not(_la==CTE.MARKUP_NAME or _la==CTE.MARKUP_SUB_NAME):
+            if not (_la == CTE.MARKUP_NAME or _la == CTE.MARKUP_SUB_NAME):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1969,11 +2121,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class MarkupContentsContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1981,20 +2134,16 @@ class CTE ( Parser ):
             return self.getToken(CTE.MARKUP_CONTENTS, 0)
 
         def containerMarkup(self):
-            return self.getTypedRuleContext(CTE.ContainerMarkupContext,0)
-
+            return self.getTypedRuleContext(CTE.ContainerMarkupContext, 0)
 
         def getRuleIndex(self):
             return CTE.RULE_markupContents
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitMarkupContents" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitMarkupContents"):
                 return visitor.visitMarkupContents(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def markupContents(self):
 
@@ -2025,11 +2174,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ContainerMapContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2039,30 +2189,26 @@ class CTE ( Parser ):
         def MAP_END(self):
             return self.getToken(CTE.MAP_END, 0)
 
-        def kvPair(self, i:int=None):
+        def kvPair(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.KvPairContext)
             else:
-                return self.getTypedRuleContext(CTE.KvPairContext,i)
-
+                return self.getTypedRuleContext(CTE.KvPairContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_containerMap
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitContainerMap" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitContainerMap"):
                 return visitor.visitContainerMap(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def containerMap(self):
 
         localctx = CTE.ContainerMapContext(self, self._ctx, self.state)
         self.enterRule(localctx, 38, self.RULE_containerMap)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 256
@@ -2070,7 +2216,98 @@ class CTE ( Parser ):
             self.state = 260
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CTE.LIST_BEGIN) | (1 << CTE.MAP_BEGIN) | (1 << CTE.NODE_BEGIN) | (1 << CTE.EDGE_BEGIN) | (1 << CTE.MARKUP_BEGIN) | (1 << CTE.ARRAY_BIT_BEGIN) | (1 << CTE.ARRAY_I8_BEGIN) | (1 << CTE.ARRAY_I8B_BEGIN) | (1 << CTE.ARRAY_I8O_BEGIN) | (1 << CTE.ARRAY_I8X_BEGIN) | (1 << CTE.ARRAY_U8_BEGIN) | (1 << CTE.ARRAY_U8B_BEGIN) | (1 << CTE.ARRAY_U8O_BEGIN) | (1 << CTE.ARRAY_U8X_BEGIN) | (1 << CTE.ARRAY_I16_BEGIN) | (1 << CTE.ARRAY_I16B_BEGIN) | (1 << CTE.ARRAY_I16O_BEGIN) | (1 << CTE.ARRAY_I16X_BEGIN) | (1 << CTE.ARRAY_U16_BEGIN) | (1 << CTE.ARRAY_U16B_BEGIN) | (1 << CTE.ARRAY_U16O_BEGIN) | (1 << CTE.ARRAY_U16X_BEGIN) | (1 << CTE.ARRAY_I32_BEGIN) | (1 << CTE.ARRAY_I32B_BEGIN) | (1 << CTE.ARRAY_I32O_BEGIN) | (1 << CTE.ARRAY_I32X_BEGIN) | (1 << CTE.ARRAY_U32_BEGIN) | (1 << CTE.ARRAY_U32B_BEGIN) | (1 << CTE.ARRAY_U32O_BEGIN) | (1 << CTE.ARRAY_U32X_BEGIN) | (1 << CTE.ARRAY_I64_BEGIN) | (1 << CTE.ARRAY_I64B_BEGIN) | (1 << CTE.ARRAY_I64O_BEGIN) | (1 << CTE.ARRAY_I64X_BEGIN) | (1 << CTE.ARRAY_U64_BEGIN) | (1 << CTE.ARRAY_U64B_BEGIN) | (1 << CTE.ARRAY_U64O_BEGIN) | (1 << CTE.ARRAY_U64X_BEGIN) | (1 << CTE.ARRAY_F16_BEGIN) | (1 << CTE.ARRAY_F16X_BEGIN) | (1 << CTE.ARRAY_F32_BEGIN) | (1 << CTE.ARRAY_F32X_BEGIN) | (1 << CTE.ARRAY_F64_BEGIN) | (1 << CTE.ARRAY_F64X_BEGIN) | (1 << CTE.CUSTOM_BINARY_BEGIN) | (1 << CTE.MEDA_BEGIN) | (1 << CTE.CUSTOM_TEXT) | (1 << CTE.NULL) | (1 << CTE.NAN) | (1 << CTE.SNAN) | (1 << CTE.INF) | (1 << CTE.TRUE) | (1 << CTE.FALSE) | (1 << CTE.PINT_BIN) | (1 << CTE.NINT_BIN))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CTE.PINT_DEC - 64)) | (1 << (CTE.NINT_DEC - 64)) | (1 << (CTE.PINT_OCT - 64)) | (1 << (CTE.NINT_OCT - 64)) | (1 << (CTE.PINT_HEX - 64)) | (1 << (CTE.NINT_HEX - 64)) | (1 << (CTE.FLOAT_DEC - 64)) | (1 << (CTE.FLOAT_HEX - 64)) | (1 << (CTE.DATE - 64)) | (1 << (CTE.TIME - 64)) | (1 << (CTE.UID - 64)) | (1 << (CTE.STRING - 64)) | (1 << (CTE.RID - 64)) | (1 << (CTE.REMOTE_REF - 64)) | (1 << (CTE.MARKER - 64)) | (1 << (CTE.REFRENCE - 64)))) != 0) or _la==CTE.MARKUP_SUB_BEGIN:
+            while (
+                (
+                    ((_la) & ~0x3F) == 0
+                    and (
+                        (1 << _la)
+                        & (
+                            (1 << CTE.LIST_BEGIN)
+                            | (1 << CTE.MAP_BEGIN)
+                            | (1 << CTE.NODE_BEGIN)
+                            | (1 << CTE.EDGE_BEGIN)
+                            | (1 << CTE.MARKUP_BEGIN)
+                            | (1 << CTE.ARRAY_BIT_BEGIN)
+                            | (1 << CTE.ARRAY_I8_BEGIN)
+                            | (1 << CTE.ARRAY_I8B_BEGIN)
+                            | (1 << CTE.ARRAY_I8O_BEGIN)
+                            | (1 << CTE.ARRAY_I8X_BEGIN)
+                            | (1 << CTE.ARRAY_U8_BEGIN)
+                            | (1 << CTE.ARRAY_U8B_BEGIN)
+                            | (1 << CTE.ARRAY_U8O_BEGIN)
+                            | (1 << CTE.ARRAY_U8X_BEGIN)
+                            | (1 << CTE.ARRAY_I16_BEGIN)
+                            | (1 << CTE.ARRAY_I16B_BEGIN)
+                            | (1 << CTE.ARRAY_I16O_BEGIN)
+                            | (1 << CTE.ARRAY_I16X_BEGIN)
+                            | (1 << CTE.ARRAY_U16_BEGIN)
+                            | (1 << CTE.ARRAY_U16B_BEGIN)
+                            | (1 << CTE.ARRAY_U16O_BEGIN)
+                            | (1 << CTE.ARRAY_U16X_BEGIN)
+                            | (1 << CTE.ARRAY_I32_BEGIN)
+                            | (1 << CTE.ARRAY_I32B_BEGIN)
+                            | (1 << CTE.ARRAY_I32O_BEGIN)
+                            | (1 << CTE.ARRAY_I32X_BEGIN)
+                            | (1 << CTE.ARRAY_U32_BEGIN)
+                            | (1 << CTE.ARRAY_U32B_BEGIN)
+                            | (1 << CTE.ARRAY_U32O_BEGIN)
+                            | (1 << CTE.ARRAY_U32X_BEGIN)
+                            | (1 << CTE.ARRAY_I64_BEGIN)
+                            | (1 << CTE.ARRAY_I64B_BEGIN)
+                            | (1 << CTE.ARRAY_I64O_BEGIN)
+                            | (1 << CTE.ARRAY_I64X_BEGIN)
+                            | (1 << CTE.ARRAY_U64_BEGIN)
+                            | (1 << CTE.ARRAY_U64B_BEGIN)
+                            | (1 << CTE.ARRAY_U64O_BEGIN)
+                            | (1 << CTE.ARRAY_U64X_BEGIN)
+                            | (1 << CTE.ARRAY_F16_BEGIN)
+                            | (1 << CTE.ARRAY_F16X_BEGIN)
+                            | (1 << CTE.ARRAY_F32_BEGIN)
+                            | (1 << CTE.ARRAY_F32X_BEGIN)
+                            | (1 << CTE.ARRAY_F64_BEGIN)
+                            | (1 << CTE.ARRAY_F64X_BEGIN)
+                            | (1 << CTE.CUSTOM_BINARY_BEGIN)
+                            | (1 << CTE.MEDA_BEGIN)
+                            | (1 << CTE.CUSTOM_TEXT)
+                            | (1 << CTE.NULL)
+                            | (1 << CTE.NAN)
+                            | (1 << CTE.SNAN)
+                            | (1 << CTE.INF)
+                            | (1 << CTE.TRUE)
+                            | (1 << CTE.FALSE)
+                            | (1 << CTE.PINT_BIN)
+                            | (1 << CTE.NINT_BIN)
+                        )
+                    )
+                    != 0
+                )
+                or (
+                    (((_la - 64)) & ~0x3F) == 0
+                    and (
+                        (1 << (_la - 64))
+                        & (
+                            (1 << (CTE.PINT_DEC - 64))
+                            | (1 << (CTE.NINT_DEC - 64))
+                            | (1 << (CTE.PINT_OCT - 64))
+                            | (1 << (CTE.NINT_OCT - 64))
+                            | (1 << (CTE.PINT_HEX - 64))
+                            | (1 << (CTE.NINT_HEX - 64))
+                            | (1 << (CTE.FLOAT_DEC - 64))
+                            | (1 << (CTE.FLOAT_HEX - 64))
+                            | (1 << (CTE.DATE - 64))
+                            | (1 << (CTE.TIME - 64))
+                            | (1 << (CTE.UID - 64))
+                            | (1 << (CTE.STRING - 64))
+                            | (1 << (CTE.RID - 64))
+                            | (1 << (CTE.REMOTE_REF - 64))
+                            | (1 << (CTE.MARKER - 64))
+                            | (1 << (CTE.REFRENCE - 64))
+                        )
+                    )
+                    != 0
+                )
+                or _la == CTE.MARKUP_SUB_BEGIN
+            ):
                 self.state = 257
                 self.kvPair()
                 self.state = 262
@@ -2087,11 +2324,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ContainerListContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2101,30 +2339,26 @@ class CTE ( Parser ):
         def LIST_END(self):
             return self.getToken(CTE.LIST_END, 0)
 
-        def value(self, i:int=None):
+        def value(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ValueContext)
             else:
-                return self.getTypedRuleContext(CTE.ValueContext,i)
-
+                return self.getTypedRuleContext(CTE.ValueContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_containerList
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitContainerList" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitContainerList"):
                 return visitor.visitContainerList(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def containerList(self):
 
         localctx = CTE.ContainerListContext(self, self._ctx, self.state)
         self.enterRule(localctx, 40, self.RULE_containerList)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 265
@@ -2132,7 +2366,98 @@ class CTE ( Parser ):
             self.state = 269
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CTE.LIST_BEGIN) | (1 << CTE.MAP_BEGIN) | (1 << CTE.NODE_BEGIN) | (1 << CTE.EDGE_BEGIN) | (1 << CTE.MARKUP_BEGIN) | (1 << CTE.ARRAY_BIT_BEGIN) | (1 << CTE.ARRAY_I8_BEGIN) | (1 << CTE.ARRAY_I8B_BEGIN) | (1 << CTE.ARRAY_I8O_BEGIN) | (1 << CTE.ARRAY_I8X_BEGIN) | (1 << CTE.ARRAY_U8_BEGIN) | (1 << CTE.ARRAY_U8B_BEGIN) | (1 << CTE.ARRAY_U8O_BEGIN) | (1 << CTE.ARRAY_U8X_BEGIN) | (1 << CTE.ARRAY_I16_BEGIN) | (1 << CTE.ARRAY_I16B_BEGIN) | (1 << CTE.ARRAY_I16O_BEGIN) | (1 << CTE.ARRAY_I16X_BEGIN) | (1 << CTE.ARRAY_U16_BEGIN) | (1 << CTE.ARRAY_U16B_BEGIN) | (1 << CTE.ARRAY_U16O_BEGIN) | (1 << CTE.ARRAY_U16X_BEGIN) | (1 << CTE.ARRAY_I32_BEGIN) | (1 << CTE.ARRAY_I32B_BEGIN) | (1 << CTE.ARRAY_I32O_BEGIN) | (1 << CTE.ARRAY_I32X_BEGIN) | (1 << CTE.ARRAY_U32_BEGIN) | (1 << CTE.ARRAY_U32B_BEGIN) | (1 << CTE.ARRAY_U32O_BEGIN) | (1 << CTE.ARRAY_U32X_BEGIN) | (1 << CTE.ARRAY_I64_BEGIN) | (1 << CTE.ARRAY_I64B_BEGIN) | (1 << CTE.ARRAY_I64O_BEGIN) | (1 << CTE.ARRAY_I64X_BEGIN) | (1 << CTE.ARRAY_U64_BEGIN) | (1 << CTE.ARRAY_U64B_BEGIN) | (1 << CTE.ARRAY_U64O_BEGIN) | (1 << CTE.ARRAY_U64X_BEGIN) | (1 << CTE.ARRAY_F16_BEGIN) | (1 << CTE.ARRAY_F16X_BEGIN) | (1 << CTE.ARRAY_F32_BEGIN) | (1 << CTE.ARRAY_F32X_BEGIN) | (1 << CTE.ARRAY_F64_BEGIN) | (1 << CTE.ARRAY_F64X_BEGIN) | (1 << CTE.CUSTOM_BINARY_BEGIN) | (1 << CTE.MEDA_BEGIN) | (1 << CTE.CUSTOM_TEXT) | (1 << CTE.NULL) | (1 << CTE.NAN) | (1 << CTE.SNAN) | (1 << CTE.INF) | (1 << CTE.TRUE) | (1 << CTE.FALSE) | (1 << CTE.PINT_BIN) | (1 << CTE.NINT_BIN))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CTE.PINT_DEC - 64)) | (1 << (CTE.NINT_DEC - 64)) | (1 << (CTE.PINT_OCT - 64)) | (1 << (CTE.NINT_OCT - 64)) | (1 << (CTE.PINT_HEX - 64)) | (1 << (CTE.NINT_HEX - 64)) | (1 << (CTE.FLOAT_DEC - 64)) | (1 << (CTE.FLOAT_HEX - 64)) | (1 << (CTE.DATE - 64)) | (1 << (CTE.TIME - 64)) | (1 << (CTE.UID - 64)) | (1 << (CTE.STRING - 64)) | (1 << (CTE.RID - 64)) | (1 << (CTE.REMOTE_REF - 64)) | (1 << (CTE.MARKER - 64)) | (1 << (CTE.REFRENCE - 64)))) != 0) or _la==CTE.MARKUP_SUB_BEGIN:
+            while (
+                (
+                    ((_la) & ~0x3F) == 0
+                    and (
+                        (1 << _la)
+                        & (
+                            (1 << CTE.LIST_BEGIN)
+                            | (1 << CTE.MAP_BEGIN)
+                            | (1 << CTE.NODE_BEGIN)
+                            | (1 << CTE.EDGE_BEGIN)
+                            | (1 << CTE.MARKUP_BEGIN)
+                            | (1 << CTE.ARRAY_BIT_BEGIN)
+                            | (1 << CTE.ARRAY_I8_BEGIN)
+                            | (1 << CTE.ARRAY_I8B_BEGIN)
+                            | (1 << CTE.ARRAY_I8O_BEGIN)
+                            | (1 << CTE.ARRAY_I8X_BEGIN)
+                            | (1 << CTE.ARRAY_U8_BEGIN)
+                            | (1 << CTE.ARRAY_U8B_BEGIN)
+                            | (1 << CTE.ARRAY_U8O_BEGIN)
+                            | (1 << CTE.ARRAY_U8X_BEGIN)
+                            | (1 << CTE.ARRAY_I16_BEGIN)
+                            | (1 << CTE.ARRAY_I16B_BEGIN)
+                            | (1 << CTE.ARRAY_I16O_BEGIN)
+                            | (1 << CTE.ARRAY_I16X_BEGIN)
+                            | (1 << CTE.ARRAY_U16_BEGIN)
+                            | (1 << CTE.ARRAY_U16B_BEGIN)
+                            | (1 << CTE.ARRAY_U16O_BEGIN)
+                            | (1 << CTE.ARRAY_U16X_BEGIN)
+                            | (1 << CTE.ARRAY_I32_BEGIN)
+                            | (1 << CTE.ARRAY_I32B_BEGIN)
+                            | (1 << CTE.ARRAY_I32O_BEGIN)
+                            | (1 << CTE.ARRAY_I32X_BEGIN)
+                            | (1 << CTE.ARRAY_U32_BEGIN)
+                            | (1 << CTE.ARRAY_U32B_BEGIN)
+                            | (1 << CTE.ARRAY_U32O_BEGIN)
+                            | (1 << CTE.ARRAY_U32X_BEGIN)
+                            | (1 << CTE.ARRAY_I64_BEGIN)
+                            | (1 << CTE.ARRAY_I64B_BEGIN)
+                            | (1 << CTE.ARRAY_I64O_BEGIN)
+                            | (1 << CTE.ARRAY_I64X_BEGIN)
+                            | (1 << CTE.ARRAY_U64_BEGIN)
+                            | (1 << CTE.ARRAY_U64B_BEGIN)
+                            | (1 << CTE.ARRAY_U64O_BEGIN)
+                            | (1 << CTE.ARRAY_U64X_BEGIN)
+                            | (1 << CTE.ARRAY_F16_BEGIN)
+                            | (1 << CTE.ARRAY_F16X_BEGIN)
+                            | (1 << CTE.ARRAY_F32_BEGIN)
+                            | (1 << CTE.ARRAY_F32X_BEGIN)
+                            | (1 << CTE.ARRAY_F64_BEGIN)
+                            | (1 << CTE.ARRAY_F64X_BEGIN)
+                            | (1 << CTE.CUSTOM_BINARY_BEGIN)
+                            | (1 << CTE.MEDA_BEGIN)
+                            | (1 << CTE.CUSTOM_TEXT)
+                            | (1 << CTE.NULL)
+                            | (1 << CTE.NAN)
+                            | (1 << CTE.SNAN)
+                            | (1 << CTE.INF)
+                            | (1 << CTE.TRUE)
+                            | (1 << CTE.FALSE)
+                            | (1 << CTE.PINT_BIN)
+                            | (1 << CTE.NINT_BIN)
+                        )
+                    )
+                    != 0
+                )
+                or (
+                    (((_la - 64)) & ~0x3F) == 0
+                    and (
+                        (1 << (_la - 64))
+                        & (
+                            (1 << (CTE.PINT_DEC - 64))
+                            | (1 << (CTE.NINT_DEC - 64))
+                            | (1 << (CTE.PINT_OCT - 64))
+                            | (1 << (CTE.NINT_OCT - 64))
+                            | (1 << (CTE.PINT_HEX - 64))
+                            | (1 << (CTE.NINT_HEX - 64))
+                            | (1 << (CTE.FLOAT_DEC - 64))
+                            | (1 << (CTE.FLOAT_HEX - 64))
+                            | (1 << (CTE.DATE - 64))
+                            | (1 << (CTE.TIME - 64))
+                            | (1 << (CTE.UID - 64))
+                            | (1 << (CTE.STRING - 64))
+                            | (1 << (CTE.RID - 64))
+                            | (1 << (CTE.REMOTE_REF - 64))
+                            | (1 << (CTE.MARKER - 64))
+                            | (1 << (CTE.REFRENCE - 64))
+                        )
+                    )
+                    != 0
+                )
+                or _la == CTE.MARKUP_SUB_BEGIN
+            ):
                 self.state = 266
                 self.value()
                 self.state = 271
@@ -2149,23 +2474,23 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ContainerEdgeContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def EDGE_BEGIN(self):
             return self.getToken(CTE.EDGE_BEGIN, 0)
 
-        def value(self, i:int=None):
+        def value(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ValueContext)
             else:
-                return self.getTypedRuleContext(CTE.ValueContext,i)
-
+                return self.getTypedRuleContext(CTE.ValueContext, i)
 
         def EDGE_NODE_END(self):
             return self.getToken(CTE.EDGE_NODE_END, 0)
@@ -2173,14 +2498,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_containerEdge
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitContainerEdge" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitContainerEdge"):
                 return visitor.visitContainerEdge(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def containerEdge(self):
 
@@ -2206,11 +2528,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ContainerNodeContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2220,44 +2543,131 @@ class CTE ( Parser ):
         def EDGE_NODE_END(self):
             return self.getToken(CTE.EDGE_NODE_END, 0)
 
-        def value(self, i:int=None):
+        def value(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ValueContext)
             else:
-                return self.getTypedRuleContext(CTE.ValueContext,i)
-
+                return self.getTypedRuleContext(CTE.ValueContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_containerNode
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitContainerNode" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitContainerNode"):
                 return visitor.visitContainerNode(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def containerNode(self):
 
         localctx = CTE.ContainerNodeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 44, self.RULE_containerNode)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 280
             self.match(CTE.NODE_BEGIN)
-            self.state = 282 
+            self.state = 282
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 281
                 self.value()
-                self.state = 284 
+                self.state = 284
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CTE.LIST_BEGIN) | (1 << CTE.MAP_BEGIN) | (1 << CTE.NODE_BEGIN) | (1 << CTE.EDGE_BEGIN) | (1 << CTE.MARKUP_BEGIN) | (1 << CTE.ARRAY_BIT_BEGIN) | (1 << CTE.ARRAY_I8_BEGIN) | (1 << CTE.ARRAY_I8B_BEGIN) | (1 << CTE.ARRAY_I8O_BEGIN) | (1 << CTE.ARRAY_I8X_BEGIN) | (1 << CTE.ARRAY_U8_BEGIN) | (1 << CTE.ARRAY_U8B_BEGIN) | (1 << CTE.ARRAY_U8O_BEGIN) | (1 << CTE.ARRAY_U8X_BEGIN) | (1 << CTE.ARRAY_I16_BEGIN) | (1 << CTE.ARRAY_I16B_BEGIN) | (1 << CTE.ARRAY_I16O_BEGIN) | (1 << CTE.ARRAY_I16X_BEGIN) | (1 << CTE.ARRAY_U16_BEGIN) | (1 << CTE.ARRAY_U16B_BEGIN) | (1 << CTE.ARRAY_U16O_BEGIN) | (1 << CTE.ARRAY_U16X_BEGIN) | (1 << CTE.ARRAY_I32_BEGIN) | (1 << CTE.ARRAY_I32B_BEGIN) | (1 << CTE.ARRAY_I32O_BEGIN) | (1 << CTE.ARRAY_I32X_BEGIN) | (1 << CTE.ARRAY_U32_BEGIN) | (1 << CTE.ARRAY_U32B_BEGIN) | (1 << CTE.ARRAY_U32O_BEGIN) | (1 << CTE.ARRAY_U32X_BEGIN) | (1 << CTE.ARRAY_I64_BEGIN) | (1 << CTE.ARRAY_I64B_BEGIN) | (1 << CTE.ARRAY_I64O_BEGIN) | (1 << CTE.ARRAY_I64X_BEGIN) | (1 << CTE.ARRAY_U64_BEGIN) | (1 << CTE.ARRAY_U64B_BEGIN) | (1 << CTE.ARRAY_U64O_BEGIN) | (1 << CTE.ARRAY_U64X_BEGIN) | (1 << CTE.ARRAY_F16_BEGIN) | (1 << CTE.ARRAY_F16X_BEGIN) | (1 << CTE.ARRAY_F32_BEGIN) | (1 << CTE.ARRAY_F32X_BEGIN) | (1 << CTE.ARRAY_F64_BEGIN) | (1 << CTE.ARRAY_F64X_BEGIN) | (1 << CTE.CUSTOM_BINARY_BEGIN) | (1 << CTE.MEDA_BEGIN) | (1 << CTE.CUSTOM_TEXT) | (1 << CTE.NULL) | (1 << CTE.NAN) | (1 << CTE.SNAN) | (1 << CTE.INF) | (1 << CTE.TRUE) | (1 << CTE.FALSE) | (1 << CTE.PINT_BIN) | (1 << CTE.NINT_BIN))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CTE.PINT_DEC - 64)) | (1 << (CTE.NINT_DEC - 64)) | (1 << (CTE.PINT_OCT - 64)) | (1 << (CTE.NINT_OCT - 64)) | (1 << (CTE.PINT_HEX - 64)) | (1 << (CTE.NINT_HEX - 64)) | (1 << (CTE.FLOAT_DEC - 64)) | (1 << (CTE.FLOAT_HEX - 64)) | (1 << (CTE.DATE - 64)) | (1 << (CTE.TIME - 64)) | (1 << (CTE.UID - 64)) | (1 << (CTE.STRING - 64)) | (1 << (CTE.RID - 64)) | (1 << (CTE.REMOTE_REF - 64)) | (1 << (CTE.MARKER - 64)) | (1 << (CTE.REFRENCE - 64)))) != 0) or _la==CTE.MARKUP_SUB_BEGIN):
+                if not (
+                    (
+                        ((_la) & ~0x3F) == 0
+                        and (
+                            (1 << _la)
+                            & (
+                                (1 << CTE.LIST_BEGIN)
+                                | (1 << CTE.MAP_BEGIN)
+                                | (1 << CTE.NODE_BEGIN)
+                                | (1 << CTE.EDGE_BEGIN)
+                                | (1 << CTE.MARKUP_BEGIN)
+                                | (1 << CTE.ARRAY_BIT_BEGIN)
+                                | (1 << CTE.ARRAY_I8_BEGIN)
+                                | (1 << CTE.ARRAY_I8B_BEGIN)
+                                | (1 << CTE.ARRAY_I8O_BEGIN)
+                                | (1 << CTE.ARRAY_I8X_BEGIN)
+                                | (1 << CTE.ARRAY_U8_BEGIN)
+                                | (1 << CTE.ARRAY_U8B_BEGIN)
+                                | (1 << CTE.ARRAY_U8O_BEGIN)
+                                | (1 << CTE.ARRAY_U8X_BEGIN)
+                                | (1 << CTE.ARRAY_I16_BEGIN)
+                                | (1 << CTE.ARRAY_I16B_BEGIN)
+                                | (1 << CTE.ARRAY_I16O_BEGIN)
+                                | (1 << CTE.ARRAY_I16X_BEGIN)
+                                | (1 << CTE.ARRAY_U16_BEGIN)
+                                | (1 << CTE.ARRAY_U16B_BEGIN)
+                                | (1 << CTE.ARRAY_U16O_BEGIN)
+                                | (1 << CTE.ARRAY_U16X_BEGIN)
+                                | (1 << CTE.ARRAY_I32_BEGIN)
+                                | (1 << CTE.ARRAY_I32B_BEGIN)
+                                | (1 << CTE.ARRAY_I32O_BEGIN)
+                                | (1 << CTE.ARRAY_I32X_BEGIN)
+                                | (1 << CTE.ARRAY_U32_BEGIN)
+                                | (1 << CTE.ARRAY_U32B_BEGIN)
+                                | (1 << CTE.ARRAY_U32O_BEGIN)
+                                | (1 << CTE.ARRAY_U32X_BEGIN)
+                                | (1 << CTE.ARRAY_I64_BEGIN)
+                                | (1 << CTE.ARRAY_I64B_BEGIN)
+                                | (1 << CTE.ARRAY_I64O_BEGIN)
+                                | (1 << CTE.ARRAY_I64X_BEGIN)
+                                | (1 << CTE.ARRAY_U64_BEGIN)
+                                | (1 << CTE.ARRAY_U64B_BEGIN)
+                                | (1 << CTE.ARRAY_U64O_BEGIN)
+                                | (1 << CTE.ARRAY_U64X_BEGIN)
+                                | (1 << CTE.ARRAY_F16_BEGIN)
+                                | (1 << CTE.ARRAY_F16X_BEGIN)
+                                | (1 << CTE.ARRAY_F32_BEGIN)
+                                | (1 << CTE.ARRAY_F32X_BEGIN)
+                                | (1 << CTE.ARRAY_F64_BEGIN)
+                                | (1 << CTE.ARRAY_F64X_BEGIN)
+                                | (1 << CTE.CUSTOM_BINARY_BEGIN)
+                                | (1 << CTE.MEDA_BEGIN)
+                                | (1 << CTE.CUSTOM_TEXT)
+                                | (1 << CTE.NULL)
+                                | (1 << CTE.NAN)
+                                | (1 << CTE.SNAN)
+                                | (1 << CTE.INF)
+                                | (1 << CTE.TRUE)
+                                | (1 << CTE.FALSE)
+                                | (1 << CTE.PINT_BIN)
+                                | (1 << CTE.NINT_BIN)
+                            )
+                        )
+                        != 0
+                    )
+                    or (
+                        (((_la - 64)) & ~0x3F) == 0
+                        and (
+                            (1 << (_la - 64))
+                            & (
+                                (1 << (CTE.PINT_DEC - 64))
+                                | (1 << (CTE.NINT_DEC - 64))
+                                | (1 << (CTE.PINT_OCT - 64))
+                                | (1 << (CTE.NINT_OCT - 64))
+                                | (1 << (CTE.PINT_HEX - 64))
+                                | (1 << (CTE.NINT_HEX - 64))
+                                | (1 << (CTE.FLOAT_DEC - 64))
+                                | (1 << (CTE.FLOAT_HEX - 64))
+                                | (1 << (CTE.DATE - 64))
+                                | (1 << (CTE.TIME - 64))
+                                | (1 << (CTE.UID - 64))
+                                | (1 << (CTE.STRING - 64))
+                                | (1 << (CTE.RID - 64))
+                                | (1 << (CTE.REMOTE_REF - 64))
+                                | (1 << (CTE.MARKER - 64))
+                                | (1 << (CTE.REFRENCE - 64))
+                            )
+                        )
+                        != 0
+                    )
+                    or _la == CTE.MARKUP_SUB_BEGIN
+                ):
                     break
 
             self.state = 286
@@ -2270,17 +2680,17 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ContainerMarkupContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def markupName(self):
-            return self.getTypedRuleContext(CTE.MarkupNameContext,0)
-
+            return self.getTypedRuleContext(CTE.MarkupNameContext, 0)
 
         def MARKUP_BEGIN(self):
             return self.getToken(CTE.MARKUP_BEGIN, 0)
@@ -2294,45 +2704,40 @@ class CTE ( Parser ):
         def MARKUP_CONTENTS_END(self):
             return self.getToken(CTE.MARKUP_CONTENTS_END, 0)
 
-        def kvPair(self, i:int=None):
+        def kvPair(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.KvPairContext)
             else:
-                return self.getTypedRuleContext(CTE.KvPairContext,i)
-
+                return self.getTypedRuleContext(CTE.KvPairContext, i)
 
         def MARKUP_CONTENT_BEGIN(self):
             return self.getToken(CTE.MARKUP_CONTENT_BEGIN, 0)
 
-        def markupContents(self, i:int=None):
+        def markupContents(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.MarkupContentsContext)
             else:
-                return self.getTypedRuleContext(CTE.MarkupContentsContext,i)
-
+                return self.getTypedRuleContext(CTE.MarkupContentsContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_containerMarkup
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitContainerMarkup" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitContainerMarkup"):
                 return visitor.visitContainerMarkup(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def containerMarkup(self):
 
         localctx = CTE.ContainerMarkupContext(self, self._ctx, self.state)
         self.enterRule(localctx, 46, self.RULE_containerMarkup)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 288
             _la = self._input.LA(1)
-            if not(_la==CTE.MARKUP_BEGIN or _la==CTE.MARKUP_SUB_BEGIN):
+            if not (_la == CTE.MARKUP_BEGIN or _la == CTE.MARKUP_SUB_BEGIN):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2342,7 +2747,98 @@ class CTE ( Parser ):
             self.state = 293
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CTE.LIST_BEGIN) | (1 << CTE.MAP_BEGIN) | (1 << CTE.NODE_BEGIN) | (1 << CTE.EDGE_BEGIN) | (1 << CTE.MARKUP_BEGIN) | (1 << CTE.ARRAY_BIT_BEGIN) | (1 << CTE.ARRAY_I8_BEGIN) | (1 << CTE.ARRAY_I8B_BEGIN) | (1 << CTE.ARRAY_I8O_BEGIN) | (1 << CTE.ARRAY_I8X_BEGIN) | (1 << CTE.ARRAY_U8_BEGIN) | (1 << CTE.ARRAY_U8B_BEGIN) | (1 << CTE.ARRAY_U8O_BEGIN) | (1 << CTE.ARRAY_U8X_BEGIN) | (1 << CTE.ARRAY_I16_BEGIN) | (1 << CTE.ARRAY_I16B_BEGIN) | (1 << CTE.ARRAY_I16O_BEGIN) | (1 << CTE.ARRAY_I16X_BEGIN) | (1 << CTE.ARRAY_U16_BEGIN) | (1 << CTE.ARRAY_U16B_BEGIN) | (1 << CTE.ARRAY_U16O_BEGIN) | (1 << CTE.ARRAY_U16X_BEGIN) | (1 << CTE.ARRAY_I32_BEGIN) | (1 << CTE.ARRAY_I32B_BEGIN) | (1 << CTE.ARRAY_I32O_BEGIN) | (1 << CTE.ARRAY_I32X_BEGIN) | (1 << CTE.ARRAY_U32_BEGIN) | (1 << CTE.ARRAY_U32B_BEGIN) | (1 << CTE.ARRAY_U32O_BEGIN) | (1 << CTE.ARRAY_U32X_BEGIN) | (1 << CTE.ARRAY_I64_BEGIN) | (1 << CTE.ARRAY_I64B_BEGIN) | (1 << CTE.ARRAY_I64O_BEGIN) | (1 << CTE.ARRAY_I64X_BEGIN) | (1 << CTE.ARRAY_U64_BEGIN) | (1 << CTE.ARRAY_U64B_BEGIN) | (1 << CTE.ARRAY_U64O_BEGIN) | (1 << CTE.ARRAY_U64X_BEGIN) | (1 << CTE.ARRAY_F16_BEGIN) | (1 << CTE.ARRAY_F16X_BEGIN) | (1 << CTE.ARRAY_F32_BEGIN) | (1 << CTE.ARRAY_F32X_BEGIN) | (1 << CTE.ARRAY_F64_BEGIN) | (1 << CTE.ARRAY_F64X_BEGIN) | (1 << CTE.CUSTOM_BINARY_BEGIN) | (1 << CTE.MEDA_BEGIN) | (1 << CTE.CUSTOM_TEXT) | (1 << CTE.NULL) | (1 << CTE.NAN) | (1 << CTE.SNAN) | (1 << CTE.INF) | (1 << CTE.TRUE) | (1 << CTE.FALSE) | (1 << CTE.PINT_BIN) | (1 << CTE.NINT_BIN))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CTE.PINT_DEC - 64)) | (1 << (CTE.NINT_DEC - 64)) | (1 << (CTE.PINT_OCT - 64)) | (1 << (CTE.NINT_OCT - 64)) | (1 << (CTE.PINT_HEX - 64)) | (1 << (CTE.NINT_HEX - 64)) | (1 << (CTE.FLOAT_DEC - 64)) | (1 << (CTE.FLOAT_HEX - 64)) | (1 << (CTE.DATE - 64)) | (1 << (CTE.TIME - 64)) | (1 << (CTE.UID - 64)) | (1 << (CTE.STRING - 64)) | (1 << (CTE.RID - 64)) | (1 << (CTE.REMOTE_REF - 64)) | (1 << (CTE.MARKER - 64)) | (1 << (CTE.REFRENCE - 64)))) != 0) or _la==CTE.MARKUP_SUB_BEGIN:
+            while (
+                (
+                    ((_la) & ~0x3F) == 0
+                    and (
+                        (1 << _la)
+                        & (
+                            (1 << CTE.LIST_BEGIN)
+                            | (1 << CTE.MAP_BEGIN)
+                            | (1 << CTE.NODE_BEGIN)
+                            | (1 << CTE.EDGE_BEGIN)
+                            | (1 << CTE.MARKUP_BEGIN)
+                            | (1 << CTE.ARRAY_BIT_BEGIN)
+                            | (1 << CTE.ARRAY_I8_BEGIN)
+                            | (1 << CTE.ARRAY_I8B_BEGIN)
+                            | (1 << CTE.ARRAY_I8O_BEGIN)
+                            | (1 << CTE.ARRAY_I8X_BEGIN)
+                            | (1 << CTE.ARRAY_U8_BEGIN)
+                            | (1 << CTE.ARRAY_U8B_BEGIN)
+                            | (1 << CTE.ARRAY_U8O_BEGIN)
+                            | (1 << CTE.ARRAY_U8X_BEGIN)
+                            | (1 << CTE.ARRAY_I16_BEGIN)
+                            | (1 << CTE.ARRAY_I16B_BEGIN)
+                            | (1 << CTE.ARRAY_I16O_BEGIN)
+                            | (1 << CTE.ARRAY_I16X_BEGIN)
+                            | (1 << CTE.ARRAY_U16_BEGIN)
+                            | (1 << CTE.ARRAY_U16B_BEGIN)
+                            | (1 << CTE.ARRAY_U16O_BEGIN)
+                            | (1 << CTE.ARRAY_U16X_BEGIN)
+                            | (1 << CTE.ARRAY_I32_BEGIN)
+                            | (1 << CTE.ARRAY_I32B_BEGIN)
+                            | (1 << CTE.ARRAY_I32O_BEGIN)
+                            | (1 << CTE.ARRAY_I32X_BEGIN)
+                            | (1 << CTE.ARRAY_U32_BEGIN)
+                            | (1 << CTE.ARRAY_U32B_BEGIN)
+                            | (1 << CTE.ARRAY_U32O_BEGIN)
+                            | (1 << CTE.ARRAY_U32X_BEGIN)
+                            | (1 << CTE.ARRAY_I64_BEGIN)
+                            | (1 << CTE.ARRAY_I64B_BEGIN)
+                            | (1 << CTE.ARRAY_I64O_BEGIN)
+                            | (1 << CTE.ARRAY_I64X_BEGIN)
+                            | (1 << CTE.ARRAY_U64_BEGIN)
+                            | (1 << CTE.ARRAY_U64B_BEGIN)
+                            | (1 << CTE.ARRAY_U64O_BEGIN)
+                            | (1 << CTE.ARRAY_U64X_BEGIN)
+                            | (1 << CTE.ARRAY_F16_BEGIN)
+                            | (1 << CTE.ARRAY_F16X_BEGIN)
+                            | (1 << CTE.ARRAY_F32_BEGIN)
+                            | (1 << CTE.ARRAY_F32X_BEGIN)
+                            | (1 << CTE.ARRAY_F64_BEGIN)
+                            | (1 << CTE.ARRAY_F64X_BEGIN)
+                            | (1 << CTE.CUSTOM_BINARY_BEGIN)
+                            | (1 << CTE.MEDA_BEGIN)
+                            | (1 << CTE.CUSTOM_TEXT)
+                            | (1 << CTE.NULL)
+                            | (1 << CTE.NAN)
+                            | (1 << CTE.SNAN)
+                            | (1 << CTE.INF)
+                            | (1 << CTE.TRUE)
+                            | (1 << CTE.FALSE)
+                            | (1 << CTE.PINT_BIN)
+                            | (1 << CTE.NINT_BIN)
+                        )
+                    )
+                    != 0
+                )
+                or (
+                    (((_la - 64)) & ~0x3F) == 0
+                    and (
+                        (1 << (_la - 64))
+                        & (
+                            (1 << (CTE.PINT_DEC - 64))
+                            | (1 << (CTE.NINT_DEC - 64))
+                            | (1 << (CTE.PINT_OCT - 64))
+                            | (1 << (CTE.NINT_OCT - 64))
+                            | (1 << (CTE.PINT_HEX - 64))
+                            | (1 << (CTE.NINT_HEX - 64))
+                            | (1 << (CTE.FLOAT_DEC - 64))
+                            | (1 << (CTE.FLOAT_HEX - 64))
+                            | (1 << (CTE.DATE - 64))
+                            | (1 << (CTE.TIME - 64))
+                            | (1 << (CTE.UID - 64))
+                            | (1 << (CTE.STRING - 64))
+                            | (1 << (CTE.RID - 64))
+                            | (1 << (CTE.REMOTE_REF - 64))
+                            | (1 << (CTE.MARKER - 64))
+                            | (1 << (CTE.REFRENCE - 64))
+                        )
+                    )
+                    != 0
+                )
+                or _la == CTE.MARKUP_SUB_BEGIN
+            ):
                 self.state = 290
                 self.kvPair()
                 self.state = 295
@@ -2352,24 +2848,26 @@ class CTE ( Parser ):
             self.state = 303
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CTE.MARKUP_CONTENT_BEGIN:
+            if _la == CTE.MARKUP_CONTENT_BEGIN:
                 self.state = 296
                 self.match(CTE.MARKUP_CONTENT_BEGIN)
                 self.state = 300
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==CTE.MARKUP_BEGIN or _la==CTE.MARKUP_CONTENTS or _la==CTE.MARKUP_SUB_BEGIN:
+                while (
+                    _la == CTE.MARKUP_BEGIN
+                    or _la == CTE.MARKUP_CONTENTS
+                    or _la == CTE.MARKUP_SUB_BEGIN
+                ):
                     self.state = 297
                     self.markupContents()
                     self.state = 302
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-
-
             self.state = 305
             _la = self._input.LA(1)
-            if not(_la==CTE.MARKUP_END or _la==CTE.MARKUP_CONTENTS_END):
+            if not (_la == CTE.MARKUP_END or _la == CTE.MARKUP_CONTENTS_END):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2382,11 +2880,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayElemBitsContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2396,14 +2895,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_arrayElemBits
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayElemBits" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayElemBits"):
                 return visitor.visitArrayElemBits(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayElemBits(self):
 
@@ -2421,11 +2917,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayElemIntContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2444,25 +2941,36 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_arrayElemInt
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayElemInt" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayElemInt"):
                 return visitor.visitArrayElemInt(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayElemInt(self):
 
         localctx = CTE.ArrayElemIntContext(self, self._ctx, self.state)
         self.enterRule(localctx, 50, self.RULE_arrayElemInt)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 309
             _la = self._input.LA(1)
-            if not(((((_la - 85)) & ~0x3f) == 0 and ((1 << (_la - 85)) & ((1 << (CTE.ARRAY_I_ELEM_B - 85)) | (1 << (CTE.ARRAY_I_ELEM_O - 85)) | (1 << (CTE.ARRAY_I_ELEM_H - 85)) | (1 << (CTE.ARRAY_I_ELEM_D - 85)))) != 0)):
+            if not (
+                (
+                    (((_la - 85)) & ~0x3F) == 0
+                    and (
+                        (1 << (_la - 85))
+                        & (
+                            (1 << (CTE.ARRAY_I_ELEM_B - 85))
+                            | (1 << (CTE.ARRAY_I_ELEM_O - 85))
+                            | (1 << (CTE.ARRAY_I_ELEM_H - 85))
+                            | (1 << (CTE.ARRAY_I_ELEM_D - 85))
+                        )
+                    )
+                    != 0
+                )
+            ):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2475,11 +2983,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayElemIntBContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2489,14 +2998,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_arrayElemIntB
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayElemIntB" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayElemIntB"):
                 return visitor.visitArrayElemIntB(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayElemIntB(self):
 
@@ -2514,11 +3020,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayElemIntOContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2528,14 +3035,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_arrayElemIntO
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayElemIntO" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayElemIntO"):
                 return visitor.visitArrayElemIntO(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayElemIntO(self):
 
@@ -2553,11 +3057,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayElemIntXContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2567,14 +3072,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_arrayElemIntX
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayElemIntX" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayElemIntX"):
                 return visitor.visitArrayElemIntX(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayElemIntX(self):
 
@@ -2592,11 +3094,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayElemUintContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2615,25 +3118,36 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_arrayElemUint
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayElemUint" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayElemUint"):
                 return visitor.visitArrayElemUint(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayElemUint(self):
 
         localctx = CTE.ArrayElemUintContext(self, self._ctx, self.state)
         self.enterRule(localctx, 58, self.RULE_arrayElemUint)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 317
             _la = self._input.LA(1)
-            if not(((((_la - 91)) & ~0x3f) == 0 and ((1 << (_la - 91)) & ((1 << (CTE.ARRAY_U_ELEM_B - 91)) | (1 << (CTE.ARRAY_U_ELEM_O - 91)) | (1 << (CTE.ARRAY_U_ELEM_H - 91)) | (1 << (CTE.ARRAY_U_ELEM_D - 91)))) != 0)):
+            if not (
+                (
+                    (((_la - 91)) & ~0x3F) == 0
+                    and (
+                        (1 << (_la - 91))
+                        & (
+                            (1 << (CTE.ARRAY_U_ELEM_B - 91))
+                            | (1 << (CTE.ARRAY_U_ELEM_O - 91))
+                            | (1 << (CTE.ARRAY_U_ELEM_H - 91))
+                            | (1 << (CTE.ARRAY_U_ELEM_D - 91))
+                        )
+                    )
+                    != 0
+                )
+            ):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2646,11 +3160,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayElemUintBContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2660,14 +3175,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_arrayElemUintB
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayElemUintB" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayElemUintB"):
                 return visitor.visitArrayElemUintB(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayElemUintB(self):
 
@@ -2685,11 +3197,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayElemUintOContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2699,14 +3212,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_arrayElemUintO
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayElemUintO" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayElemUintO"):
                 return visitor.visitArrayElemUintO(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayElemUintO(self):
 
@@ -2724,11 +3234,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayElemUintXContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2738,14 +3249,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_arrayElemUintX
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayElemUintX" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayElemUintX"):
                 return visitor.visitArrayElemUintX(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayElemUintX(self):
 
@@ -2763,11 +3271,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayElemFloatContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2780,25 +3289,22 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_arrayElemFloat
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayElemFloat" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayElemFloat"):
                 return visitor.visitArrayElemFloat(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayElemFloat(self):
 
         localctx = CTE.ArrayElemFloatContext(self, self._ctx, self.state)
         self.enterRule(localctx, 66, self.RULE_arrayElemFloat)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 325
             _la = self._input.LA(1)
-            if not(_la==CTE.ARRAY_F_ELEM_D or _la==CTE.ARRAY_F_ELEM_H):
+            if not (_la == CTE.ARRAY_F_ELEM_D or _la == CTE.ARRAY_F_ELEM_H):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2811,11 +3317,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayElemFloatXContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2825,14 +3332,11 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_arrayElemFloatX
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayElemFloatX" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayElemFloatX"):
                 return visitor.visitArrayElemFloatX(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayElemFloatX(self):
 
@@ -2850,11 +3354,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayElemByteXContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2867,25 +3372,22 @@ class CTE ( Parser ):
         def getRuleIndex(self):
             return CTE.RULE_arrayElemByteX
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayElemByteX" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayElemByteX"):
                 return visitor.visitArrayElemByteX(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayElemByteX(self):
 
         localctx = CTE.ArrayElemByteXContext(self, self._ctx, self.state)
         self.enterRule(localctx, 70, self.RULE_arrayElemByteX)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 329
             _la = self._input.LA(1)
-            if not(_la==CTE.CUSTOM_BINARY_ELEM or _la==CTE.MEDIA_ELEM):
+            if not (_la == CTE.CUSTOM_BINARY_ELEM or _la == CTE.MEDIA_ELEM):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2898,11 +3400,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayBitContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2912,30 +3415,26 @@ class CTE ( Parser ):
         def ARRAY_BIT_END(self):
             return self.getToken(CTE.ARRAY_BIT_END, 0)
 
-        def arrayElemBits(self, i:int=None):
+        def arrayElemBits(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemBitsContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemBitsContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemBitsContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayBit
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayBit" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayBit"):
                 return visitor.visitArrayBit(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayBit(self):
 
         localctx = CTE.ArrayBitContext(self, self._ctx, self.state)
         self.enterRule(localctx, 72, self.RULE_arrayBit)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 331
@@ -2943,7 +3442,7 @@ class CTE ( Parser ):
             self.state = 335
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_BIT_BITS:
+            while _la == CTE.ARRAY_BIT_BITS:
                 self.state = 332
                 self.arrayElemBits()
                 self.state = 337
@@ -2960,11 +3459,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI8Context(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2974,30 +3474,26 @@ class CTE ( Parser ):
         def ARRAY_I_END(self):
             return self.getToken(CTE.ARRAY_I_END, 0)
 
-        def arrayElemInt(self, i:int=None):
+        def arrayElemInt(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI8
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI8" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI8"):
                 return visitor.visitArrayI8(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI8(self):
 
         localctx = CTE.ArrayI8Context(self, self._ctx, self.state)
         self.enterRule(localctx, 74, self.RULE_arrayI8)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 340
@@ -3005,7 +3501,15 @@ class CTE ( Parser ):
             self.state = 344
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 85)) & ~0x3f) == 0 and ((1 << (_la - 85)) & ((1 << (CTE.ARRAY_I_ELEM_B - 85)) | (1 << (CTE.ARRAY_I_ELEM_O - 85)) | (1 << (CTE.ARRAY_I_ELEM_H - 85)) | (1 << (CTE.ARRAY_I_ELEM_D - 85)))) != 0):
+            while (((_la - 85)) & ~0x3F) == 0 and (
+                (1 << (_la - 85))
+                & (
+                    (1 << (CTE.ARRAY_I_ELEM_B - 85))
+                    | (1 << (CTE.ARRAY_I_ELEM_O - 85))
+                    | (1 << (CTE.ARRAY_I_ELEM_H - 85))
+                    | (1 << (CTE.ARRAY_I_ELEM_D - 85))
+                )
+            ) != 0:
                 self.state = 341
                 self.arrayElemInt()
                 self.state = 346
@@ -3022,11 +3526,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI8bContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3036,30 +3541,26 @@ class CTE ( Parser ):
         def ARRAY_I_B_END(self):
             return self.getToken(CTE.ARRAY_I_B_END, 0)
 
-        def arrayElemIntB(self, i:int=None):
+        def arrayElemIntB(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntBContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntBContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntBContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI8b
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI8b" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI8b"):
                 return visitor.visitArrayI8b(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI8b(self):
 
         localctx = CTE.ArrayI8bContext(self, self._ctx, self.state)
         self.enterRule(localctx, 76, self.RULE_arrayI8b)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 349
@@ -3067,7 +3568,7 @@ class CTE ( Parser ):
             self.state = 353
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_I_B_ELEM:
+            while _la == CTE.ARRAY_I_B_ELEM:
                 self.state = 350
                 self.arrayElemIntB()
                 self.state = 355
@@ -3084,11 +3585,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI8oContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3098,30 +3600,26 @@ class CTE ( Parser ):
         def ARRAY_I_O_END(self):
             return self.getToken(CTE.ARRAY_I_O_END, 0)
 
-        def arrayElemIntO(self, i:int=None):
+        def arrayElemIntO(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntOContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntOContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntOContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI8o
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI8o" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI8o"):
                 return visitor.visitArrayI8o(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI8o(self):
 
         localctx = CTE.ArrayI8oContext(self, self._ctx, self.state)
         self.enterRule(localctx, 78, self.RULE_arrayI8o)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 358
@@ -3129,7 +3627,7 @@ class CTE ( Parser ):
             self.state = 362
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_I_O_ELEM:
+            while _la == CTE.ARRAY_I_O_ELEM:
                 self.state = 359
                 self.arrayElemIntO()
                 self.state = 364
@@ -3146,11 +3644,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI8xContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3160,30 +3659,26 @@ class CTE ( Parser ):
         def ARRAY_I_X_END(self):
             return self.getToken(CTE.ARRAY_I_X_END, 0)
 
-        def arrayElemIntX(self, i:int=None):
+        def arrayElemIntX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI8x
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI8x" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI8x"):
                 return visitor.visitArrayI8x(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI8x(self):
 
         localctx = CTE.ArrayI8xContext(self, self._ctx, self.state)
         self.enterRule(localctx, 80, self.RULE_arrayI8x)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 367
@@ -3191,7 +3686,7 @@ class CTE ( Parser ):
             self.state = 371
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_I_X_ELEM:
+            while _la == CTE.ARRAY_I_X_ELEM:
                 self.state = 368
                 self.arrayElemIntX()
                 self.state = 373
@@ -3208,11 +3703,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU8Context(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3222,30 +3718,26 @@ class CTE ( Parser ):
         def ARRAY_U_END(self):
             return self.getToken(CTE.ARRAY_U_END, 0)
 
-        def arrayElemUint(self, i:int=None):
+        def arrayElemUint(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU8
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU8" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU8"):
                 return visitor.visitArrayU8(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU8(self):
 
         localctx = CTE.ArrayU8Context(self, self._ctx, self.state)
         self.enterRule(localctx, 82, self.RULE_arrayU8)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 376
@@ -3253,7 +3745,15 @@ class CTE ( Parser ):
             self.state = 380
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 91)) & ~0x3f) == 0 and ((1 << (_la - 91)) & ((1 << (CTE.ARRAY_U_ELEM_B - 91)) | (1 << (CTE.ARRAY_U_ELEM_O - 91)) | (1 << (CTE.ARRAY_U_ELEM_H - 91)) | (1 << (CTE.ARRAY_U_ELEM_D - 91)))) != 0):
+            while (((_la - 91)) & ~0x3F) == 0 and (
+                (1 << (_la - 91))
+                & (
+                    (1 << (CTE.ARRAY_U_ELEM_B - 91))
+                    | (1 << (CTE.ARRAY_U_ELEM_O - 91))
+                    | (1 << (CTE.ARRAY_U_ELEM_H - 91))
+                    | (1 << (CTE.ARRAY_U_ELEM_D - 91))
+                )
+            ) != 0:
                 self.state = 377
                 self.arrayElemUint()
                 self.state = 382
@@ -3270,11 +3770,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU8bContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3284,30 +3785,26 @@ class CTE ( Parser ):
         def ARRAY_U_B_END(self):
             return self.getToken(CTE.ARRAY_U_B_END, 0)
 
-        def arrayElemUintB(self, i:int=None):
+        def arrayElemUintB(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintBContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintBContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintBContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU8b
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU8b" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU8b"):
                 return visitor.visitArrayU8b(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU8b(self):
 
         localctx = CTE.ArrayU8bContext(self, self._ctx, self.state)
         self.enterRule(localctx, 84, self.RULE_arrayU8b)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 385
@@ -3315,7 +3812,7 @@ class CTE ( Parser ):
             self.state = 389
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_U_B_ELEM:
+            while _la == CTE.ARRAY_U_B_ELEM:
                 self.state = 386
                 self.arrayElemUintB()
                 self.state = 391
@@ -3332,11 +3829,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU8oContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3346,30 +3844,26 @@ class CTE ( Parser ):
         def ARRAY_U_O_END(self):
             return self.getToken(CTE.ARRAY_U_O_END, 0)
 
-        def arrayElemUintO(self, i:int=None):
+        def arrayElemUintO(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintOContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintOContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintOContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU8o
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU8o" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU8o"):
                 return visitor.visitArrayU8o(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU8o(self):
 
         localctx = CTE.ArrayU8oContext(self, self._ctx, self.state)
         self.enterRule(localctx, 86, self.RULE_arrayU8o)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 394
@@ -3377,7 +3871,7 @@ class CTE ( Parser ):
             self.state = 398
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_U_O_ELEM:
+            while _la == CTE.ARRAY_U_O_ELEM:
                 self.state = 395
                 self.arrayElemUintO()
                 self.state = 400
@@ -3394,11 +3888,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU8xContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3408,30 +3903,26 @@ class CTE ( Parser ):
         def ARRAY_U_X_END(self):
             return self.getToken(CTE.ARRAY_U_X_END, 0)
 
-        def arrayElemUintX(self, i:int=None):
+        def arrayElemUintX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU8x
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU8x" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU8x"):
                 return visitor.visitArrayU8x(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU8x(self):
 
         localctx = CTE.ArrayU8xContext(self, self._ctx, self.state)
         self.enterRule(localctx, 88, self.RULE_arrayU8x)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 403
@@ -3439,7 +3930,7 @@ class CTE ( Parser ):
             self.state = 407
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_U_X_ELEM:
+            while _la == CTE.ARRAY_U_X_ELEM:
                 self.state = 404
                 self.arrayElemUintX()
                 self.state = 409
@@ -3456,11 +3947,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI16Context(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3470,30 +3962,26 @@ class CTE ( Parser ):
         def ARRAY_I_END(self):
             return self.getToken(CTE.ARRAY_I_END, 0)
 
-        def arrayElemInt(self, i:int=None):
+        def arrayElemInt(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI16
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI16" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI16"):
                 return visitor.visitArrayI16(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI16(self):
 
         localctx = CTE.ArrayI16Context(self, self._ctx, self.state)
         self.enterRule(localctx, 90, self.RULE_arrayI16)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 412
@@ -3501,7 +3989,15 @@ class CTE ( Parser ):
             self.state = 416
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 85)) & ~0x3f) == 0 and ((1 << (_la - 85)) & ((1 << (CTE.ARRAY_I_ELEM_B - 85)) | (1 << (CTE.ARRAY_I_ELEM_O - 85)) | (1 << (CTE.ARRAY_I_ELEM_H - 85)) | (1 << (CTE.ARRAY_I_ELEM_D - 85)))) != 0):
+            while (((_la - 85)) & ~0x3F) == 0 and (
+                (1 << (_la - 85))
+                & (
+                    (1 << (CTE.ARRAY_I_ELEM_B - 85))
+                    | (1 << (CTE.ARRAY_I_ELEM_O - 85))
+                    | (1 << (CTE.ARRAY_I_ELEM_H - 85))
+                    | (1 << (CTE.ARRAY_I_ELEM_D - 85))
+                )
+            ) != 0:
                 self.state = 413
                 self.arrayElemInt()
                 self.state = 418
@@ -3518,11 +4014,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI16bContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3532,30 +4029,26 @@ class CTE ( Parser ):
         def ARRAY_I_B_END(self):
             return self.getToken(CTE.ARRAY_I_B_END, 0)
 
-        def arrayElemIntB(self, i:int=None):
+        def arrayElemIntB(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntBContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntBContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntBContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI16b
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI16b" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI16b"):
                 return visitor.visitArrayI16b(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI16b(self):
 
         localctx = CTE.ArrayI16bContext(self, self._ctx, self.state)
         self.enterRule(localctx, 92, self.RULE_arrayI16b)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 421
@@ -3563,7 +4056,7 @@ class CTE ( Parser ):
             self.state = 425
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_I_B_ELEM:
+            while _la == CTE.ARRAY_I_B_ELEM:
                 self.state = 422
                 self.arrayElemIntB()
                 self.state = 427
@@ -3580,11 +4073,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI16oContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3594,30 +4088,26 @@ class CTE ( Parser ):
         def ARRAY_I_O_END(self):
             return self.getToken(CTE.ARRAY_I_O_END, 0)
 
-        def arrayElemIntO(self, i:int=None):
+        def arrayElemIntO(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntOContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntOContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntOContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI16o
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI16o" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI16o"):
                 return visitor.visitArrayI16o(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI16o(self):
 
         localctx = CTE.ArrayI16oContext(self, self._ctx, self.state)
         self.enterRule(localctx, 94, self.RULE_arrayI16o)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 430
@@ -3625,7 +4115,7 @@ class CTE ( Parser ):
             self.state = 434
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_I_O_ELEM:
+            while _la == CTE.ARRAY_I_O_ELEM:
                 self.state = 431
                 self.arrayElemIntO()
                 self.state = 436
@@ -3642,11 +4132,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI16xContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3656,30 +4147,26 @@ class CTE ( Parser ):
         def ARRAY_I_X_END(self):
             return self.getToken(CTE.ARRAY_I_X_END, 0)
 
-        def arrayElemIntX(self, i:int=None):
+        def arrayElemIntX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI16x
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI16x" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI16x"):
                 return visitor.visitArrayI16x(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI16x(self):
 
         localctx = CTE.ArrayI16xContext(self, self._ctx, self.state)
         self.enterRule(localctx, 96, self.RULE_arrayI16x)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 439
@@ -3687,7 +4174,7 @@ class CTE ( Parser ):
             self.state = 443
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_I_X_ELEM:
+            while _la == CTE.ARRAY_I_X_ELEM:
                 self.state = 440
                 self.arrayElemIntX()
                 self.state = 445
@@ -3704,11 +4191,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU16Context(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3718,30 +4206,26 @@ class CTE ( Parser ):
         def ARRAY_U_END(self):
             return self.getToken(CTE.ARRAY_U_END, 0)
 
-        def arrayElemUint(self, i:int=None):
+        def arrayElemUint(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU16
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU16" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU16"):
                 return visitor.visitArrayU16(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU16(self):
 
         localctx = CTE.ArrayU16Context(self, self._ctx, self.state)
         self.enterRule(localctx, 98, self.RULE_arrayU16)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 448
@@ -3749,7 +4233,15 @@ class CTE ( Parser ):
             self.state = 452
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 91)) & ~0x3f) == 0 and ((1 << (_la - 91)) & ((1 << (CTE.ARRAY_U_ELEM_B - 91)) | (1 << (CTE.ARRAY_U_ELEM_O - 91)) | (1 << (CTE.ARRAY_U_ELEM_H - 91)) | (1 << (CTE.ARRAY_U_ELEM_D - 91)))) != 0):
+            while (((_la - 91)) & ~0x3F) == 0 and (
+                (1 << (_la - 91))
+                & (
+                    (1 << (CTE.ARRAY_U_ELEM_B - 91))
+                    | (1 << (CTE.ARRAY_U_ELEM_O - 91))
+                    | (1 << (CTE.ARRAY_U_ELEM_H - 91))
+                    | (1 << (CTE.ARRAY_U_ELEM_D - 91))
+                )
+            ) != 0:
                 self.state = 449
                 self.arrayElemUint()
                 self.state = 454
@@ -3766,11 +4258,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU16bContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3780,30 +4273,26 @@ class CTE ( Parser ):
         def ARRAY_U_B_END(self):
             return self.getToken(CTE.ARRAY_U_B_END, 0)
 
-        def arrayElemUintB(self, i:int=None):
+        def arrayElemUintB(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintBContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintBContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintBContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU16b
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU16b" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU16b"):
                 return visitor.visitArrayU16b(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU16b(self):
 
         localctx = CTE.ArrayU16bContext(self, self._ctx, self.state)
         self.enterRule(localctx, 100, self.RULE_arrayU16b)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 457
@@ -3811,7 +4300,7 @@ class CTE ( Parser ):
             self.state = 461
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_U_B_ELEM:
+            while _la == CTE.ARRAY_U_B_ELEM:
                 self.state = 458
                 self.arrayElemUintB()
                 self.state = 463
@@ -3828,11 +4317,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU16oContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3842,30 +4332,26 @@ class CTE ( Parser ):
         def ARRAY_U_O_END(self):
             return self.getToken(CTE.ARRAY_U_O_END, 0)
 
-        def arrayElemUintO(self, i:int=None):
+        def arrayElemUintO(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintOContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintOContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintOContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU16o
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU16o" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU16o"):
                 return visitor.visitArrayU16o(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU16o(self):
 
         localctx = CTE.ArrayU16oContext(self, self._ctx, self.state)
         self.enterRule(localctx, 102, self.RULE_arrayU16o)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 466
@@ -3873,7 +4359,7 @@ class CTE ( Parser ):
             self.state = 470
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_U_O_ELEM:
+            while _la == CTE.ARRAY_U_O_ELEM:
                 self.state = 467
                 self.arrayElemUintO()
                 self.state = 472
@@ -3890,11 +4376,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU16xContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3904,30 +4391,26 @@ class CTE ( Parser ):
         def ARRAY_U_X_END(self):
             return self.getToken(CTE.ARRAY_U_X_END, 0)
 
-        def arrayElemUintX(self, i:int=None):
+        def arrayElemUintX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU16x
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU16x" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU16x"):
                 return visitor.visitArrayU16x(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU16x(self):
 
         localctx = CTE.ArrayU16xContext(self, self._ctx, self.state)
         self.enterRule(localctx, 104, self.RULE_arrayU16x)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 475
@@ -3935,7 +4418,7 @@ class CTE ( Parser ):
             self.state = 479
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_U_X_ELEM:
+            while _la == CTE.ARRAY_U_X_ELEM:
                 self.state = 476
                 self.arrayElemUintX()
                 self.state = 481
@@ -3952,11 +4435,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI32Context(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3966,30 +4450,26 @@ class CTE ( Parser ):
         def ARRAY_I_END(self):
             return self.getToken(CTE.ARRAY_I_END, 0)
 
-        def arrayElemInt(self, i:int=None):
+        def arrayElemInt(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI32
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI32" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI32"):
                 return visitor.visitArrayI32(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI32(self):
 
         localctx = CTE.ArrayI32Context(self, self._ctx, self.state)
         self.enterRule(localctx, 106, self.RULE_arrayI32)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 484
@@ -3997,7 +4477,15 @@ class CTE ( Parser ):
             self.state = 488
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 85)) & ~0x3f) == 0 and ((1 << (_la - 85)) & ((1 << (CTE.ARRAY_I_ELEM_B - 85)) | (1 << (CTE.ARRAY_I_ELEM_O - 85)) | (1 << (CTE.ARRAY_I_ELEM_H - 85)) | (1 << (CTE.ARRAY_I_ELEM_D - 85)))) != 0):
+            while (((_la - 85)) & ~0x3F) == 0 and (
+                (1 << (_la - 85))
+                & (
+                    (1 << (CTE.ARRAY_I_ELEM_B - 85))
+                    | (1 << (CTE.ARRAY_I_ELEM_O - 85))
+                    | (1 << (CTE.ARRAY_I_ELEM_H - 85))
+                    | (1 << (CTE.ARRAY_I_ELEM_D - 85))
+                )
+            ) != 0:
                 self.state = 485
                 self.arrayElemInt()
                 self.state = 490
@@ -4014,11 +4502,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI32bContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4028,30 +4517,26 @@ class CTE ( Parser ):
         def ARRAY_I_B_END(self):
             return self.getToken(CTE.ARRAY_I_B_END, 0)
 
-        def arrayElemIntB(self, i:int=None):
+        def arrayElemIntB(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntBContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntBContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntBContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI32b
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI32b" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI32b"):
                 return visitor.visitArrayI32b(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI32b(self):
 
         localctx = CTE.ArrayI32bContext(self, self._ctx, self.state)
         self.enterRule(localctx, 108, self.RULE_arrayI32b)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 493
@@ -4059,7 +4544,7 @@ class CTE ( Parser ):
             self.state = 497
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_I_B_ELEM:
+            while _la == CTE.ARRAY_I_B_ELEM:
                 self.state = 494
                 self.arrayElemIntB()
                 self.state = 499
@@ -4076,11 +4561,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI32oContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4090,30 +4576,26 @@ class CTE ( Parser ):
         def ARRAY_I_O_END(self):
             return self.getToken(CTE.ARRAY_I_O_END, 0)
 
-        def arrayElemIntO(self, i:int=None):
+        def arrayElemIntO(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntOContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntOContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntOContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI32o
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI32o" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI32o"):
                 return visitor.visitArrayI32o(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI32o(self):
 
         localctx = CTE.ArrayI32oContext(self, self._ctx, self.state)
         self.enterRule(localctx, 110, self.RULE_arrayI32o)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 502
@@ -4121,7 +4603,7 @@ class CTE ( Parser ):
             self.state = 506
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_I_O_ELEM:
+            while _la == CTE.ARRAY_I_O_ELEM:
                 self.state = 503
                 self.arrayElemIntO()
                 self.state = 508
@@ -4138,11 +4620,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI32xContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4152,30 +4635,26 @@ class CTE ( Parser ):
         def ARRAY_I_X_END(self):
             return self.getToken(CTE.ARRAY_I_X_END, 0)
 
-        def arrayElemIntX(self, i:int=None):
+        def arrayElemIntX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI32x
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI32x" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI32x"):
                 return visitor.visitArrayI32x(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI32x(self):
 
         localctx = CTE.ArrayI32xContext(self, self._ctx, self.state)
         self.enterRule(localctx, 112, self.RULE_arrayI32x)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 511
@@ -4183,7 +4662,7 @@ class CTE ( Parser ):
             self.state = 515
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_I_X_ELEM:
+            while _la == CTE.ARRAY_I_X_ELEM:
                 self.state = 512
                 self.arrayElemIntX()
                 self.state = 517
@@ -4200,11 +4679,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU32Context(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4214,30 +4694,26 @@ class CTE ( Parser ):
         def ARRAY_U_END(self):
             return self.getToken(CTE.ARRAY_U_END, 0)
 
-        def arrayElemUint(self, i:int=None):
+        def arrayElemUint(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU32
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU32" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU32"):
                 return visitor.visitArrayU32(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU32(self):
 
         localctx = CTE.ArrayU32Context(self, self._ctx, self.state)
         self.enterRule(localctx, 114, self.RULE_arrayU32)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 520
@@ -4245,7 +4721,15 @@ class CTE ( Parser ):
             self.state = 524
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 91)) & ~0x3f) == 0 and ((1 << (_la - 91)) & ((1 << (CTE.ARRAY_U_ELEM_B - 91)) | (1 << (CTE.ARRAY_U_ELEM_O - 91)) | (1 << (CTE.ARRAY_U_ELEM_H - 91)) | (1 << (CTE.ARRAY_U_ELEM_D - 91)))) != 0):
+            while (((_la - 91)) & ~0x3F) == 0 and (
+                (1 << (_la - 91))
+                & (
+                    (1 << (CTE.ARRAY_U_ELEM_B - 91))
+                    | (1 << (CTE.ARRAY_U_ELEM_O - 91))
+                    | (1 << (CTE.ARRAY_U_ELEM_H - 91))
+                    | (1 << (CTE.ARRAY_U_ELEM_D - 91))
+                )
+            ) != 0:
                 self.state = 521
                 self.arrayElemUint()
                 self.state = 526
@@ -4262,11 +4746,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU32bContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4276,30 +4761,26 @@ class CTE ( Parser ):
         def ARRAY_U_B_END(self):
             return self.getToken(CTE.ARRAY_U_B_END, 0)
 
-        def arrayElemUintB(self, i:int=None):
+        def arrayElemUintB(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintBContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintBContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintBContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU32b
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU32b" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU32b"):
                 return visitor.visitArrayU32b(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU32b(self):
 
         localctx = CTE.ArrayU32bContext(self, self._ctx, self.state)
         self.enterRule(localctx, 116, self.RULE_arrayU32b)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 529
@@ -4307,7 +4788,7 @@ class CTE ( Parser ):
             self.state = 533
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_U_B_ELEM:
+            while _la == CTE.ARRAY_U_B_ELEM:
                 self.state = 530
                 self.arrayElemUintB()
                 self.state = 535
@@ -4324,11 +4805,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU32oContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4338,30 +4820,26 @@ class CTE ( Parser ):
         def ARRAY_U_O_END(self):
             return self.getToken(CTE.ARRAY_U_O_END, 0)
 
-        def arrayElemUintO(self, i:int=None):
+        def arrayElemUintO(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintOContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintOContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintOContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU32o
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU32o" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU32o"):
                 return visitor.visitArrayU32o(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU32o(self):
 
         localctx = CTE.ArrayU32oContext(self, self._ctx, self.state)
         self.enterRule(localctx, 118, self.RULE_arrayU32o)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 538
@@ -4369,7 +4847,7 @@ class CTE ( Parser ):
             self.state = 542
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_U_O_ELEM:
+            while _la == CTE.ARRAY_U_O_ELEM:
                 self.state = 539
                 self.arrayElemUintO()
                 self.state = 544
@@ -4386,11 +4864,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU32xContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4400,30 +4879,26 @@ class CTE ( Parser ):
         def ARRAY_U_X_END(self):
             return self.getToken(CTE.ARRAY_U_X_END, 0)
 
-        def arrayElemUintX(self, i:int=None):
+        def arrayElemUintX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU32x
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU32x" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU32x"):
                 return visitor.visitArrayU32x(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU32x(self):
 
         localctx = CTE.ArrayU32xContext(self, self._ctx, self.state)
         self.enterRule(localctx, 120, self.RULE_arrayU32x)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 547
@@ -4431,7 +4906,7 @@ class CTE ( Parser ):
             self.state = 551
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_U_X_ELEM:
+            while _la == CTE.ARRAY_U_X_ELEM:
                 self.state = 548
                 self.arrayElemUintX()
                 self.state = 553
@@ -4448,11 +4923,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI64Context(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4462,30 +4938,26 @@ class CTE ( Parser ):
         def ARRAY_I_END(self):
             return self.getToken(CTE.ARRAY_I_END, 0)
 
-        def arrayElemInt(self, i:int=None):
+        def arrayElemInt(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI64
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI64" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI64"):
                 return visitor.visitArrayI64(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI64(self):
 
         localctx = CTE.ArrayI64Context(self, self._ctx, self.state)
         self.enterRule(localctx, 122, self.RULE_arrayI64)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 556
@@ -4493,7 +4965,15 @@ class CTE ( Parser ):
             self.state = 560
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 85)) & ~0x3f) == 0 and ((1 << (_la - 85)) & ((1 << (CTE.ARRAY_I_ELEM_B - 85)) | (1 << (CTE.ARRAY_I_ELEM_O - 85)) | (1 << (CTE.ARRAY_I_ELEM_H - 85)) | (1 << (CTE.ARRAY_I_ELEM_D - 85)))) != 0):
+            while (((_la - 85)) & ~0x3F) == 0 and (
+                (1 << (_la - 85))
+                & (
+                    (1 << (CTE.ARRAY_I_ELEM_B - 85))
+                    | (1 << (CTE.ARRAY_I_ELEM_O - 85))
+                    | (1 << (CTE.ARRAY_I_ELEM_H - 85))
+                    | (1 << (CTE.ARRAY_I_ELEM_D - 85))
+                )
+            ) != 0:
                 self.state = 557
                 self.arrayElemInt()
                 self.state = 562
@@ -4510,11 +4990,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI64bContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4524,30 +5005,26 @@ class CTE ( Parser ):
         def ARRAY_I_B_END(self):
             return self.getToken(CTE.ARRAY_I_B_END, 0)
 
-        def arrayElemIntB(self, i:int=None):
+        def arrayElemIntB(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntBContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntBContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntBContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI64b
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI64b" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI64b"):
                 return visitor.visitArrayI64b(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI64b(self):
 
         localctx = CTE.ArrayI64bContext(self, self._ctx, self.state)
         self.enterRule(localctx, 124, self.RULE_arrayI64b)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 565
@@ -4555,7 +5032,7 @@ class CTE ( Parser ):
             self.state = 569
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_I_B_ELEM:
+            while _la == CTE.ARRAY_I_B_ELEM:
                 self.state = 566
                 self.arrayElemIntB()
                 self.state = 571
@@ -4572,11 +5049,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI64oContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4586,30 +5064,26 @@ class CTE ( Parser ):
         def ARRAY_I_O_END(self):
             return self.getToken(CTE.ARRAY_I_O_END, 0)
 
-        def arrayElemIntO(self, i:int=None):
+        def arrayElemIntO(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntOContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntOContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntOContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI64o
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI64o" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI64o"):
                 return visitor.visitArrayI64o(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI64o(self):
 
         localctx = CTE.ArrayI64oContext(self, self._ctx, self.state)
         self.enterRule(localctx, 126, self.RULE_arrayI64o)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 574
@@ -4617,7 +5091,7 @@ class CTE ( Parser ):
             self.state = 578
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_I_O_ELEM:
+            while _la == CTE.ARRAY_I_O_ELEM:
                 self.state = 575
                 self.arrayElemIntO()
                 self.state = 580
@@ -4634,11 +5108,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayI64xContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4648,30 +5123,26 @@ class CTE ( Parser ):
         def ARRAY_I_X_END(self):
             return self.getToken(CTE.ARRAY_I_X_END, 0)
 
-        def arrayElemIntX(self, i:int=None):
+        def arrayElemIntX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemIntXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemIntXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemIntXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayI64x
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayI64x" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayI64x"):
                 return visitor.visitArrayI64x(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayI64x(self):
 
         localctx = CTE.ArrayI64xContext(self, self._ctx, self.state)
         self.enterRule(localctx, 128, self.RULE_arrayI64x)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 583
@@ -4679,7 +5150,7 @@ class CTE ( Parser ):
             self.state = 587
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_I_X_ELEM:
+            while _la == CTE.ARRAY_I_X_ELEM:
                 self.state = 584
                 self.arrayElemIntX()
                 self.state = 589
@@ -4696,11 +5167,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU64Context(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4710,30 +5182,26 @@ class CTE ( Parser ):
         def ARRAY_U_END(self):
             return self.getToken(CTE.ARRAY_U_END, 0)
 
-        def arrayElemUint(self, i:int=None):
+        def arrayElemUint(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU64
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU64" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU64"):
                 return visitor.visitArrayU64(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU64(self):
 
         localctx = CTE.ArrayU64Context(self, self._ctx, self.state)
         self.enterRule(localctx, 130, self.RULE_arrayU64)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 592
@@ -4741,7 +5209,15 @@ class CTE ( Parser ):
             self.state = 596
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 91)) & ~0x3f) == 0 and ((1 << (_la - 91)) & ((1 << (CTE.ARRAY_U_ELEM_B - 91)) | (1 << (CTE.ARRAY_U_ELEM_O - 91)) | (1 << (CTE.ARRAY_U_ELEM_H - 91)) | (1 << (CTE.ARRAY_U_ELEM_D - 91)))) != 0):
+            while (((_la - 91)) & ~0x3F) == 0 and (
+                (1 << (_la - 91))
+                & (
+                    (1 << (CTE.ARRAY_U_ELEM_B - 91))
+                    | (1 << (CTE.ARRAY_U_ELEM_O - 91))
+                    | (1 << (CTE.ARRAY_U_ELEM_H - 91))
+                    | (1 << (CTE.ARRAY_U_ELEM_D - 91))
+                )
+            ) != 0:
                 self.state = 593
                 self.arrayElemUint()
                 self.state = 598
@@ -4758,11 +5234,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU64bContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4772,30 +5249,26 @@ class CTE ( Parser ):
         def ARRAY_U_B_END(self):
             return self.getToken(CTE.ARRAY_U_B_END, 0)
 
-        def arrayElemUintB(self, i:int=None):
+        def arrayElemUintB(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintBContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintBContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintBContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU64b
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU64b" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU64b"):
                 return visitor.visitArrayU64b(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU64b(self):
 
         localctx = CTE.ArrayU64bContext(self, self._ctx, self.state)
         self.enterRule(localctx, 132, self.RULE_arrayU64b)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 601
@@ -4803,7 +5276,7 @@ class CTE ( Parser ):
             self.state = 605
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_U_B_ELEM:
+            while _la == CTE.ARRAY_U_B_ELEM:
                 self.state = 602
                 self.arrayElemUintB()
                 self.state = 607
@@ -4820,11 +5293,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU64oContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4834,30 +5308,26 @@ class CTE ( Parser ):
         def ARRAY_U_O_END(self):
             return self.getToken(CTE.ARRAY_U_O_END, 0)
 
-        def arrayElemUintO(self, i:int=None):
+        def arrayElemUintO(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintOContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintOContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintOContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU64o
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU64o" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU64o"):
                 return visitor.visitArrayU64o(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU64o(self):
 
         localctx = CTE.ArrayU64oContext(self, self._ctx, self.state)
         self.enterRule(localctx, 134, self.RULE_arrayU64o)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 610
@@ -4865,7 +5335,7 @@ class CTE ( Parser ):
             self.state = 614
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_U_O_ELEM:
+            while _la == CTE.ARRAY_U_O_ELEM:
                 self.state = 611
                 self.arrayElemUintO()
                 self.state = 616
@@ -4882,11 +5352,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayU64xContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4896,30 +5367,26 @@ class CTE ( Parser ):
         def ARRAY_U_X_END(self):
             return self.getToken(CTE.ARRAY_U_X_END, 0)
 
-        def arrayElemUintX(self, i:int=None):
+        def arrayElemUintX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemUintXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemUintXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemUintXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayU64x
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayU64x" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayU64x"):
                 return visitor.visitArrayU64x(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayU64x(self):
 
         localctx = CTE.ArrayU64xContext(self, self._ctx, self.state)
         self.enterRule(localctx, 136, self.RULE_arrayU64x)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 619
@@ -4927,7 +5394,7 @@ class CTE ( Parser ):
             self.state = 623
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_U_X_ELEM:
+            while _la == CTE.ARRAY_U_X_ELEM:
                 self.state = 620
                 self.arrayElemUintX()
                 self.state = 625
@@ -4944,11 +5411,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayF16Context(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4958,30 +5426,26 @@ class CTE ( Parser ):
         def ARRAY_F_END(self):
             return self.getToken(CTE.ARRAY_F_END, 0)
 
-        def arrayElemFloat(self, i:int=None):
+        def arrayElemFloat(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemFloatContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemFloatContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemFloatContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayF16
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayF16" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayF16"):
                 return visitor.visitArrayF16(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayF16(self):
 
         localctx = CTE.ArrayF16Context(self, self._ctx, self.state)
         self.enterRule(localctx, 138, self.RULE_arrayF16)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 628
@@ -4989,7 +5453,7 @@ class CTE ( Parser ):
             self.state = 632
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_F_ELEM_D or _la==CTE.ARRAY_F_ELEM_H:
+            while _la == CTE.ARRAY_F_ELEM_D or _la == CTE.ARRAY_F_ELEM_H:
                 self.state = 629
                 self.arrayElemFloat()
                 self.state = 634
@@ -5006,11 +5470,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayF16xContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -5020,30 +5485,26 @@ class CTE ( Parser ):
         def ARRAY_F_X_END(self):
             return self.getToken(CTE.ARRAY_F_X_END, 0)
 
-        def arrayElemFloatX(self, i:int=None):
+        def arrayElemFloatX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemFloatXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemFloatXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemFloatXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayF16x
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayF16x" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayF16x"):
                 return visitor.visitArrayF16x(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayF16x(self):
 
         localctx = CTE.ArrayF16xContext(self, self._ctx, self.state)
         self.enterRule(localctx, 140, self.RULE_arrayF16x)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 637
@@ -5051,7 +5512,7 @@ class CTE ( Parser ):
             self.state = 641
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_F_X_ELEM:
+            while _la == CTE.ARRAY_F_X_ELEM:
                 self.state = 638
                 self.arrayElemFloatX()
                 self.state = 643
@@ -5068,11 +5529,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayF32Context(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -5082,30 +5544,26 @@ class CTE ( Parser ):
         def ARRAY_F_END(self):
             return self.getToken(CTE.ARRAY_F_END, 0)
 
-        def arrayElemFloat(self, i:int=None):
+        def arrayElemFloat(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemFloatContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemFloatContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemFloatContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayF32
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayF32" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayF32"):
                 return visitor.visitArrayF32(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayF32(self):
 
         localctx = CTE.ArrayF32Context(self, self._ctx, self.state)
         self.enterRule(localctx, 142, self.RULE_arrayF32)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 646
@@ -5113,7 +5571,7 @@ class CTE ( Parser ):
             self.state = 650
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_F_ELEM_D or _la==CTE.ARRAY_F_ELEM_H:
+            while _la == CTE.ARRAY_F_ELEM_D or _la == CTE.ARRAY_F_ELEM_H:
                 self.state = 647
                 self.arrayElemFloat()
                 self.state = 652
@@ -5130,11 +5588,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayF32xContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -5144,30 +5603,26 @@ class CTE ( Parser ):
         def ARRAY_F_X_END(self):
             return self.getToken(CTE.ARRAY_F_X_END, 0)
 
-        def arrayElemFloatX(self, i:int=None):
+        def arrayElemFloatX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemFloatXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemFloatXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemFloatXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayF32x
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayF32x" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayF32x"):
                 return visitor.visitArrayF32x(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayF32x(self):
 
         localctx = CTE.ArrayF32xContext(self, self._ctx, self.state)
         self.enterRule(localctx, 144, self.RULE_arrayF32x)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 655
@@ -5175,7 +5630,7 @@ class CTE ( Parser ):
             self.state = 659
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_F_X_ELEM:
+            while _la == CTE.ARRAY_F_X_ELEM:
                 self.state = 656
                 self.arrayElemFloatX()
                 self.state = 661
@@ -5192,11 +5647,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayF64Context(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -5206,30 +5662,26 @@ class CTE ( Parser ):
         def ARRAY_F_END(self):
             return self.getToken(CTE.ARRAY_F_END, 0)
 
-        def arrayElemFloat(self, i:int=None):
+        def arrayElemFloat(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemFloatContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemFloatContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemFloatContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayF64
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayF64" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayF64"):
                 return visitor.visitArrayF64(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayF64(self):
 
         localctx = CTE.ArrayF64Context(self, self._ctx, self.state)
         self.enterRule(localctx, 146, self.RULE_arrayF64)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 664
@@ -5237,7 +5689,7 @@ class CTE ( Parser ):
             self.state = 668
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_F_ELEM_D or _la==CTE.ARRAY_F_ELEM_H:
+            while _la == CTE.ARRAY_F_ELEM_D or _la == CTE.ARRAY_F_ELEM_H:
                 self.state = 665
                 self.arrayElemFloat()
                 self.state = 670
@@ -5254,11 +5706,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ArrayF64xContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -5268,30 +5721,26 @@ class CTE ( Parser ):
         def ARRAY_F_X_END(self):
             return self.getToken(CTE.ARRAY_F_X_END, 0)
 
-        def arrayElemFloatX(self, i:int=None):
+        def arrayElemFloatX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemFloatXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemFloatXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemFloatXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_arrayF64x
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayF64x" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitArrayF64x"):
                 return visitor.visitArrayF64x(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def arrayF64x(self):
 
         localctx = CTE.ArrayF64xContext(self, self._ctx, self.state)
         self.enterRule(localctx, 148, self.RULE_arrayF64x)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 673
@@ -5299,7 +5748,7 @@ class CTE ( Parser ):
             self.state = 677
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.ARRAY_F_X_ELEM:
+            while _la == CTE.ARRAY_F_X_ELEM:
                 self.state = 674
                 self.arrayElemFloatX()
                 self.state = 679
@@ -5316,11 +5765,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class CustomBinaryContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -5330,30 +5780,26 @@ class CTE ( Parser ):
         def CUSTOM_BINARY_END(self):
             return self.getToken(CTE.CUSTOM_BINARY_END, 0)
 
-        def arrayElemByteX(self, i:int=None):
+        def arrayElemByteX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemByteXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemByteXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemByteXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_customBinary
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitCustomBinary" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitCustomBinary"):
                 return visitor.visitCustomBinary(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def customBinary(self):
 
         localctx = CTE.CustomBinaryContext(self, self._ctx, self.state)
         self.enterRule(localctx, 150, self.RULE_customBinary)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 682
@@ -5361,7 +5807,7 @@ class CTE ( Parser ):
             self.state = 686
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.CUSTOM_BINARY_ELEM or _la==CTE.MEDIA_ELEM:
+            while _la == CTE.CUSTOM_BINARY_ELEM or _la == CTE.MEDIA_ELEM:
                 self.state = 683
                 self.arrayElemByteX()
                 self.state = 688
@@ -5378,11 +5824,12 @@ class CTE ( Parser ):
             self.exitRule()
         return localctx
 
-
     class MediaContext(ParserRuleContext):
-        __slots__ = 'parser'
+        __slots__ = "parser"
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -5392,30 +5839,26 @@ class CTE ( Parser ):
         def MEDIA_END(self):
             return self.getToken(CTE.MEDIA_END, 0)
 
-        def arrayElemByteX(self, i:int=None):
+        def arrayElemByteX(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CTE.ArrayElemByteXContext)
             else:
-                return self.getTypedRuleContext(CTE.ArrayElemByteXContext,i)
-
+                return self.getTypedRuleContext(CTE.ArrayElemByteXContext, i)
 
         def getRuleIndex(self):
             return CTE.RULE_media
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitMedia" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitMedia"):
                 return visitor.visitMedia(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def media(self):
 
         localctx = CTE.MediaContext(self, self._ctx, self.state)
         self.enterRule(localctx, 152, self.RULE_media)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 691
@@ -5423,7 +5866,7 @@ class CTE ( Parser ):
             self.state = 695
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==CTE.CUSTOM_BINARY_ELEM or _la==CTE.MEDIA_ELEM:
+            while _la == CTE.CUSTOM_BINARY_ELEM or _la == CTE.MEDIA_ELEM:
                 self.state = 692
                 self.arrayElemByteX()
                 self.state = 697
@@ -5439,8 +5882,3 @@ class CTE ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
-
-
-
-

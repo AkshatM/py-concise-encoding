@@ -1,41 +1,42 @@
 import os
 import unittest
 import ce.cte as cte
+from datetime import time
+from zoneinfo import ZoneInfo
+from ce.cte.utils import DataError
 
-from ce.cte.utils import WHITESPACE
 
 class PrimitivesTestCase(unittest.TestCase):
-
     def test_invalid_version(self):
         with self.assertRaises(Exception):
             cte.load("c2 false")
 
     def test_bool(self):
-        self.assertTrue(cte.load("c1 true")) 
+        self.assertTrue(cte.load("c1 true"))
 
     def test_false(self):
-        self.assertFalse(cte.load("c1 false")) 
+        self.assertFalse(cte.load("c1 false"))
 
     def test_pint_dec(self):
-        self.assertEqual(cte.load("c1 5"), 5) 
+        self.assertEqual(cte.load("c1 5"), 5)
 
     def test_nint_dec(self):
-        self.assertEqual(cte.load("c1 -5"), -5) 
+        self.assertEqual(cte.load("c1 -5"), -5)
 
     def test_pint_bin(self):
-        self.assertEqual(cte.load("c1 0b1"), 1) 
+        self.assertEqual(cte.load("c1 0b1"), 1)
 
     def test_nint_bin(self):
         self.assertEqual(cte.load("c1 -0b1"), -1)
 
     def test_pint_oct(self):
-        self.assertEqual(cte.load("c1 0o1"), 1) 
+        self.assertEqual(cte.load("c1 0o1"), 1)
 
     def test_nint_oct(self):
         self.assertEqual(cte.load("c1 -0o1"), -1)
 
     def test_pint_hex(self):
-        self.assertEqual(cte.load("c1 0x1"), 1) 
+        self.assertEqual(cte.load("c1 0x1"), 1)
 
     def test_nint_hex(self):
         self.assertEqual(cte.load("c1 -0x1"), -1)
@@ -79,9 +80,6 @@ class PrimitivesTestCase(unittest.TestCase):
     def test_hexadecimal_float_case1(self):
         self.assertEqual(cte.load("c1 0x0.1p0"), 0.0625)
 
-    def test_hexadecimal_float_case1(self):
-        self.assertEqual(cte.load("c1 0x0.1p0"), 0.0625)
-
     def test_hexadecimal_float_case2(self):
         self.assertEqual(cte.load("c1 0xaf.b7p+0"), 175.71484375)
 
@@ -95,19 +93,19 @@ class PrimitivesTestCase(unittest.TestCase):
         self.assertEqual(cte.load("c1 0xaf.b7p3"), 1405.71875)
 
     def test_decimal_float_overflow(self):
-        with self.assertRaises(OverflowError):
+        with self.assertRaises(DataError):
             cte.load("c1 1e20000")
 
     def test_decimal_float_underflow(self):
-        with self.assertRaises(FloatingPointError):
+        with self.assertRaises(DataError):
             cte.load("c1 1e-20000")
 
     def test_hexadecimal_float_overflow(self):
-        with self.assertRaises(OverflowError):
+        with self.assertRaises(DataError):
             cte.load("c1 0x1p1024")
 
     def test_hexadecimal_float_underflow(self):
-        with self.assertRaises(FloatingPointError):
+        with self.assertRaises(DataError):
             cte.load("c1 0x1p-102400")
 
     def test_nan(self):
@@ -123,12 +121,40 @@ class PrimitivesTestCase(unittest.TestCase):
         self.assertTrue(cte.load("c1 snan").is_snan())
 
     def test_rid(self):
-        self.assertEqual(cte.load("""c1 @\"http://x.y.z?quote=\""""), "http://x.y.z?quote=")
+        self.assertEqual(
+            cte.load("""c1 @\"http://x.y.z?quote=\""""), "http://x.y.z?quote="
+        )
 
     def test_pathological_rid(self):
 
-        filename = os.path.join(os.path.dirname(__file__), 'examples/pathological_string.cte')
+        filename = os.path.join(
+            os.path.dirname(__file__), "examples/pathological_string.cte"
+        )
         with open(filename, "r") as f:
             test = f.read()
             self.assertEqual(cte.load(test), "ab\u000a\u0009\u0123cde   \\.f\u0009g")
 
+    def test_simple_time(self):
+
+        self.assertEqual(
+            cte.load("""c1 21:05:04"""), time(21, 5, 4, 0, ZoneInfo("UTC"))
+        )
+
+    def test_simple_time_with_microsecond(self):
+
+        self.assertEqual(
+            cte.load("""c1 21:05:04.4444"""), time(21, 5, 4, 4444, ZoneInfo("UTC"))
+        )
+
+    def test_simple_time_with_microsecond_and_timezone(self):
+
+        self.assertEqual(
+            cte.load("""c1 21:05:04.444/E"""), time(21, 5, 4, 444, ZoneInfo("Etc/UTC"))
+        )
+
+    def test_simple_time_with_lat_and_long(self):
+
+        self.assertEqual(
+            cte.load("""c1 21:05:04.444/51.34/71.52"""),
+            time(21, 5, 4, 444, ZoneInfo("Asia/Almaty")),
+        )
