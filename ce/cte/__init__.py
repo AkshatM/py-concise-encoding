@@ -7,7 +7,7 @@ from antlr4.InputStream import InputStream
 from ce.cte.antlrgen.CTE import CTE as CTEParser
 from ce.cte.antlrgen.CTEVisitor import CTEVisitor
 from ce.cte.antlrgen.CTELexer import CTELexer
-from ce.cte.utils import validate_string, validate_float, DataError, parse_time
+from ce.cte.utils import validate_string, validate_float, validate_time
 from antlr4.error.ErrorStrategy import BailErrorStrategy
 
 
@@ -102,7 +102,7 @@ class __TextToObject(CTEVisitor):
     def visitValueTime(self, ctx):
 
         if ctx.TIME():
-            return parse_time(ctx.TIME().getText())
+            return validate_time(ctx.TIME().getText())
 
 
 def dump():

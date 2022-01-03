@@ -1,10 +1,12 @@
+"""
+Utilities to help with structural validation. 
+"""
+
 import re
 import unicodedata
 from zoneinfo import ZoneInfo
-from datetime import time
-from datetime import datetime
 from timezonefinder import TimezoneFinder
-
+from datetime import time, datetime, timezone, timedelta
 
 class DataError(Exception):
     def __init__(self, reason, obj, start, end):
@@ -46,7 +48,22 @@ WHITESPACE = [
     chr(0x3000),
 ]
 
-ENDSEQ_IDENTIFIER = [chr(0x0020), chr(0x0009), chr(0x000A), chr(0x000D) + chr(0x000A)]
+LITERAL_ESCAPE_IDENTIFIER = {
+    't': chr(0x0009),
+    'n': chr(0x000A),
+    'r': chr(0x000D),
+    '*': chr(0x002A),
+    "/": chr(0x002F),
+    "<": chr(0x003C),
+    ">": chr(0x003E),
+    ">": chr(0x003E),
+    "\\": chr(0x005C),
+    "|": chr(0x007C),
+    "_": chr(0x00A0),
+    "-": chr(0x00AD)
+}
+
+TERMINATOR_DELIMITER = [chr(0x0020), chr(0x0009), chr(0x000A), chr(0x000D) + chr(0x000A)]
 
 
 def is_valid_codepoint(c):
@@ -77,7 +94,6 @@ def validate_float(s, zero_pattern, as_hex=False):
 
     return value
 
-
 def validate_string(s: str):
     """
     Given a string:
@@ -90,53 +106,32 @@ def validate_string(s: str):
     """
 
     verified_s = ""
+    index = 0
 
-    index, escape_mode = 0, False
     while index < len(s):
 
-        if escape_mode:
+        if s[index] == "\\":
 
-            if s[index] == "t":
-                verified_s += chr(0x0009)
-            elif s[index] == "n":
-                verified_s += chr(0x000A)
-            elif s[index] == "r":
-                verified_s += chr(0x000D)
-            elif s[index] == "*":
-                verified_s += chr(0x002A)
-            elif s[index] == "/":
-                verified_s += chr(0x002F)
-            elif s[index] == "<":
-                verified_s += chr(0x003C)
-            elif s[index] == ">":
-                verified_s += chr(0x003E)
-            elif s[index] == ">":
-                verified_s += chr(0x003E)
-            elif s[index] == "\\":
-                verified_s += chr(0x005C)
-            elif s[index] == "|":
-                verified_s += chr(0x007C)
-            elif s[index] == "_":
-                verified_s += chr(0x00A0)
-            elif s[index] == "-":
-                verified_s += chr(0x00AD)
+            index += 1
+
+            if s[index] in LITERAL_ESCAPE_IDENTIFIER:
+                verified_s += LITERAL_ESCAPE_IDENTIFIER[s[index]]
+                index += 1
 
             elif s[index] == chr(0x000A) or s[index] == chr(0x000D):
 
-                continuation_range = 0
-                while index + continuation_range < len(s):
-                    if s[index + continuation_range] in WHITESPACE:
-                        continuation_range += 1
-                    else:
+                while index < len(s):
+                    if s[index] not in WHITESPACE:
                         break
-                index += continuation_range - 1
+                    index += 1
 
             elif s[index].isdigit():
 
-                # no need for bounds check because ANTLR only accepts exact
-                # ranges.
+                # no need for bounds check on size because ANTLR only accepts 
+                # exact ranges
                 size = int(s[index])
                 proposed_char = chr(int(s[index + 1 : index + size + 1], 16))
+
                 if not is_valid_codepoint(proposed_char):
                     raise DataError(
                         "Disallowed Unicode codepoint category",
@@ -144,154 +139,146 @@ def validate_string(s: str):
                         index - 1,
                         index + size + 1,
                     )
-                else:
-                    verified_s += proposed_char
-                index += size
+
+                verified_s += proposed_char
+                index += size + 1
 
             elif s[index] == ".":
 
-                terminator_start = index + 1
-                terminator_end = terminator_start
+                terminator = ''
+                index = index + 1
 
-                while terminator_end < len(s):
-                    if s[terminator_end] not in WHITESPACE and is_valid_codepoint(
-                        s[terminator_end]
-                    ):
-                        terminator_end += 1
-                    else:
+                while index < len(s):
+
+                    if (s[index] in TERMINATOR_DELIMITER):
+                        index += 1
+                        break
+
+                    if (s[index : index + 2] in TERMINATOR_DELIMITER):
+                        index += 2
+                        break
+
+                    if s[index] in WHITESPACE or not is_valid_codepoint(s[index]):
                         raise DataError(
-                            "Unexpected usage of whitespace or invalid codepoint",
-                            s,
-                            terminator_start,
-                            terminator_end,
+                            "Invalid codepoint in verbatim sequence terminator",
+                            terminator + s[index],
+                            0,
+                            len(terminator + s[index]),
                         )
 
-                    if (
-                        s[terminator_end] in ENDSEQ_IDENTIFIER
-                        or s[terminator_end : terminator_end + 2] in ENDSEQ_IDENTIFIER
-                    ):
+                    terminator += s[index]
+                    index += 1
+
+                while index < len(s):
+                    if (s[index : index + len(terminator)] == terminator):
+                        index += len(terminator)
                         break
 
-                terminator_seq = s[terminator_start:terminator_end]
-                terminator_end += 1
+                    verified_s += s[index]  # as is
+                    index += 1
 
-                while terminator_end < len(s):
-                    if (
-                        s[terminator_end : terminator_end + len(terminator_seq)]
-                        == terminator_seq
-                    ):
-                        terminator_end += len(terminator_seq)
-                        break
-                    else:
-                        verified_s += s[terminator_end]  # as is
-                        terminator_end += 1
+            continue
 
-                index = terminator_end - 1
+        if not is_valid_codepoint(s[index]):
+            raise DataError(
+                "Disallowed Unicode codepoint category",
+                s,
+                index,
+                index + 1,
+            )
 
-            escape_mode = False
-
-        else:
-
-            if s[index] == "\\":
-                escape_mode = True
-                index += 1
-                continue
-
-            if not is_valid_codepoint(s[index]):
-                raise DataError(
-                    "Disallowed Unicode codepoint category",
-                    s,
-                    index,
-                    index + 1,
-                )
-
-            verified_s += s[index]
-
+        verified_s += s[index]
         index += 1
 
     return verified_s
 
+def DatetimeKeeper(object):
+    """
+    A simple wrapper around datetime.datetime that keeps extra information
+    not supported by the native datetime module e.g. support for BC dates and
+    AD dates larger than 999999.
+    """
 
-def parse_time(s: str, utc_offset_expected=False):
+    def __init__(self):
+        pass
+
+# TODO: Refactor to be smaller and more easily maintained. Currently has the benefits
+# of being a linear parser, but could use some conciseness.
+def validate_time(s: str, utc_offset_expected=False):
+
     """
     Parse a time string with timezone information. If `utc_offset_expected` is set,
     can be used to parse the time component of a timestamp string as well.
 
     Why not use datetime.strptime here? Firstly, because %Z is not robust enough to handle
     lat/long types - we need to parse timezone information separately for this. Secondly,
-    datetime.strptime requires exact formatting, whereas CE supports many different types
-    of formats which we cannot predict in advance. It is cleanest to parse and construct
+    datetime.strptime requires exact format in advance, whereas CE supports many different 
+    types of formats which we cannot predict in advance. It is cleanest to parse and construct
     by hand.
     """
 
     # unvalidated hour, minute, second, microsecond and tz respectively
-    state = ["", "", "", "", ""]
-    index, state_index = 0, 0
+    parse_stage = ["", "", "", "", ()]
+    index, parse_stage_index = 0, 0
 
     while index < len(s):
 
         # hour, minute and second parsing is easy - just grab all
         # characters until a colon comes along
-        if state_index in [0, 1]:
+        if parse_stage_index in [0, 1]:
 
             if s[index] == ":":
-                state_index += 1
+                parse_stage_index += 1
             else:
-                state[state_index] += s[index]
+                parse_stage[parse_stage_index] += s[index]
 
             index += 1
             continue
 
-        if state_index == 2:
+        if parse_stage_index == 2:
 
             if s[index] in [".", ",", "/", "+", "-"]:
-                state_index += 1
+                parse_stage_index += 1
                 continue
             else:
-                state[state_index] += s[index]
+                parse_stage[parse_stage_index] += s[index]
                 index += 1
                 continue
 
         # because microsecond is optional, we call into a different parsing
-        # stage here. We abort if the start tokens ".", "," are not present,
+        # parse_stage here. We abort if the start tokens ".", "," are not present,
         # otherwise gather until we encounter a "/", "+", "-".
-        if state_index == 3:
+        if parse_stage_index == 3:
 
             if s[index] in [".", ","]:
-                microsecond_index = index + 1
-                while microsecond_index < len(s):
-                    if s[microsecond_index] in ["/", "+", "-"]:
-                        state_index += 1
+                index += 1
+                while index < len(s):
+                    if s[index] in ["/", "+", "-"]:
+                        parse_stage_index += 1
                         break
                     else:
-                        state[state_index] += s[microsecond_index]
-                        microsecond_index += 1
-
-                index = microsecond_index
+                        parse_stage[parse_stage_index] += s[index]
+                        index += 1
                 continue
 
             else:
-                state_index += 1
+                parse_stage_index += 1
                 continue
 
-        # time to parse a timezone!
-        if state_index == 4:
+        # time to parse a timezone! Can be a UTC offset, a (lat, long) pair,
+        # an (area, location) pair or just an abbreviation. Finish parsing here.
+        if parse_stage_index == 4:
 
-            tz_index = index
+            if s[index] in ["+", "-"] and not utc_offset_expected:
+                raise DataError("Unexpected UTC offset", s, 0, len(s))
+            elif s[index] in ["+", "-"] and utc_offset_expected:
+                parse_stage[parse_stage_index] = s[index+1:index+5]
+            elif s[index] == "/":
+                parse_stage[parse_stage_index] = s[index+1:]
 
-            if s[tz_index] in ["+", "-"] and not utc_offset_expected:
-                raise DataError("Unexpected UTC offset", s, 0, len(index))
+            break
 
-            if s[tz_index] == "/":
-                # read until the end - validate separately later
-                tz_index += 1
-                while tz_index < len(s):
-                    state[state_index] += s[tz_index]
-                    tz_index += 1
-
-            index = tz_index
-
-    hour, minute, second, microsecond, tz = state
+    hour, minute, second, microsecond, tz = parse_stage
     hour, minute, second = int(hour), int(minute), int(second)
     if not 0 <= hour <= 23:
         raise DataError("Hour out of range 0 - 23", s, 0, len(text))
@@ -307,6 +294,8 @@ def parse_time(s: str, utc_offset_expected=False):
     else:
         microsecond = 0
 
+    # TODO: This is really messy. We should move this up higher into the parsing stage, return
+    # a type and pattern-match based on it. 
     if tz:
         try:
             if tz == "L":
@@ -335,7 +324,12 @@ def parse_time(s: str, utc_offset_expected=False):
                 tz = ZoneInfo(tz.replace("I/", "Indian/", 1))
             elif tz.startswith("P/"):
                 tz = ZoneInfo(tz.replace("P/", "Pacific/", 1))
-            elif tz.startswith("-") or tz[0].isdigit():
+            elif tz.startswith("+") or (tz.startswith("-") and not tz.contains("/")):
+                hours, minutes = int(tz[1:3]), int(tz[3:])
+                if tz[0] == "-":
+                    hours, minutes = -1*hours, -1*hours
+                tz = timezone(timedelta(hours=hours, minutes=minutes))
+            elif (tz.startswith("-")) or tz[0].isdigit():
                 lat, lng = tz.replace(",", ".").split("/")
                 lat, lng = validate_float(lat, r"-?00\.00"), validate_float(
                     lng, r"-?00\.00"

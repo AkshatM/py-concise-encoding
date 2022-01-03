@@ -152,6 +152,18 @@ class PrimitivesTestCase(unittest.TestCase):
             cte.load("""c1 21:05:04.444/E"""), time(21, 5, 4, 444, ZoneInfo("Etc/UTC"))
         )
 
+    def test_simple_time_with_area_location_tz(self):
+
+        self.assertEqual(
+            cte.load("""c1 21:05:04.444/Asia/Almaty"""), time(21, 5, 4, 444, ZoneInfo("Asia/Almaty"))
+        )
+
+    def test_simple_time_with_abbreviated_area_location_tz(self):
+
+        self.assertEqual(
+            cte.load("""c1 21:05:04.444/S/Almaty"""), time(21, 5, 4, 444, ZoneInfo("Asia/Almaty"))
+        )
+
     def test_simple_time_with_lat_and_long(self):
 
         self.assertEqual(
