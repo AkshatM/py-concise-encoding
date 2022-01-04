@@ -119,19 +119,3 @@ class PrimitivesTestCase(unittest.TestCase):
 
     def test_snan(self):
         self.assertTrue(cte.load("c1 snan").is_snan())
-
-    def test_rid(self):
-        self.assertEqual(
-            cte.load("""c1 @\"http://x.y.z?quote=\""""), Rid("http://x.y.z?quote=")
-        )
-
-    def test_pathological_rid(self):
-
-        filename = os.path.join(
-            os.path.dirname(__file__), "examples/pathological_string.cte"
-        )
-        with open(filename, "r") as f:
-            test = f.read()
-            self.assertEqual(
-                cte.load(test).rid, "ab\u000a\u0009\u0123cde   \\.f\u0009g"
-            )

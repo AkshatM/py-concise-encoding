@@ -1,3 +1,4 @@
+import os
 import unittest
 import ce.cte as cte
 from ce.complex_types import Time, Timestamp
@@ -71,3 +72,21 @@ class DatesAndTimeTestCase(unittest.TestCase):
             cte.load("""c1 1992-03-04/21:05:04.444/51.34/71.52"""),
             Timestamp(1992, 3, 4, Time(21, 5, 4, 444, "Asia/Almaty")),
         )
+
+
+class RidTestCase(unittest.TestCase):
+    def test_rid(self):
+        self.assertEqual(
+            cte.load("""c1 @\"http://x.y.z?quote=\"""").rid, "http://x.y.z?quote="
+        )
+
+    def test_pathological_rid(self):
+
+        filename = os.path.join(
+            os.path.dirname(__file__), "examples/pathological_string.cte"
+        )
+        with open(filename, "r") as f:
+            test = f.read()
+            self.assertEqual(
+                cte.load(test).rid, "ab\u000a\u0009\u0123cde   \\.f\u0009g"
+            )

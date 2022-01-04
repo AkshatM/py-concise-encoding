@@ -8,7 +8,7 @@ from ce.primitive_types import validated_string, validated_float
 
 class Rid(object):
     def __init__(self, s: str, **kwargs):
-        self.rid = validated_string(s, **kwargs)
+        self.rid = validated_string(s.rstrip('"').lstrip('@"'), **kwargs)
 
     def __eq__(self, other):
 
@@ -104,7 +104,7 @@ class Time(object):
             return "UTC"
 
         if isinstance(tzrepr, tuple):
-            if len(tzrepr) == 2 and all(isinstance(x, float) for x in tzrepr):
+            if all(isinstance(x, float) for x in tzrepr):
                 lat, lng = tzrepr
                 return TimezoneFinder().timezone_at_land(lng=lng, lat=lat)
 
@@ -208,6 +208,7 @@ class Time(object):
         )
 
 
+# TODO: Make attrs immutable
 class Timestamp(object):
     @classmethod
     def validated_year(_, year: int | str):

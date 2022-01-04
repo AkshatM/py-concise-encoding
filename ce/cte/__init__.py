@@ -39,7 +39,8 @@ class __TextToObject(CTEVisitor):
     def visitValueString(self, ctx):
 
         return validated_string(
-            ctx.STRING().getText(), allow_NULs=self.config.get("allow_NULs", False)
+            ctx.STRING().getText().strip('"'),
+            allow_NULs=self.config.get("allow_NULs", False),
         )
 
     def visitValueInt(self, ctx):
@@ -85,7 +86,7 @@ class __TextToObject(CTEVisitor):
         return UUID(ctx.UID().getText())
 
     def visitValueRid(self, ctx):
-        text = ctx.RID().getText().rstrip('"').lstrip('@"')
+        text = ctx.RID().getText()
         return Rid(text, allow_NULs=self.config.get("allow_NULs", False))
 
     def visitValueTime(self, ctx):
@@ -95,6 +96,9 @@ class __TextToObject(CTEVisitor):
 
         if ctx.DATE():
             return Timestamp.from_string(ctx.DATE().getText())
+
+    def visitContainerList(self, ctx):
+        return [self.visit(context) for context in ctx.value()]
 
 
 def dump():
