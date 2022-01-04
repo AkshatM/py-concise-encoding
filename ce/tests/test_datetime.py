@@ -2,18 +2,15 @@ import unittest
 import ce.cte as cte
 from ce.complex_types import Time, Timestamp
 
+
 class DatesAndTimeTestCase(unittest.TestCase):
     def test_simple_time(self):
 
-        self.assertEqual(
-            cte.load("""c1 21:05:04"""), Time(21, 5, 4, None, "UTC")
-        )
+        self.assertEqual(cte.load("""c1 21:05:04"""), Time(21, 5, 4, None, "UTC"))
 
     def test_simple_time_with_microsecond(self):
 
-        self.assertEqual(
-            cte.load("""c1 21:05:04.4444"""), Time(21, 5, 4, 4444, "UTC")
-        )
+        self.assertEqual(cte.load("""c1 21:05:04.4444"""), Time(21, 5, 4, 4444, "UTC"))
 
     def test_simple_time_with_microsecond_and_timezone(self):
 

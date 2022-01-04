@@ -5,6 +5,7 @@ from zoneinfo import ZoneInfo
 from timezonefinder import TimezoneFinder
 from ce.primitive_types import validated_string, validated_float
 
+
 class Rid(object):
     def __init__(self, s: str, **kwargs):
         self.rid = validated_string(s, **kwargs)
@@ -85,7 +86,7 @@ class Time(object):
             return None
 
         if isinstance(nanosecond, str):
-            if nanosecond == '':
+            if nanosecond == "":
                 return None
             nanosecond = int(nanosecond)
 
@@ -126,12 +127,12 @@ class Time(object):
                 expansion = cls.AREA_ABBREVIATIONS[area]
                 return str(ZoneInfo(f"{expansion}/{locale}"))
 
-            utc_offset_match = re.match(r"[+|-](\d{2})(\d{2})", tzrepr)
+            utc_offset_match = re.match(r"(\d{2})(\d{2})", tzrepr)
             if utc_offset_match:
                 hour, minute = utc_offset_match.groups()
                 if tzrepr.startswith("-"):
                     hour, minute = -1 * hour, -1 * hour
-                # returns strings that resemble UTC[+|-]\d{2}:\d{2}
+                # returns strings that resemble UTC[+-]\d{2}:\d{2}
                 return str(timezone(timedelta(hours=hours, minutes=minutes)))
 
             lat_lng_pattern = r"^(-?\d{2}\.\d{2})/(-?\d{2}\.\d{2})$"
@@ -151,9 +152,7 @@ class Time(object):
         self.second = self.validated_second(second)
         self.nanosecond = self.validated_nanosecond(nanosecond)
         self.tzname = self.validated_timezone(tzname)
-        self.is_utc_offset = (
-            re.match(r"UTC[+|-]\d{2}:\d{2}", self.tzname)
-        ) is not None
+        self.is_utc_offset = (re.match(r"UTC[+-]\d{2}:\d{2}", self.tzname)) is not None
 
     def __eq__(self, other):
 
@@ -169,7 +168,17 @@ class Time(object):
         return (hour, minute, second, nanosecond, timezone)
 
     def __repr__(self):
-        attributes = [str(getattr(self, a)) for a in ["hour", "minute", "second", "nanosecond", "tzname", "is_utc_offset"]]
+        attributes = [
+            str(getattr(self, a))
+            for a in [
+                "hour",
+                "minute",
+                "second",
+                "nanosecond",
+                "tzname",
+                "is_utc_offset",
+            ]
+        ]
         return f"Time({','.join(attributes)})"
 
     @classmethod
@@ -180,81 +189,16 @@ class Time(object):
         can be used to parse the time component of a timestamp string as well.
         """
 
-        if s == '':
+        if s == "":
             return None
 
+        nanosecond, tzname = None, None
 
-        # Why not use datetime.strptime here? Firstly, because %Z is not robust enough to handle
-        # lat/long types - we need to parse timezone information separately for this. Secondly,
-        # datetime.strptime requires exact format in advance, whereas CE supports many different
-        # types of formats which we cannot predict in advance. It is cleanest to parse and construct
-        # by hand. Might consider refactoring to require something less verbose than a linear scan,
-        # but it works for now.
+        pattern = r"(\d{2}):(\d{2}):(\d{2})(.*)"
+        hour, minute, second, remaining = re.match(pattern, s).groups()
+        if remaining:
+            nanosecond, tzname = re.match(r"\.(\d+)?[/+-]?(.*)", remaining).groups()
 
-        # unvalidated hour, minute, second, nanosecond and tz respectively
-
-        pattern = r'(\d{2}):(\d{2}):(\d{2})'
-        parse_state = ["", "", "", "", ""]
-        index, parse_stage = 0, 0
-
-        while index < len(s):
-
-            # hour, minute parsing is easy - just grab all
-            # characters until a colon comes along
-            if parse_stage in [0, 1]:
-
-                if s[index] == ":":
-                    parse_stage += 1
-                else:
-                    parse_state[parse_stage] += s[index]
-
-                index += 1
-                continue
-
-            # parsing a second is only slightly complicated by the presence of different
-            # stopping characters
-            if parse_stage == 2:
-
-                if s[index] in [".", ",", "/", "+", "-"]:
-                    parse_stage += 1
-                    continue
-                else:
-                    parse_state[parse_stage] += s[index]
-                    index += 1
-                    continue
-
-            # because nanosecond is optional, we abort if the start tokens ".", "," are not present,
-            # otherwise gather until we encounter a "/", "+", "-".
-            if parse_stage == 3:
-
-                if s[index] in [".", ","]:
-                    index += 1
-                    while index < len(s):
-                        if s[index] in ["/", "+", "-"]:
-                            parse_stage += 1
-                            break
-                        else:
-                            parse_state[parse_stage] += s[index]
-                            index += 1
-                    continue
-
-                else:
-                    parse_stage += 1
-                    continue
-
-            # time to parse a timezone!
-            if parse_stage == 4:
-
-                if s[index] in ["+", "-"] and not utc_offset_expected:
-                    raise Exception("Unexpected UTC offset")
-                elif s[index] in ["+", "-"] and utc_offset_expected:
-                    parse_state[parse_stage] = s[index + 1 : index + 5]
-                elif s[index] == "/":
-                    parse_state[parse_stage] = s[index + 1 :]
-
-                break
-
-        hour, minute, second, nanosecond, tzname = parse_state
         return Time(
             hour=hour,
             minute=minute,
@@ -263,8 +207,8 @@ class Time(object):
             tzname=tzname,
         )
 
-class Timestamp(object):
 
+class Timestamp(object):
     @classmethod
     def validated_year(_, year: int | str):
         if isinstance(year, str):
@@ -290,7 +234,7 @@ class Timestamp(object):
         raise Exception("Month is not in desired type")
 
     @classmethod
-    def validated_day(_, year: int|str, month: int|str, day: int | str):
+    def validated_day(_, year: int | str, month: int | str, day: int | str):
 
         if isinstance(month, str):
             month = self.validated_month(month)
@@ -336,9 +280,8 @@ class Timestamp(object):
         attributes = [str(getattr(self, a)) for a in ["year", "month", "day", "time"]]
         return f"Timestamp({','.join(attributes)})"
 
-
     @classmethod
     def from_string(_, s: str):
-        match = re.fullmatch(r'(-?\d+)-(\d{2})-(\d{2})(.*)', s).groups()
+        match = re.fullmatch(r"(-?\d+)-(\d{2})-(\d{2})(.*)", s).groups()
         year, month, day, time = match
-        return Timestamp(year, month, day,time=time.lstrip('/') if time else None)
+        return Timestamp(year, month, day, time=time.lstrip("/") if time else None)

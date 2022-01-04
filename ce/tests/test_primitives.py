@@ -5,6 +5,7 @@ from datetime import time
 from zoneinfo import ZoneInfo
 from ce.complex_types import Rid
 
+
 class PrimitivesTestCase(unittest.TestCase):
     def test_invalid_version(self):
         with self.assertRaises(Exception):
