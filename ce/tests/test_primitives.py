@@ -3,8 +3,7 @@ import unittest
 import ce.cte as cte
 from datetime import time
 from zoneinfo import ZoneInfo
-from ce.cte.utils import DataError
-
+from ce.complex_types import Rid
 
 class PrimitivesTestCase(unittest.TestCase):
     def test_invalid_version(self):
@@ -93,19 +92,19 @@ class PrimitivesTestCase(unittest.TestCase):
         self.assertEqual(cte.load("c1 0xaf.b7p3"), 1405.71875)
 
     def test_decimal_float_overflow(self):
-        with self.assertRaises(DataError):
+        with self.assertRaises(Exception):
             cte.load("c1 1e20000")
 
     def test_decimal_float_underflow(self):
-        with self.assertRaises(DataError):
+        with self.assertRaises(Exception):
             cte.load("c1 1e-20000")
 
     def test_hexadecimal_float_overflow(self):
-        with self.assertRaises(DataError):
+        with self.assertRaises(Exception):
             cte.load("c1 0x1p1024")
 
     def test_hexadecimal_float_underflow(self):
-        with self.assertRaises(DataError):
+        with self.assertRaises(Exception):
             cte.load("c1 0x1p-102400")
 
     def test_nan(self):
@@ -122,7 +121,7 @@ class PrimitivesTestCase(unittest.TestCase):
 
     def test_rid(self):
         self.assertEqual(
-            cte.load("""c1 @\"http://x.y.z?quote=\""""), "http://x.y.z?quote="
+            cte.load("""c1 @\"http://x.y.z?quote=\""""), Rid("http://x.y.z?quote=")
         )
 
     def test_pathological_rid(self):
@@ -132,41 +131,6 @@ class PrimitivesTestCase(unittest.TestCase):
         )
         with open(filename, "r") as f:
             test = f.read()
-            self.assertEqual(cte.load(test), "ab\u000a\u0009\u0123cde   \\.f\u0009g")
-
-    def test_simple_time(self):
-
-        self.assertEqual(
-            cte.load("""c1 21:05:04"""), time(21, 5, 4, 0, ZoneInfo("UTC"))
-        )
-
-    def test_simple_time_with_microsecond(self):
-
-        self.assertEqual(
-            cte.load("""c1 21:05:04.4444"""), time(21, 5, 4, 4444, ZoneInfo("UTC"))
-        )
-
-    def test_simple_time_with_microsecond_and_timezone(self):
-
-        self.assertEqual(
-            cte.load("""c1 21:05:04.444/E"""), time(21, 5, 4, 444, ZoneInfo("Etc/UTC"))
-        )
-
-    def test_simple_time_with_area_location_tz(self):
-
-        self.assertEqual(
-            cte.load("""c1 21:05:04.444/Asia/Almaty"""), time(21, 5, 4, 444, ZoneInfo("Asia/Almaty"))
-        )
-
-    def test_simple_time_with_abbreviated_area_location_tz(self):
-
-        self.assertEqual(
-            cte.load("""c1 21:05:04.444/S/Almaty"""), time(21, 5, 4, 444, ZoneInfo("Asia/Almaty"))
-        )
-
-    def test_simple_time_with_lat_and_long(self):
-
-        self.assertEqual(
-            cte.load("""c1 21:05:04.444/51.34/71.52"""),
-            time(21, 5, 4, 444, ZoneInfo("Asia/Almaty")),
-        )
+            self.assertEqual(
+                cte.load(test).rid, "ab\u000a\u0009\u0123cde   \\.f\u0009g"
+            )

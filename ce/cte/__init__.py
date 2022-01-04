@@ -7,7 +7,8 @@ from antlr4.InputStream import InputStream
 from ce.cte.antlrgen.CTE import CTE as CTEParser
 from ce.cte.antlrgen.CTEVisitor import CTEVisitor
 from ce.cte.antlrgen.CTELexer import CTELexer
-from ce.cte.utils import validate_string, validate_float, validate_time
+from ce.primitive_types import validated_string, validated_float
+from ce.complex_types import Rid, Time, Timestamp
 from antlr4.error.ErrorStrategy import BailErrorStrategy
 
 
@@ -16,8 +17,9 @@ class __TextToObject(CTEVisitor):
     Cast a tokenized CTE stream into a Python dictionary.
     """
 
-    def __init__(self):
+    def __init__(self, config={}):
         self.state = None
+        self.config = config
 
     def visitCte(self, ctx):
 
@@ -33,6 +35,12 @@ class __TextToObject(CTEVisitor):
 
         if ctx.FALSE():
             return False
+
+    def visitValueString(self, ctx):
+
+        return validated_string(
+            ctx.STRING().getText(), allow_NULs=self.config.get("allow_NULs", False)
+        )
 
     def visitValueInt(self, ctx):
         if ctx.PINT_DEC() or ctx.NINT_DEC():
@@ -58,30 +66,11 @@ class __TextToObject(CTEVisitor):
 
     def visitValueFloat(self, ctx):
 
-        # In Python, floats smaller than the IEE-754 range get silently cast
-        # to 0.0. This is a violation of the CE spec, which requires a data
-        # error in such cases. Hence, we artificially detect it for FLOAT_DEC/HEX
-        # by checking if the text "looks like" a pattern that should not have been
-        # cast to zero but was, which is doable because there are only finitely
-        # many such patterns.
-
-        # Python will also sometimes cast an out-of-range large float value to "inf", so we
-        # explicitly disallow that case.
-
         if ctx.FLOAT_DEC():
-
-            # The following zero_pattern matches -0.0,00.000,0.000, 0.0e0, 0.0e20 etc.
-            # and disallows 0.1, etc. The one case it fails on is 0.e0, but this is
-            # fine because Antlr will reject it at this stage.
-            zero_pattern = r"^-?0+(?P<dot>\.)?(?(dot)0+)(?P<exp>e)?(?(exp).*)$"
-
-            return validate_float(ctx.FLOAT_DEC().getText(), zero_pattern)
+            return validated_float(ctx.FLOAT_DEC().getText())
 
         if ctx.FLOAT_HEX():
-
-            # The following zero_pattern matches -0x0p0, 0x0000p+0, 0x0000p-0, 0x0.0p-0 etc.
-            zero_pattern = r"^-?0x0+(?P<dot>\.)?(?(dot)0+)(?P<exp>p)?(?(exp).*)$"
-            return validate_float(ctx.FLOAT_HEX().getText(), zero_pattern, as_hex=True)
+            return validated_float(ctx.FLOAT_HEX().getText(), as_hex=True)
 
         if ctx.INF():
             return float(ctx.INF().getText())
@@ -97,12 +86,15 @@ class __TextToObject(CTEVisitor):
 
     def visitValueRid(self, ctx):
         text = ctx.RID().getText().rstrip('"').lstrip('@"')
-        return validate_string(text)
+        return Rid(text, allow_NULs=self.config.get("allow_NULs", False))
 
     def visitValueTime(self, ctx):
 
         if ctx.TIME():
-            return validate_time(ctx.TIME().getText())
+            return Time.from_string(ctx.TIME().getText())
+
+        if ctx.DATE():
+            return Timestamp.from_string(ctx.DATE().getText())
 
 
 def dump():
