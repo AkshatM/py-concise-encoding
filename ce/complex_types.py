@@ -165,7 +165,7 @@ class Time(object):
         )
 
     def __hash__(self, other):
-        return (hour, minute, second, nanosecond, timezone)
+        return hash((hour, minute, second, nanosecond, timezone))
 
     def __repr__(self):
         attributes = [
@@ -275,7 +275,7 @@ class Timestamp(object):
         )
 
     def __hash__(self, other):
-        return (year, month, day, time)
+        return hash((year, month, day, time))
 
     def __repr__(self):
         attributes = [str(getattr(self, a)) for a in ["year", "month", "day", "time"]]

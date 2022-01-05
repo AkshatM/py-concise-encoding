@@ -9,6 +9,7 @@ from ce.cte.antlrgen.CTEVisitor import CTEVisitor
 from ce.cte.antlrgen.CTELexer import CTELexer
 from ce.primitive_types import validated_string, validated_float
 from ce.complex_types import Rid, Time, Timestamp
+from ce.container_types import Map, List
 from antlr4.error.ErrorStrategy import BailErrorStrategy
 
 
@@ -98,7 +99,13 @@ class __TextToObject(CTEVisitor):
             return Timestamp.from_string(ctx.DATE().getText())
 
     def visitContainerList(self, ctx):
-        return [self.visit(context) for context in ctx.value()]
+        return List([self.visit(context) for context in ctx.value()])
+
+    def visitKvPair(self, ctx):
+        return (self.visit(v) for v in ctx.value())
+
+    def visitContainerMap(self, ctx):
+        return Map((self.visit(pair) for pair in ctx.kvPair()))
 
 
 def dump():
