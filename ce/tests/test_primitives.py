@@ -2,8 +2,10 @@ import os
 import unittest
 import ce.cte as cte
 from datetime import time
+from decimal import Decimal
 from zoneinfo import ZoneInfo
 from ce.complex_types import Rid
+from ce.primitive_types import BinaryFloat
 
 
 class PrimitivesTestCase(unittest.TestCase):
@@ -42,63 +44,61 @@ class PrimitivesTestCase(unittest.TestCase):
         self.assertEqual(cte.load("c1 -0x1"), -1)
 
     def test_decimal_float_zero(self):
-        self.assertEqual(cte.load("c1 0.0"), 0.0)
+        self.assertEqual(cte.load("c1 0.0"), Decimal("0.0"))
 
     def test_decimal_float_case1(self):
-        self.assertEqual(cte.load("c1 0.1"), 0.1)
+        self.assertEqual(cte.load("c1 0.1"), Decimal("0.1"))
 
     def test_decimal_float_case2(self):
-        self.assertEqual(cte.load("c1 -0.1"), -0.1)
+        self.assertEqual(cte.load("c1 -0.1"), Decimal("-0.1"))
 
     def test_decimal_float_case3(self):
-        self.assertEqual(cte.load("c1 0,1"), 0.1)
+        self.assertEqual(cte.load("c1 0,1"), Decimal("0.1"))
 
     def test_decimal_float_case4(self):
-        self.assertEqual(cte.load("c1 -0,1"), -0.1)
+        self.assertEqual(cte.load("c1 -0,1"), Decimal("-0.1"))
 
     def test_decimal_float_case5(self):
-        self.assertEqual(cte.load("c1 1e1"), 10)
+        self.assertEqual(cte.load("c1 1e1"), Decimal('1E+1'))
 
     def test_decimal_float_case6(self):
-        self.assertEqual(cte.load("c1 -1e1"), -10)
+        self.assertEqual(cte.load("c1 -1e1"), Decimal('-1E+1'))
 
     def test_decimal_float_case7(self):
-        self.assertEqual(cte.load("c1 1.1e1"), 11)
+        self.assertEqual(cte.load("c1 1.1e1"), Decimal('1.1E+1'))
 
     def test_decimal_float_case8(self):
-        self.assertEqual(cte.load("c1 -1.1e1"), -11)
+        self.assertEqual(cte.load("c1 -1.1e1"), Decimal('-1.1E+1'))
 
     def test_decimal_float_case9(self):
-        self.assertEqual(cte.load("c1 1,1e1"), 11)
+        self.assertEqual(cte.load("c1 1,1e1"), Decimal('1.1E+1'))
 
     def test_decimal_float_case10(self):
-        self.assertEqual(cte.load("c1 -1,1e1"), -11)
+        self.assertEqual(cte.load("c1 -1,1e1"), Decimal('-1.1E+1'))
 
     def test_hexadecimal_float_zero(self):
-        self.assertEqual(cte.load("c1 0.0p+0"), 0.0)
+        self.assertEqual(cte.load("c1 0x0.0p+0"), BinaryFloat('0x0.0p+0'))
 
     def test_hexadecimal_float_case1(self):
-        self.assertEqual(cte.load("c1 0x0.1p0"), 0.0625)
+        self.assertEqual(cte.load("c1 0x0.1p0"), BinaryFloat("0x0.1p0"))
 
     def test_hexadecimal_float_case2(self):
-        self.assertEqual(cte.load("c1 0xaf.b7p+0"), 175.71484375)
+        self.assertEqual(cte.load("c1 0xaf.b7p+0"), BinaryFloat("0xaf.b7p+0"))
 
     def test_hexadecimal_float_case3(self):
-        self.assertEqual(cte.load("c1 0xaf.b7p+2"), 702.859375)
+        self.assertEqual(cte.load("c1 0xaf.b7p+2"), BinaryFloat("0xaf.b7p+2"))
 
     def test_hexadecimal_float_case4(self):
-        self.assertEqual(cte.load("c1 0xaf.b7p-2"), 43.9287109375)
+        self.assertEqual(cte.load("c1 0xaf.b7p-2"), BinaryFloat("0xaf.b7p-2"))
 
     def test_hexadecimal_float_case5(self):
-        self.assertEqual(cte.load("c1 0xaf.b7p3"), 1405.71875)
+        self.assertEqual(cte.load("c1 0xaf.b7p3"), BinaryFloat("0xaf.b7p3"))
 
     def test_decimal_float_overflow(self):
-        with self.assertRaises(Exception):
-            cte.load("c1 1e20000")
+        self.assertEqual(cte.load("c1 1e20000"), Decimal("1e20000"))
 
     def test_decimal_float_underflow(self):
-        with self.assertRaises(Exception):
-            cte.load("c1 1e-20000")
+        self.assertEqual(cte.load("c1 -1e20000"), Decimal("-1e20000"))
 
     def test_hexadecimal_float_overflow(self):
         with self.assertRaises(Exception):
@@ -112,10 +112,10 @@ class PrimitivesTestCase(unittest.TestCase):
         self.assertTrue(cte.load("c1 nan").is_nan())
 
     def test_inf(self):
-        self.assertEqual(cte.load("c1 inf"), float("inf"))
+        self.assertEqual(cte.load("c1 inf"), Decimal("inf"))
 
     def test_negative_inf(self):
-        self.assertEqual(cte.load("c1 -inf"), float("-inf"))
+        self.assertEqual(cte.load("c1 -inf"), Decimal("-inf"))
 
     def test_snan(self):
         self.assertTrue(cte.load("c1 snan").is_snan())

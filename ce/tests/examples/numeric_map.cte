@@ -1,0 +1,14 @@
+c1
+{
+    "boolean"       = true
+    "binary int"    = -0b10001011
+    "octal int"     = 0o644
+    "decimal int"   = -10000000
+    "hex int"       = 0xfffe0001
+    "very long int" = 100000000000000000000000000000000000009
+    "decimal float" = -14.125
+    "hex float"     = 0x5.1ec4p+20
+    "very long flt" = 4,957234990634579394723460546348e+100000
+    "infinity"      = inf
+    "neg infinity"  = -inf
+}

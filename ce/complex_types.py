@@ -3,7 +3,7 @@ from calendar import Calendar
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from timezonefinder import TimezoneFinder
-from ce.primitive_types import validated_string, validated_float
+from ce.primitive_types import validated_string
 
 
 class Rid(object):
@@ -138,7 +138,7 @@ class Time(object):
             lat_lng_pattern = r"^(-?\d{2}\.\d{2})/(-?\d{2}\.\d{2})$"
             lat_lng_match = re.match(lat_lng_pattern, tzrepr)
             if lat_lng_match:
-                lat, lng = map(validated_float, lat_lng_match.groups())
+                lat, lng = map(float, lat_lng_match.groups())
                 return TimezoneFinder().timezone_at_land(lng=lng, lat=lat)
 
             # last resort

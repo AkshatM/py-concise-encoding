@@ -4,7 +4,9 @@ All basic numeric and string types and their associated handling.
 
 import re
 import unicodedata
+from enum import Enum
 from zoneinfo import ZoneInfo
+from decimal import Decimal
 from timezonefinder import TimezoneFinder
 
 WHITESPACE = [
@@ -71,45 +73,50 @@ def is_valid_codepoint(c):
 
     return True
 
+class BinaryFloat(object):
 
-def validated_float(s: str, as_hex=False):
-    """
-    Take a string representation of a float and cast it to a float, verifying
-    if the given float is within the IEE-754 range.
-    """
+    def __init__(self, f: str):
+        self.float = self.__validate_binary_float(f)
+        self.as_decimal = Decimal(float.fromhex(self.float))
 
-    # In Python, floats smaller than the IEE-754 range get silently cast
-    # to 0.0. This is a violation of the CE spec, which requires a data
-    # error in such cases. Hence, we artificially detect it for FLOAT_DEC/HEX
-    # by checking if the text "looks like" a pattern that should not have been
-    # cast to zero but was, which is doable because there are only finitely
-    # many such patterns.
+    def __validate_binary_float(self, s: str):
+        """
+        Take a representation of a binary float and cast it to a float, verifying
+        if the given float is within the IEE-754 range.
+        """
 
-    # Python will also sometimes cast an out-of-range large float value to "inf", so we
-    # explicitly disallow that case.
+        # In Python, floats smaller than the IEE-754 range get silently cast
+        # to 0.0. This is a violation of the CE spec, which requires a data
+        # error in such cases. Hence, we artificially detect it
+        # by checking if the text "looks like" a pattern that should not have been
+        # cast to zero but was, which is doable because there are only finitely
+        # many such patterns.
 
-    text = s.replace("_", ".").replace(",", ".")
 
-    # The following zero_pattern matches -0.0,00.000,0.000, 0.0e0, 0.0e20 etc.
-    # and disallows 0.1, etc. The one case it fails on is 0.e0, but this is
-    # fine because it's not a valid CTE document string.
-    zero_pattern = r"^-?0+(?P<dot>\.)?(?(dot)0+)(?P<exp>e)?(?(exp).*)$"
-    if as_hex:
-        # The following zero_pattern matches -0x0p0, 0x0000p+0, 0x0000p-0, 0x0.0p-0 etc.
-        zero_pattern = r"^-?0x0+(?P<dot>\.)?(?(dot)0+)(?P<exp>p)?(?(exp).*)$"
+        text = s.replace("_", "").replace(",", ".")
+        zero_pattern = r"-?0x0+(?P<dot>\.)?(?(dot)0+)(?P<exp>p)?(?(exp).*)"
 
-    try:
-        value = float.fromhex(text) if as_hex else float(text)
-    except OverflowError:
-        raise Exception(f"Value {s} exceeds IEEE-754 bounds")
+        try:
+            value = float.fromhex(text)
+        except OverflowError:
+            raise Exception(f"Value {s} exceeds IEEE-754 bounds")
 
-    if value == float("inf"):
-        raise Exception(f"Value {s} exceeds IEEE-754 bounds")
+        if (value == 0.0 and re.match(zero_pattern, text) is None):
+            raise Exception(f"Value {s} underflows IEEE-754 bounds")
 
-    if (value == 0.0 and not re.match(zero_pattern, text)) or value == float("-inf"):
-        raise Exception(f"Value {s} underflows IEEE-754 bounds")
+        return text
 
-    return value
+    def __eq__(self, other):
+
+        if isinstance(other, BinaryFloat):
+            return self.as_decimal.__eq__(other.as_decimal)
+
+    def __hash__(self):
+        return self.as_decimal.__hash__()
+
+    def __repr__(self):
+        return f'BinaryFloat({self.float}={self.as_decimal})'
+
 
 
 def validated_string(s: str, allow_NULs=False):

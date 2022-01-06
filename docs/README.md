@@ -4,8 +4,7 @@ CE documents represent abstract types with the following schema:
 
 ```
 integers -> ints (native type)
-float (except NaN, sNaN) -> floats (native type)
-float (NaN, sNaN) -> decimal.Decimal("NaN"), decimal.Decimal("sNaN")
+float -> -> decimal.Decimal("NaN"), decimal.Decimal("sNaN")
 strings -> strings (native type)
 null -> None
 bool -> bools (native type)

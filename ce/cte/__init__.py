@@ -7,9 +7,9 @@ from antlr4.InputStream import InputStream
 from ce.cte.antlrgen.CTE import CTE as CTEParser
 from ce.cte.antlrgen.CTEVisitor import CTEVisitor
 from ce.cte.antlrgen.CTELexer import CTELexer
-from ce.primitive_types import validated_string, validated_float
+from ce.primitive_types import validated_string, BinaryFloat
 from ce.complex_types import Rid, Time, Timestamp
-from ce.container_types import Map, List
+from ce.container_types import Map
 from antlr4.error.ErrorStrategy import BailErrorStrategy
 
 
@@ -55,27 +55,27 @@ class __TextToObject(CTEVisitor):
             return -int(ctx.NINT_BIN().getText().lstrip("-0b").replace("_", ""), 2)
 
         if ctx.PINT_OCT():
-            return int(ctx.PINT_OCT().getText().lstrip("0o").replace("_", "."), 8)
+            return int(ctx.PINT_OCT().getText().lstrip("0o").replace("_", ""), 8)
 
         if ctx.NINT_OCT():
-            return -int(ctx.NINT_OCT().getText().lstrip("-0o").replace("_", "."), 8)
+            return -int(ctx.NINT_OCT().getText().lstrip("-0o").replace("_", ""), 8)
 
         if ctx.PINT_HEX():
-            return int(ctx.PINT_HEX().getText().lstrip("0x").replace("_", "."), 16)
+            return int(ctx.PINT_HEX().getText().lstrip("0x").replace("_", ""), 16)
 
         if ctx.NINT_HEX():
-            return -int(ctx.NINT_HEX().getText().lstrip("-0x").replace("_", "."), 16)
+            return -int(ctx.NINT_HEX().getText().lstrip("-0x").replace("_", ""), 16)
 
     def visitValueFloat(self, ctx):
 
         if ctx.FLOAT_DEC():
-            return validated_float(ctx.FLOAT_DEC().getText())
+            return Decimal(ctx.FLOAT_DEC().getText().replace("_", "").replace(",", "."))
 
         if ctx.FLOAT_HEX():
-            return validated_float(ctx.FLOAT_HEX().getText(), as_hex=True)
+            return BinaryFloat(ctx.FLOAT_HEX().getText())
 
         if ctx.INF():
-            return float(ctx.INF().getText())
+            return Decimal(ctx.INF().getText())
 
         if ctx.NAN():
             return Decimal("nan")
@@ -99,7 +99,7 @@ class __TextToObject(CTEVisitor):
             return Timestamp.from_string(ctx.DATE().getText())
 
     def visitContainerList(self, ctx):
-        return List([self.visit(context) for context in ctx.value()])
+        return [self.visit(context) for context in ctx.value()]
 
     def visitKvPair(self, ctx):
         return (self.visit(v) for v in ctx.value())

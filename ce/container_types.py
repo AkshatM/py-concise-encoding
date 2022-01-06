@@ -1,31 +1,11 @@
+from __future__ import annotations
+
 from uuid import UUID
 from typing import Union
+from decimal import Decimal
+from ce.primitive_types import BinaryFloat
 from collections.abc import Mapping, Sequence
 from ce.complex_types import Rid, Time, Timestamp
-
-Value = Union[str, float, int, bool, None, Rid, Time, Timestamp, "Map", UUID, "List"]
-Keyable = str | float | int | Rid | Time | Timestamp | UUID
-KeyValue = tuple[Keyable, Value]
-
-
-class List(Sequence):
-    def __init__(self, items: list[Value]):
-        self.list = [item for item in items]
-
-    def __getitem__(self, index):
-        return self.list[index]
-
-    def __len__(self):
-        return len(self.list)
-
-    def __eq__(self, other):
-        if isinstance(other, List):
-            if len(self.list) == len(other.list):
-                return all(self.list[i] == other.list[i] for i in range(len(self.list)))
-
-    def __repr__(self):
-        return f"List{self.list}"
-
 
 class Map(Mapping):
 
@@ -46,9 +26,8 @@ class Map(Mapping):
         if not isinstance(key, Keyable):
             raise Exception(f"Key {key} of type {type(key)} is not keyable")
 
-        import pdb; pdb.set_trace()
         if not isinstance(value, Value):
-            raise Exception(f"Cannot store value {value} of type {type(value)}")
+            raise Exception(f"Cannot store value {value}, type {type(value)} not in {Value}")
 
         if key in self.map:
             raise Exception(f"Key {key} already exists")
@@ -66,3 +45,7 @@ class Map(Mapping):
 
     def __repr__(self):
         return self.map.__repr__()
+
+Value = Union[str, int, bool, None, Rid, Time, Timestamp, list, Map, Decimal, BinaryFloat]
+Keyable = str | Decimal | BinaryFloat | int | Rid | Time | Timestamp | UUID
+KeyValue = tuple[Keyable, Value]
