@@ -7,9 +7,9 @@ from antlr4.InputStream import InputStream
 from ce.cte.antlrgen.CTE import CTE as CTEParser
 from ce.cte.antlrgen.CTEVisitor import CTEVisitor
 from ce.cte.antlrgen.CTELexer import CTELexer
-from ce.primitive_types import validated_string, BinaryFloat
+from ce.primitive_types import read_string, read_int, read_float
 from ce.complex_types import Rid, Time, Timestamp
-from ce.container_types import Map
+from ce.container_types import Map, Value
 from antlr4.error.ErrorStrategy import BailErrorStrategy
 
 
@@ -39,55 +39,22 @@ class __TextToObject(CTEVisitor):
 
     def visitValueString(self, ctx):
 
-        return validated_string(
+        return read_string(
             ctx.STRING().getText().strip('"'),
             allow_NULs=self.config.get("allow_NULs", False),
         )
 
     def visitValueInt(self, ctx):
-        if ctx.PINT_DEC() or ctx.NINT_DEC():
-            return int(ctx.getText().replace("_", ""))
-
-        if ctx.PINT_BIN():
-            return int(ctx.PINT_BIN().getText().lstrip("0b").replace("_", ""), 2)
-
-        if ctx.NINT_BIN():
-            return -int(ctx.NINT_BIN().getText().lstrip("-0b").replace("_", ""), 2)
-
-        if ctx.PINT_OCT():
-            return int(ctx.PINT_OCT().getText().lstrip("0o").replace("_", ""), 8)
-
-        if ctx.NINT_OCT():
-            return -int(ctx.NINT_OCT().getText().lstrip("-0o").replace("_", ""), 8)
-
-        if ctx.PINT_HEX():
-            return int(ctx.PINT_HEX().getText().lstrip("0x").replace("_", ""), 16)
-
-        if ctx.NINT_HEX():
-            return -int(ctx.NINT_HEX().getText().lstrip("-0x").replace("_", ""), 16)
+        return read_int(ctx.getText())
 
     def visitValueFloat(self, ctx):
-
-        if ctx.FLOAT_DEC():
-            return Decimal(ctx.FLOAT_DEC().getText().replace("_", "").replace(",", "."))
-
-        if ctx.FLOAT_HEX():
-            return BinaryFloat(ctx.FLOAT_HEX().getText())
-
-        if ctx.INF():
-            return Decimal(ctx.INF().getText())
-
-        if ctx.NAN():
-            return Decimal("nan")
-
-        if ctx.SNAN():
-            return Decimal("snan")
+        return read_float(ctx.getText())
 
     def visitValueUid(self, ctx):
         return UUID(ctx.UID().getText())
 
     def visitValueRid(self, ctx):
-        text = ctx.RID().getText()
+        text = ctx.RID().getText().rstrip('"').lstrip('@"')
         return Rid(text, allow_NULs=self.config.get("allow_NULs", False))
 
     def visitValueTime(self, ctx):
@@ -108,7 +75,7 @@ class __TextToObject(CTEVisitor):
         return Map((self.visit(pair) for pair in ctx.kvPair()))
 
 
-def dump():
+def dump(value: Value):
     pass
 
 

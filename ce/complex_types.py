@@ -3,12 +3,12 @@ from calendar import Calendar
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from timezonefinder import TimezoneFinder
-from ce.primitive_types import validated_string
+from ce.primitive_types import read_string
 
 
 class Rid(object):
     def __init__(self, s: str, **kwargs):
-        self.rid = validated_string(s.rstrip('"').lstrip('@"'), **kwargs)
+        self.rid = read_string(s, **kwargs)
 
     def __eq__(self, other):
 
@@ -23,10 +23,18 @@ class Rid(object):
     def __repr__(self):
         return self.rid
 
+    def to_string(self):
+        return f'@"{self.rid}"'
+
+    @classmethod
+    def from_string(_, s: str):
+        if not s.startswith('@"') or not s.endswith('"'):
+            raise Exception("Supplied string does not begin with @\" or end with closing quotation mark")
+
+        return Rid(s.lstrip('@"').rstrip('"'))
 
 Coordinates = tuple[float, float]
 
-# TODO: Make attrs immutable
 class Time(object):
 
     AREA_ABBREVIATIONS = {
@@ -207,8 +215,12 @@ class Time(object):
             tzname=tzname,
         )
 
+    def to_string(self):
+        base = f"{self.hour:02d}:{self.minute:02d}:{self.second:02d}"
+        microsecond_portion = f".{self.microsecond}" if self.microsecond else ""
+        tzname_portion = f"/{self.tzname}" if not is_utc_offset else f"{self.tzname.rstrip('UTC')}"
+        return f"{base}{microsecond_portion}{tzname_portion}"
 
-# TODO: Make attrs immutable
 class Timestamp(object):
     @classmethod
     def validated_year(_, year: int | str):
@@ -275,7 +287,7 @@ class Timestamp(object):
         )
 
     def __hash__(self, other):
-        return hash((year, month, day, time))
+        return hash((self.year, self.month, self.day, self.time))
 
     def __repr__(self):
         attributes = [str(getattr(self, a)) for a in ["year", "month", "day", "time"]]
@@ -286,3 +298,8 @@ class Timestamp(object):
         match = re.fullmatch(r"(-?\d+)-(\d{2})-(\d{2})(.*)", s).groups()
         year, month, day, time = match
         return Timestamp(year, month, day, time=time.lstrip("/") if time else None)
+
+    def to_string(self):
+        base = f"{self.year:04d}-{self.month:02d}-{self.day:02d}"
+        time_portion = f"/{self.time}" if self.time else ""
+        return f"{base}{time_portion}"

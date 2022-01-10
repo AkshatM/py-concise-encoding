@@ -59,25 +59,25 @@ class PrimitivesTestCase(unittest.TestCase):
         self.assertEqual(cte.load("c1 -0,1"), Decimal("-0.1"))
 
     def test_decimal_float_case5(self):
-        self.assertEqual(cte.load("c1 1e1"), Decimal('1E+1'))
+        self.assertEqual(cte.load("c1 1e1"), Decimal("1E+1"))
 
     def test_decimal_float_case6(self):
-        self.assertEqual(cte.load("c1 -1e1"), Decimal('-1E+1'))
+        self.assertEqual(cte.load("c1 -1e1"), Decimal("-1E+1"))
 
     def test_decimal_float_case7(self):
-        self.assertEqual(cte.load("c1 1.1e1"), Decimal('1.1E+1'))
+        self.assertEqual(cte.load("c1 1.1e1"), Decimal("1.1E+1"))
 
     def test_decimal_float_case8(self):
-        self.assertEqual(cte.load("c1 -1.1e1"), Decimal('-1.1E+1'))
+        self.assertEqual(cte.load("c1 -1.1e1"), Decimal("-1.1E+1"))
 
     def test_decimal_float_case9(self):
-        self.assertEqual(cte.load("c1 1,1e1"), Decimal('1.1E+1'))
+        self.assertEqual(cte.load("c1 1,1e1"), Decimal("1.1E+1"))
 
     def test_decimal_float_case10(self):
-        self.assertEqual(cte.load("c1 -1,1e1"), Decimal('-1.1E+1'))
+        self.assertEqual(cte.load("c1 -1,1e1"), Decimal("-1.1E+1"))
 
     def test_hexadecimal_float_zero(self):
-        self.assertEqual(cte.load("c1 0x0.0p+0"), BinaryFloat('0x0.0p+0'))
+        self.assertEqual(cte.load("c1 0x0.0p+0"), BinaryFloat("0x0.0p+0"))
 
     def test_hexadecimal_float_case1(self):
         self.assertEqual(cte.load("c1 0x0.1p0"), BinaryFloat("0x0.1p0"))

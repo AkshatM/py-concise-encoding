@@ -27,7 +27,9 @@ class Map(Mapping):
             raise Exception(f"Key {key} of type {type(key)} is not keyable")
 
         if not isinstance(value, Value):
-            raise Exception(f"Cannot store value {value}, type {type(value)} not in {Value}")
+            raise Exception(
+                f"Cannot store value {value}, type {type(value)} not in {Value}"
+            )
 
         if key in self.map:
             raise Exception(f"Key {key} already exists")
@@ -46,6 +48,9 @@ class Map(Mapping):
     def __repr__(self):
         return self.map.__repr__()
 
-Value = Union[str, int, bool, None, Rid, Time, Timestamp, list, Map, Decimal, BinaryFloat]
+
+Value = Union[
+    str, int, bool, None, Rid, Time, Timestamp, list, Map, Decimal, BinaryFloat
+]
 Keyable = str | Decimal | BinaryFloat | int | Rid | Time | Timestamp | UUID
 KeyValue = tuple[Keyable, Value]

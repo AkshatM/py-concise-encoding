@@ -73,8 +73,8 @@ def is_valid_codepoint(c):
 
     return True
 
-class BinaryFloat(object):
 
+class BinaryFloat(object):
     def __init__(self, f: str):
         self.float = self.__validate_binary_float(f)
         self.as_decimal = Decimal(float.fromhex(self.float))
@@ -92,7 +92,6 @@ class BinaryFloat(object):
         # cast to zero but was, which is doable because there are only finitely
         # many such patterns.
 
-
         text = s.replace("_", "").replace(",", ".")
         zero_pattern = r"-?0x0+(?P<dot>\.)?(?(dot)0+)(?P<exp>p)?(?(exp).*)"
 
@@ -101,7 +100,7 @@ class BinaryFloat(object):
         except OverflowError:
             raise Exception(f"Value {s} exceeds IEEE-754 bounds")
 
-        if (value == 0.0 and re.match(zero_pattern, text) is None):
+        if value == 0.0 and re.match(zero_pattern, text) is None:
             raise Exception(f"Value {s} underflows IEEE-754 bounds")
 
         return text
@@ -115,13 +114,60 @@ class BinaryFloat(object):
         return self.as_decimal.__hash__()
 
     def __repr__(self):
-        return f'BinaryFloat({self.float}={self.as_decimal})'
+        return f"BinaryFloat({self.float} = {self.as_decimal})"
 
+    def write(self) -> str:
+        # TODO
+        return ""
 
+def read_int(s: str):
 
-def validated_string(s: str, allow_NULs=False):
+    s, base = s.replace("_", ""), 10
+
+    if "0b" in s:
+        s, base = s.replace("0b", ""), 2
+    elif "0o" in s:
+        s, base = s.replace("0o", ""), 8
+    elif "0x" in s:
+        s, base = s.replace("0x", ""), 16
+    else:
+        pass
+
+    return int(s, base)
+
+def write_int(i: int):
+    """ 
+    The `write` counterpart of `read_int`. 
+    Returns a representation of a base-10 integer suitable for CE encoding.
+    Other bases are not supported because they are not needed during emitting,
+    only when parsing. This is fine because Python supports arbitrary-precision
+    integers, and no loss is encountered during conversion.
     """
-    Given a string:
+    return str(i)
+
+def read_float(s: str):
+
+    if any([re.fullmatch(r"[-]?inf", s), re.fullmatch(r"nan", s), re.fullmatch(r"snan", s)]):
+        return Decimal(s)
+
+    if '0x' in s:
+        return BinaryFloat(s)
+    
+    return Decimal(s.replace("_", "").replace(",", "."))
+
+def write_float(f: Decimal | BinaryFloat):
+
+    match f:
+        case Decimal():
+            return str(f)
+        case BinaryFloat():
+            return f.write()
+        case _:
+            raise Exception("Only decimal.Decimal and ce.BinaryFloat types allowed")
+
+def read_string(s: str, allow_NULs=False):
+    """
+    Given a string from a CE document:
     1. Ensure no Unicode codepoint in category C, Z1, Zp is presented
        (except for TAB (u+0009), LF (u+000a), and CR (u+000d))
     2. Parse only the following escape sequences:
@@ -225,3 +271,6 @@ def validated_string(s: str, allow_NULs=False):
         index += 1
 
     return verified_s
+
+def write_string(s: str):
+    pass
