@@ -76,7 +76,16 @@ class __TextToObject(CTEVisitor):
 
 
 def dump(value: Value):
-    pass
+
+    stringified_value = "null"
+    
+    match value:
+        case int():
+            stringified_value = str(value)
+        case _:
+            raise Exception("Not implemented")
+
+    return f"c1 {stringified_value}"
 
 
 def load(text: str):

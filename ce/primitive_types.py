@@ -135,6 +135,31 @@ def read_int(s: str):
 
     return int(s, base)
 
+def read_int_binary(b: bytes):
+
+    type_indicator = b[0]
+    if b[0] < b'\x65':
+        return int.from_bytes(b[0], "little", signed=True)
+
+def write_int_binary(i: int):
+
+    byte_length = lambda x: ceil(x.bit_length() // 8)
+
+    prefix = b''
+
+    if 100 < abs(i) < (1 << 8):
+        pass
+    elif (1 << 8) < abs(i) < (1 << 16):
+        prefix = b"\x6a" if i > 0 else b"\x6b"
+    elif (1 << 16) < abs(i) < (1 << 32):
+        prefix = b"\x6c" if i > 0 else b"\x6d"
+    elif (1 << 32) < abs(i) < (1 << 64):
+        prefix = b"\x6e" if i > 0 else b"\x6f"
+    else:
+        prefix = (b"\x66" if i > 0 else b"\x67") + leb128.u.encode(byte_length(i))
+
+    return prefix + i.to_bytes(byte_length(i), "little", signed=True)
+
 def write_int(i: int):
     """ 
     The `write` counterpart of `read_int`. 
